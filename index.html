@@ -1,0 +1,1186 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>OKNO PREMIUM — Окна и двери премиум-класса</title>
+<meta name="description" content="OKNO PREMIUM: пластиковые и алюминиевые окна, двери, балконы. Онлайн-конфигуратор и расчёт цены.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{color-scheme:light;--bg:#fff;--ivory:#f3f8fe;--card:#fff;--tx:#0b1f44;--mu:#667085;--ac:#1d4ed8;--gold:#1f6fd1;--bd:#dce7f4;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+html{scroll-behavior:smooth;scroll-padding-top:80px}
+*{box-sizing:border-box}
+body{margin:0;background:#fff;color:var(--tx);font:16px/1.7 Inter,"Helvetica Neue",Arial,sans-serif}
+.w{max-width:1180px;margin:0 auto;padding:0 24px}
+header{position:sticky;top:0;z-index:9;background:rgba(255,255,255,.96);border-bottom:1px solid var(--bd)}
+.nav{display:flex;align-items:center;gap:28px;height:76px}
+.logo{font:600 24px "Cormorant Garamond",Georgia,serif;letter-spacing:.2em;text-decoration:none;color:var(--tx)}
+.logo b{color:var(--gold);font-weight:600}
+nav{display:flex;gap:30px;margin-left:auto}
+nav a{color:var(--tx);text-decoration:none;font-size:13px;letter-spacing:.12em;text-transform:uppercase}
+nav a:hover{color:var(--gold)}
+.lang{display:flex;gap:2px}
+.lang button{border:0;background:none;color:var(--mu);padding:6px 9px;font:500 12px Inter,Arial,sans-serif;letter-spacing:.1em;cursor:pointer;border-bottom:1px solid transparent}
+.lang button.on{color:var(--tx);border-bottom-color:var(--gold)}
+.btn{display:inline-block;background:var(--tx);color:#fff;border:1px solid var(--tx);padding:15px 34px;border-radius:0;font:500 12px Inter,Arial,sans-serif;letter-spacing:.16em;text-transform:uppercase;text-decoration:none;cursor:pointer;transition:.25s}
+.btn:hover{background:var(--gold);border-color:var(--gold)}
+.btn.o{background:none;color:var(--tx)}
+.btn.o:hover{background:var(--tx);color:#fff;border-color:var(--tx)}
+.hero{padding:90px 0 80px;background:linear-gradient(180deg,#fff,var(--ivory))}
+.hero .w{display:grid;grid-template-columns:1.1fr .9fr;gap:60px;align-items:center}
+h1,h2,h3{font-family:"Cormorant Garamond",Georgia,serif;font-weight:600;letter-spacing:.01em}
+h1{font-size:clamp(40px,6vw,72px);line-height:1.05;margin:0 0 22px}
+h2{font-size:clamp(32px,4vw,46px);line-height:1.15;margin:0 0 10px}
+h3{font-size:24px;margin:14px 0 6px}
+.tag{display:block;color:var(--gold);font-size:12px;letter-spacing:.24em;text-transform:uppercase;margin-bottom:14px}
+.mu{color:var(--mu)}
+.stats{display:flex;gap:44px;margin-top:44px;padding-top:28px;border-top:1px solid var(--bd);flex-wrap:wrap}
+.stats b{font:600 38px "Cormorant Garamond",Georgia,serif;display:block;color:var(--tx);line-height:1.1}
+.stats span{font-size:13px}
+section{padding:96px 0}
+.alt{background:var(--ivory)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:24px;margin-top:40px}
+.card{background:#fff;border:1px solid var(--bd);padding:32px 28px;transition:.3s}
+.grid .card:hover{border-color:var(--gold);box-shadow:0 18px 40px rgba(11,31,68,.07)}
+.ic svg{width:44px;height:44px;stroke:var(--gold);fill:none;stroke-width:1.2}
+.card button{margin-top:14px}
+.cfg{display:grid;grid-template-columns:1fr 1fr;gap:40px;margin-top:40px}
+label{display:block;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--mu);margin:18px 0 8px}
+select,input,textarea{width:100%;padding:13px 14px;border:1px solid var(--bd);border-radius:0;background:#fff;color:var(--tx);font:inherit}
+select:focus,input:focus,textarea:focus{outline:none;border-color:var(--gold)}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.sw{display:flex;gap:12px}
+.sw button{width:34px;height:34px;border-radius:50%;border:1px solid var(--bd);outline:2px solid transparent;outline-offset:3px;cursor:pointer}
+.sw button.on{outline-color:var(--gold)}
+.prev{display:flex;align-items:center;justify-content:center;min-height:320px;background:var(--ivory);padding:20px}
+.price{font:600 46px "Cormorant Garamond",Georgia,serif;margin:20px 0 4px}
+.steps{counter-reset:s}
+.steps .card::before{counter-increment:s;content:"0" counter(s);display:block;font:600 34px "Cormorant Garamond",Georgia,serif;color:var(--gold)}
+details{background:#fff;border:1px solid var(--bd);padding:18px 22px;margin-bottom:12px}
+summary{cursor:pointer;font-weight:500}
+.ct{display:grid;grid-template-columns:1fr 1fr;gap:40px;margin-top:40px}
+.ct a{color:var(--tx);text-decoration:none;border-bottom:1px solid var(--gold)}
+.ct p{margin:14px 0}
+.k{display:inline-block;min-width:78px;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold)}
+footer{border-top:1px solid var(--bd);padding:32px 0;color:var(--mu);font-size:13px;letter-spacing:.06em;text-align:center}
+@media(max-width:860px){.hero .w,.cfg,.ct{grid-template-columns:1fr}nav{display:none}.lang{margin-left:auto}section{padding:64px 0}}
+:root{--i1:url(assets/image-b6cc73179637f7df.jpg);--i2:url(assets/image-704beb9ba914630b.jpg);--i3:url(assets/image-b970777e1c84d7d6.jpg)}
+.g3{grid-template-columns:repeat(auto-fit,minmax(290px,1fr))}
+.cc{padding:0;overflow:hidden}
+.cc .im{height:300px;background-size:cover;background-position:center;transition:transform .6s}
+.cc:hover .im{transform:scale(1.04)}
+.cc{overflow:hidden}.cc .cb{padding:26px 28px 30px;background:#fff;position:relative}
+.mq{overflow:hidden;margin-top:44px}
+.track{display:flex;width:max-content;animation:mv 55s linear infinite}
+.mq:hover .track{animation-play-state:paused}
+@keyframes mv{from{transform:translateX(-50%)}to{transform:translateX(0)}}
+.tile{width:340px;height:440px;margin-right:22px;flex:none;background-size:cover;background-position:center}
+
+
+
+
+@media(prefers-reduced-motion:reduce){.track{animation:none}.mq{overflow-x:auto}}
+@media(max-width:860px){.tile{width:260px;height:340px}}
+:root{--p1:url(assets/image-2ab51c1412f87980.jpg);--p2:url(assets/image-0f497f04dd818142.jpg);--p3:url(assets/image-e52aa661033a29c6.jpg);--p4:url(assets/image-a57e896282dae47a.jpg);--p5:url(assets/image-cc1e972c030a0fe1.jpg);--p6:url(assets/image-221181e15100c310.jpg);--p7:url(assets/image-23b46a773b0d9486.jpg)}
+.why{position:relative;overflow:hidden}
+.why .ico{width:78px;height:78px;display:flex;align-items:center;justify-content:center;background:linear-gradient(145deg,#fff,var(--ivory));border:1px solid var(--bd);position:relative;margin-bottom:22px;transition:.35s}
+.why .ico::after{content:"";position:absolute;right:-1px;top:-1px;width:14px;height:14px;border-top:2px solid var(--gold);border-right:2px solid var(--gold)}
+.why svg{width:46px;height:46px;fill:none;stroke-linecap:round;stroke-linejoin:round}
+.why .f{stroke:#0b1f44;stroke-width:1.4;fill:rgba(31,111,209,.16);transition:.35s}
+.why .g{stroke:var(--gold);stroke-width:2.2}
+.why .n{position:absolute;right:24px;top:18px;font:600 44px "Cormorant Garamond",Georgia,serif;color:#e4eefb}
+.why:hover .ico{background:var(--tx);border-color:var(--tx)}
+.why:hover .f{stroke:#fff;fill:rgba(255,255,255,.12)}
+.why::before{content:"";position:absolute;left:0;bottom:0;height:2px;width:0;background:var(--gold);transition:width .5s}
+.why:hover::before{width:100%}
+.proc{display:grid;grid-template-columns:1fr 1.05fr;gap:56px;margin-top:44px;align-items:center}
+.sl{border-left:1px solid var(--bd)}
+.st{display:block;width:100%;text-align:left;font:inherit;color:inherit;background:none;border:0;border-left:2px solid transparent;margin-left:-1px;padding:20px 26px 24px;position:relative;cursor:pointer;opacity:.5;transition:.3s}
+.st.on{opacity:1;border-left-color:var(--gold);background:linear-gradient(90deg,rgba(31,111,209,.09),transparent)}
+.st .no{font:500 12px ui-monospace,Menlo,Consolas,monospace;letter-spacing:.2em;color:var(--gold)}
+.st h3{margin:2px 0 4px}.st p{margin:0;color:var(--mu);font-size:15px}
+.st .bar{position:absolute;left:0;right:0;bottom:0;height:2px}
+.st .bar i{display:block;height:100%;width:0;background:var(--gold)}
+.st.on .bar i{animation:fl 4.5s linear forwards}
+@keyframes fl{to{width:100%}}
+.bp{background:#fff linear-gradient(rgba(29,78,216,.07) 1px,transparent 1px) 0 0/24px 24px;background-image:linear-gradient(rgba(29,78,216,.07) 1px,transparent 1px),linear-gradient(90deg,rgba(29,78,216,.07) 1px,transparent 1px);border:1px solid var(--bd);box-shadow:0 30px 60px rgba(11,31,68,.08)}
+.hud{display:flex;justify-content:space-between;padding:12px 18px;font:500 11px ui-monospace,Menlo,Consolas,monospace;letter-spacing:.22em;color:var(--mu);border-bottom:1px solid var(--bd);background:#fff}
+.bp svg{display:block;width:100%;height:auto}
+.bp text{font:500 12px ui-monospace,Menlo,Consolas,monospace;fill:#1f6fd1;letter-spacing:.08em}
+.ph{opacity:0;transition:opacity .8s}.ph.on{opacity:1}
+.dl{stroke-dasharray:700;stroke-dashoffset:700;transition:stroke-dashoffset 1.4s}.ph.on .dl{stroke-dashoffset:0}
+.scan{opacity:0}
+.bp[data-s="2"] .scan{opacity:.9;animation:sc 2.4s ease-in-out infinite}
+@keyframes sc{from{transform:translateY(0)}to{transform:translateY(258px)}}
+.pop{transform-box:fill-box;transform-origin:center;transform:scale(.2);transition:transform .6s cubic-bezier(.3,1.6,.5,1)}
+.ph.on .pop{transform:scale(1)}
+.shine{opacity:0}
+.bp[data-s="3"] .shine{animation:sh 1.8s ease .3s 1 both}
+@keyframes sh{0%{opacity:0;transform:translateX(-40px)}30%{opacity:.75}100%{opacity:0;transform:translateX(300px)}}
+@media(max-width:860px){.proc{grid-template-columns:1fr;gap:30px}}
+@media(prefers-reduced-motion:reduce){.st.on .bar i{animation:none;width:100%}.scan,.shine{animation:none!important}}
+:root{--k1:url(assets/image-0e82d9b1362c4958.webp);--k2:url(assets/image-d669cbb35804ed93.webp);--k3:url(assets/image-90ee7bf72af29a99.webp)}
+.vw{padding:50px 24px 90px}
+.bc{font-size:13px;letter-spacing:.08em;color:var(--mu);margin-bottom:26px}.bc a{color:var(--mu);text-decoration:none}.bc a:hover{color:var(--gold)}
+.vw h2{font-size:clamp(36px,5vw,58px)}
+.vw hr{border:0;border-top:1px solid var(--tx);margin:26px 0 40px}
+.pg{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:32px}
+.pc{text-decoration:none;color:var(--tx);display:block}
+.pi,.big{background-color:#fff;background-repeat:no-repeat;background-position:center;border:1px solid #d3e0f1;border-radius:26px}
+.pi{height:340px;background-size:contain;background-origin:content-box;padding:36px;transition:.3s}
+.pc:hover .pi{border-color:var(--gold);box-shadow:0 18px 40px rgba(11,31,68,.08)}
+.pc b{display:block;margin-top:16px;font-weight:600}
+.dt{display:grid;grid-template-columns:1fr 1.1fr;gap:56px;align-items:start}
+.big{height:540px;background-size:contain;background-origin:content-box;padding:56px}
+.sp{width:100%;border-collapse:collapse;margin:10px 0 30px}
+.sp td{padding:13px 0;border-bottom:1px solid var(--bd)}.sp td:first-child{color:var(--mu);padding-right:20px}.sp td:last-child{text-align:right;font-weight:500}
+.vw h3.shd{font-size:26px;margin:26px 0 0}
+@media(max-width:860px){.dt{grid-template-columns:1fr;gap:28px}.big{height:380px}}
+:root{--b1:url(assets/image-5f33766e62514400.webp);--b2:url(assets/image-c75646a2d1a0686c.webp);--b3:url(assets/image-7cb2911508da26af.webp);--b4:url(assets/image-895ecd6ab02e41c8.webp);--b5:url(assets/image-f78e862a77766ec9.webp)}.cp{font:500 11px Inter,Arial,sans-serif;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);background:#fff;border:1px solid var(--bd);padding:4px 10px;margin-left:8px;cursor:pointer}
+.cp:hover{border-color:var(--gold)}
+#fres{border:1px solid var(--bd);background:var(--ivory);padding:18px;margin-top:14px;font-size:14px}
+#fres textarea{margin:10px 0 14px}
+#fres .btn{padding:12px 18px;margin:0 8px 8px 0;font-size:11px}
+#toast{position:fixed;left:50%;bottom:calc(28px + env(safe-area-inset-bottom,0px));transform:translate(-50%,30px);background:var(--tx);color:#fff;padding:12px 22px;font-size:14px;opacity:0;pointer-events:none;transition:.3s;z-index:99;max-width:90vw;text-align:center}
+#toast.on{opacity:1;transform:translate(-50%,0)}
+.mapw iframe{display:block;width:100%;height:440px;border:1px solid var(--bd);background:var(--ivory)}.ml{display:inline-block;margin-top:14px;color:var(--tx);border-bottom:1px solid var(--gold);text-decoration:none;font-size:14px}@media(max-width:860px){.mapw iframe{height:340px}}:root{--l1:url(assets/image-fb5fa744043fd6db.webp);--l2:url(assets/image-39c4f64880906f4b.webp);--l3:url(assets/image-3f78ac0158616db9.webp);--l4:url(assets/image-0d64a9adac8428bf.webp);}.mapbig iframe{display:block;width:100%;height:560px;border:1px solid var(--bd);margin-top:26px;background:var(--ivory)}.ct .card{max-width:760px}@media(max-width:860px){.mapbig iframe{height:420px}}.stack{position:relative;display:flex;flex-direction:column;gap:26px;margin-top:44px;max-width:980px}
+.stack::before{content:"";position:absolute;left:50%;top:20px;bottom:20px;border-left:2px dashed var(--bd)}
+.cr{position:relative;display:flex;align-items:center;gap:28px;width:min(100%,600px);padding:22px 28px 22px 24px;background:#fff;border:1px solid var(--bd);text-decoration:none;color:var(--tx);box-shadow:0 14px 34px rgba(11,37,89,.07);transition:transform .35s,border-color .3s,box-shadow .35s}
+.cr:nth-child(even){align-self:flex-end}
+.cr::before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;background:var(--c)}
+.cr img{width:96px;height:96px;object-fit:contain;flex:none;filter:drop-shadow(0 12px 16px rgba(11,37,89,.22));transition:transform .45s cubic-bezier(.3,1.5,.5,1)}
+.cr .tx{flex:1;min-width:0}
+.cr h3{margin:0;font-size:32px;line-height:1.1}
+.cr p{margin:4px 0 0;color:var(--mu);font-size:15px;overflow-wrap:anywhere}
+.cr .ar{width:48px;height:48px;border-radius:50%;border:1px solid var(--bd);display:flex;align-items:center;justify-content:center;flex:none;transition:.3s}
+.cr .ar svg{width:20px;height:20px}
+.cr:hover{transform:translateY(-6px);border-color:var(--c);box-shadow:0 22px 44px rgba(11,37,89,.14)}
+.cr:hover img{transform:rotate(-8deg) scale(1.1)}
+.cr:hover .ar{background:var(--c);border-color:var(--c);color:#fff}
+.js .cr{opacity:0;transform:translateY(30px);transition:opacity .7s var(--d),transform .7s var(--d),border-color .3s,box-shadow .35s}
+.js .cr.in{opacity:1;transform:none}
+.js .cr.in:hover{transform:translateY(-6px);transition-delay:0s}
+@media(max-width:860px){.stack::before{display:none}.cr,.cr:nth-child(even){width:100%;align-self:stretch;gap:18px}.cr img{width:72px;height:72px}.cr h3{font-size:26px}.cr .ar{width:40px;height:40px}}.hw{display:grid;grid-template-columns:minmax(300px,420px) 1fr;gap:60px;align-items:center;margin-top:44px}
+.dial{position:relative;max-width:420px;width:100%;margin:0 auto}
+.dial svg{display:block;width:100%;overflow:visible}
+#arc{transition:stroke-dashoffset 2.2s cubic-bezier(.3,.7,.2,1)}
+.in #arc{stroke-dashoffset:0}
+#hand{transform-origin:160px 160px;transform:rotate(0deg);transition:transform 2.4s cubic-bezier(.2,.8,.2,1)}
+.pu{transform-box:fill-box;transform-origin:center;animation:pg 2s ease-out infinite}
+@keyframes pg{0%{transform:scale(1);opacity:.9}100%{transform:scale(2.4);opacity:0}}
+.dc{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;pointer-events:none;padding:0 74px}
+.dc b{font:600 clamp(40px,7vw,58px)/1 "Cormorant Garamond",Georgia,serif;color:var(--tx)}
+.dc b i{font-style:normal;animation:bl 1s steps(2,jump-none) infinite}
+@keyframes bl{50%{opacity:.15}}
+.dc .st{display:flex;align-items:center;gap:8px;margin-top:12px;font-size:12px;letter-spacing:.16em;text-transform:uppercase;font-weight:600}
+.dc .dot{width:10px;height:10px;border-radius:50%;background:#18b36b;animation:pl 1.8s infinite}
+.dc.cl .dot{background:#e5484d;animation:none}
+@keyframes pl{0%{box-shadow:0 0 0 0 rgba(24,179,107,.55)}80%,100%{box-shadow:0 0 0 12px rgba(24,179,107,0)}}
+.dc small{margin-top:8px;color:var(--mu);font-size:13px;line-height:1.35}
+.dr{display:grid;grid-template-columns:150px 1fr 104px;gap:18px;align-items:center;padding:15px 20px;margin-bottom:10px;background:#fff;border:1px solid var(--bd);transition:transform .4s,box-shadow .4s,border-color .4s}
+.dn{color:var(--mu);font-weight:500}
+.dn .tg{display:none;font-style:normal;margin-left:8px;font-size:10px;letter-spacing:.14em;text-transform:uppercase;background:var(--gold);color:#fff;padding:2px 7px}
+.tr{position:relative;height:10px;background:#e6eefb;overflow:hidden}
+.tr i{position:absolute;top:0;bottom:0;left:35.4167%;width:43.75%;background:linear-gradient(90deg,#3b9bf0,#0b2559);transform:scaleX(0);transform-origin:left;transition:transform 1.1s cubic-bezier(.2,.8,.2,1) var(--d)}
+.in .tr i{transform:scaleX(1)}
+.nw{display:none;position:absolute;top:-2px;bottom:-2px;width:3px;background:#e5484d;box-shadow:0 0 8px #e5484d}
+.dt2{text-align:right;font-weight:500;font-size:15px}
+.off .tr{background:repeating-linear-gradient(135deg,#f1f5fc,#f1f5fc 6px,#dfe8f6 6px,#dfe8f6 12px)}.off .tr i{display:none}.off .dt2{color:var(--mu)}
+.dr.td{border-color:var(--gold);box-shadow:0 16px 34px rgba(31,127,224,.18);transform:translateX(10px)}
+.td .dn{color:var(--tx);font-weight:600}.td .tg,.td .nw{display:inline-block}
+@media(max-width:860px){.hw{grid-template-columns:1fr;gap:34px}.dr{grid-template-columns:104px 1fr 78px;gap:10px;padding:12px 14px}.dt2{font-size:13px}.dr.td{transform:none}.dn .tg{display:none!important}.dc{padding:0 62px}}
+@media(prefers-reduced-motion:reduce){.pu,.dc b i,.dc .dot{animation:none}#hand,#arc,.tr i{transition:none}}
+.hw{grid-template-columns:1fr;max-width:760px;gap:0}@media(max-width:860px){.hw{max-width:none}}:root{--s1:url(assets/image-5eea93209501131d.jpg);--s2:url(assets/image-76b7c923ee1f0b3e.jpg);--s3:url(assets/image-e6b32251e9e3dbfd.jpg);--s4:url(assets/image-dd3c803d1659cdb7.jpg);--s5:url(assets/image-819035bd3b5a05c5.jpg);--s6:url(assets/image-7684f3b5f65efe2c.jpg);--s7:url(assets/image-63bfef051c51b3f3.jpg);}.sv{overflow:hidden;margin-top:40px;cursor:grab;touch-action:pan-y;user-select:none;-webkit-user-select:none}
+.sv:active{cursor:grabbing}
+.str{display:flex;will-change:transform}
+.sl{flex:none;width:clamp(250px,26vw,340px);height:clamp(360px,36vw,470px);margin-right:20px;background-size:cover;background-position:center;position:relative}
+.sl::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 45%,rgba(11,37,89,.78))}
+.cp{position:absolute;left:0;right:0;bottom:0;padding:24px;z-index:1;color:#fff;pointer-events:none}
+.cp span{font:500 12px ui-monospace,Menlo,Consolas,monospace;letter-spacing:.22em;color:#9fd0ff}
+.cp h3{color:#fff;margin:6px 0 0;font-size:30px;line-height:1.1}
+.nv{display:flex;align-items:center;justify-content:center;gap:24px;margin-top:32px}
+.nv button{width:58px;height:58px;border-radius:50%;border:1px solid var(--tx);background:#fff;color:var(--tx);cursor:pointer;display:flex;align-items:center;justify-content:center;transition:.3s}
+.nv button:hover{background:var(--tx);color:#fff}
+.nv span{font:500 13px ui-monospace,Menlo,Consolas,monospace;letter-spacing:.2em;color:var(--mu);min-width:70px;text-align:center}
+.sl,.sl *{-webkit-user-drag:none}.sl{height:auto;background:none}
+.sl::after{display:none}
+.sl .im{height:clamp(360px,36vw,470px);background-color:#fff;background-repeat:no-repeat;background-position:center;background-size:contain;border:1px solid var(--bd)}
+.sl .cp{position:static;padding:18px 6px 0;text-align:center;pointer-events:none}
+.sl .cp h3{color:var(--tx);font-size:28px;margin:0}
+.nv{margin-top:26px}:root{--g1:url(assets/image-941ba0b434706b14.png);--g2:url(assets/image-48a5b36f194fcb47.png);--g3:url(assets/image-1a35da527e9c966c.png);}.ltrack{display:flex;align-items:center;width:max-content;animation:mv 50s linear infinite}
+.mq:hover .ltrack{animation-play-state:paused}
+.lgi{flex:none;width:230px;height:96px;margin-right:70px;background-repeat:no-repeat;background-position:center;background-size:contain}
+.lg1{background-image:var(--g1)}.lg2{background-image:var(--g2)}.lg3{background-image:var(--g3)}
+@media(max-width:860px){.lgi{width:160px;height:70px;margin-right:44px}}
+@media(prefers-reduced-motion:reduce){.ltrack{animation:none}}#why{padding:56px 0}
+#why .grid{grid-template-columns:repeat(4,1fr);gap:14px;margin-top:26px}
+.why{padding:18px 16px;cursor:pointer;text-align:left}
+.why .n{display:none}
+.why .ico{width:54px;height:54px;margin-bottom:12px}
+.why svg{width:30px;height:30px}
+.why h3{font-size:22px;margin:0;line-height:1.15}
+.why p{display:none}
+.why::before{transition:width .3s}
+.why.on{border-color:var(--gold);box-shadow:0 16px 34px rgba(31,127,224,.16)}
+.why.on .ico{background:var(--tx);border-color:var(--tx)}
+.why.on .f{stroke:#fff;fill:rgba(255,255,255,.12)}
+.why.on::before{width:100%;transition:width 4.5s linear}
+.wd{margin-top:16px;padding:18px 24px;background:var(--ivory);border-left:3px solid var(--gold);min-height:64px;display:flex;align-items:center}
+.wd p{margin:0;font-size:17px;color:var(--tx)}
+.wd.f p{animation:wf .5s ease}
+@keyframes wf{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+@media(max-width:860px){#why .grid{grid-template-columns:repeat(2,1fr);gap:10px}.why{padding:14px 12px}.why h3{font-size:19px}.why .ico{width:46px;height:46px;margin-bottom:10px}.why svg{width:26px;height:26px}.wd{padding:14px 16px}.wd p{font-size:15px}}
+@media(prefers-reduced-motion:reduce){.wd.f p{animation:none}.why.on::before{transition:none}}:root{--li:url(assets/image-70e5f3a0e80c83e5.png)}
+.logo{display:flex;align-items:center;gap:12px}
+.lm{width:46px;height:46px;flex:none;background:var(--li) center/contain no-repeat}
+
+@media(max-width:520px){.logo{font-size:17px;letter-spacing:.12em;gap:9px}.lm{width:36px;height:36px}.nav{gap:12px}}#process{padding:56px 0}
+#process .grid{grid-template-columns:repeat(4,1fr);gap:14px;margin-top:26px}
+@media(max-width:860px){#process .grid{grid-template-columns:repeat(2,1fr);gap:10px}}.pg{grid-template-columns:repeat(2,1fr);gap:20px;max-width:920px}
+.pi{height:clamp(170px,24vw,280px);padding:16px}
+.pc b{margin-top:10px;font-size:16px}
+.vw hr{margin:20px 0 28px}
+@media(max-width:860px){.pg{gap:12px}.pc b{font-size:14px;margin-top:8px}.pi{border-radius:18px;padding:10px}.vw{padding:30px 16px 60px}.bc{margin-bottom:16px}}.bk{font:500 12px Inter,Arial,sans-serif;letter-spacing:.14em;text-transform:uppercase;background:#fff;border:1px solid var(--tx);color:var(--tx);padding:10px 18px;cursor:pointer;margin-bottom:18px;transition:.25s}.bk:hover{background:var(--tx);color:#fff}.inview .lm{display:none}.g3{gap:44px 34px;padding:10px 0 0 10px}
+.cc{position:relative;overflow:visible;border:0;background:transparent;box-shadow:none;padding:0;transition:none}
+.grid .cc:hover{border:0;box-shadow:none}
+.cc::before{content:"";position:absolute;left:-10px;top:-10px;width:100%;height:360px;border:1.5px solid var(--gold);border-radius:999px 999px 28px 28px;transition:.5s cubic-bezier(.3,.8,.3,1);z-index:0}
+.cc .im{position:relative;z-index:1;height:360px;border-radius:999px 999px 28px 28px;background-size:cover;background-position:center;box-shadow:0 26px 40px -22px rgba(11,37,89,.45);transition:transform .5s cubic-bezier(.3,.8,.3,1)}
+.cc:hover .im{transform:translate(6px,6px)}
+.cc:hover::before{left:-4px;top:-4px}
+.cc .cb{background:transparent;padding:24px 8px 0;text-align:center}
+.cc .cb h3{font-size:30px}
+@media(max-width:860px){.cc::before,.cc .im{height:320px}}.sl .im{border-radius:84px 20px 84px 20px;padding:28px;background-origin:content-box;box-shadow:0 22px 36px -24px rgba(11,37,89,.35)}
+.sl:nth-child(even) .im{border-radius:20px 84px 20px 84px}
+@media(max-width:860px){.sl .im{border-radius:64px 16px 64px 16px;padding:22px}.sl:nth-child(even) .im{border-radius:16px 64px 16px 64px}}.sl{width:auto}
+.sl .im{height:clamp(360px,36vw,470px);width:auto;border-radius:38px;padding:0;border:0;background-size:cover;background-position:center;box-shadow:0 24px 38px -22px rgba(11,37,89,.45)}
+.sl:nth-child(even) .im{border-radius:38px}
+.sl .cp{width:0;min-width:100%;padding:16px 4px 0}
+.sl .cp h3{font-size:24px;line-height:1.2}
+@media(max-width:860px){.sl .im,.sl:nth-child(even) .im{border-radius:28px}.sl .im{height:360px}}.sdl{flex:none;width:auto;margin-right:20px}
+.sdl,.sdl *{-webkit-user-drag:none;-webkit-user-select:none;user-select:none}
+.sim{height:clamp(360px,36vw,470px);width:auto;border-radius:38px;background-size:cover;background-position:center;box-shadow:0 24px 38px -22px rgba(11,37,89,.45)}
+.scp{width:0;min-width:100%;display:flex;flex-direction:column;align-items:center;padding-top:16px;pointer-events:none}
+.scp::before{content:"";width:30px;height:2px;background:var(--gold);margin-bottom:12px}
+.scp h3{margin:0;white-space:nowrap;font-size:22px;line-height:1.2;color:var(--tx)}
+@media(max-width:860px){.sim{height:360px;border-radius:28px}.scp h3{font-size:19px}}.hx{position:relative;justify-self:center;width:min(100%,400px);aspect-ratio:3/4}
+.hx::before{content:"";position:absolute;inset:-14px 14px 14px -14px;border:1.5px solid var(--gold);border-radius:999px 999px 36px 36px;opacity:.75}
+.hx .arc{position:absolute;inset:0;border:10px solid var(--tx);border-radius:999px 999px 26px 26px;overflow:hidden;background:#cfe0fa;perspective:1300px;box-shadow:0 44px 60px -28px rgba(11,37,89,.55)}
+.sc{position:absolute;inset:0}
+.sc i{position:absolute;inset:0;background-size:cover;background-position:center;opacity:0;transform:scale(1.12);animation:cf 16s linear infinite}
+.sc i:nth-child(1){background-image:var(--s1)}
+.sc i:nth-child(2){background-image:var(--i1);animation-delay:4s}
+.sc i:nth-child(3){background-image:var(--i2);animation-delay:8s}
+.sc i:nth-child(4){background-image:var(--i3);animation-delay:12s}
+@keyframes cf{0%{opacity:0;transform:scale(1.12)}6%{opacity:1}25%{opacity:1}31%{opacity:0;transform:scale(1.02)}100%{opacity:0;transform:scale(1.02)}}
+.sh{position:absolute;top:0;bottom:0;width:50%;overflow:hidden;box-sizing:border-box;border:6px solid var(--tx);background:linear-gradient(135deg,rgba(255,255,255,.62),rgba(173,205,245,.3));-webkit-backdrop-filter:blur(5px);backdrop-filter:blur(5px);transition:transform .9s cubic-bezier(.3,.8,.3,1)}
+.sh.l{left:0;transform-origin:left center;animation:so 14s ease-in-out infinite}
+.sh.r{right:0;transform-origin:right center;animation:sor 14s ease-in-out infinite}
+@keyframes so{0%,6%{transform:rotateY(0)}20%,68%{transform:rotateY(-74deg)}84%,100%{transform:rotateY(0)}}
+@keyframes sor{0%,6%{transform:rotateY(0)}20%,68%{transform:rotateY(74deg)}84%,100%{transform:rotateY(0)}}
+.sh::before{content:"";position:absolute;inset:0;background:linear-gradient(105deg,transparent 38%,rgba(255,255,255,.8) 50%,transparent 62%);transform:translateX(-130%);animation:shn 7s ease-in-out infinite}
+@keyframes shn{0%,55%{transform:translateX(-130%)}85%,100%{transform:translateX(130%)}}
+.sh::after{content:"";position:absolute;top:50%;width:5px;height:64px;margin-top:-32px;border-radius:3px;background:var(--gold)}
+.sh.l::after{right:10px}.sh.r::after{left:10px}
+.hx.fo .sh,.hx.fc .sh{animation:none}
+.hx.fo .sh.l{transform:rotateY(-74deg)}.hx.fo .sh.r{transform:rotateY(74deg)}
+.hx.fc .sh{transform:none}
+.hx .arc{cursor:pointer}
+.rb{position:absolute;right:-26px;bottom:34px;width:118px;height:118px;filter:drop-shadow(0 14px 18px rgba(11,37,89,.25));pointer-events:none}
+.rr{transform-origin:60px 60px;animation:rt 20s linear infinite}
+@keyframes rt{to{transform:rotate(360deg)}}
+.stats{gap:14px;margin-top:36px;padding-top:0;border-top:0}
+.stats>div{flex:1 1 130px;position:relative;overflow:hidden;background:#fff;border:1px solid var(--bd);padding:18px 18px 16px}
+.stats>div::before{content:"";position:absolute;left:0;top:0;width:100%;height:3px;background:linear-gradient(90deg,var(--gold),var(--tx));transform:scaleX(0);transform-origin:left;transition:transform 1.2s cubic-bezier(.3,.8,.3,1)}
+.stats.in>div::before{transform:scaleX(1)}
+.stats b{font-size:36px}
+@media(max-width:860px){.hx{width:min(86%,340px);margin-top:20px}.rb{right:-14px;width:96px;height:96px}.stats>div{flex:1 1 100px;padding:14px}.stats b{font-size:30px}}
+@media(prefers-reduced-motion:reduce){.sc i,.sh,.sh::before,.rr{animation:none}.sc i:first-child{opacity:1;transform:none}.sh.l{transform:rotateY(-74deg)}.sh.r{transform:rotateY(74deg)}}
+#spot{background:linear-gradient(180deg,#fff,var(--ivory));overflow-x:clip}
+.spbar{position:sticky;top:88px;z-index:6;display:flex;align-items:center;justify-content:space-between;gap:10px;padding:8px 8px 8px 24px;margin-bottom:40px;background:rgba(255,255,255,.82);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);border:1px solid var(--bd);border-radius:999px;box-shadow:0 14px 34px -16px rgba(11,37,89,.35)}
+.spbar b{font:600 22px "Cormorant Garamond",Georgia,serif}
+.spbar span{display:flex;gap:8px}
+.spb{font:500 12px Inter,Arial,sans-serif;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;color:#fff;background:var(--tx);padding:11px 20px;border-radius:999px;border:1px solid var(--tx)}
+.spb.o{background:#fff;color:var(--tx)}
+.sph{font-size:clamp(40px,8vw,84px);line-height:1.02;margin:0 0 14px}
+.sppp{max-width:560px;font-size:18px}
+.spc{display:block;margin:34px 0 0;max-width:520px}
+.spc span{display:block;font:600 22px Inter,Arial,sans-serif;text-transform:none;letter-spacing:0;color:var(--tx);margin-bottom:12px}
+.spc select{appearance:none;-webkit-appearance:none;width:100%;padding:16px 52px 16px 24px;border:1.5px solid var(--bd);border-radius:999px;background:#fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='%230b2559' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E") no-repeat right 20px center;font:500 17px Inter,Arial,sans-serif;color:var(--tx);cursor:pointer}
+.spst{margin-top:54px;display:grid;gap:64px}
+.sst .pr{font-size:18px;color:var(--mu)}
+.sst .bg{font:600 clamp(52px,12vw,104px)/1.02 "Cormorant Garamond",Georgia,serif;color:var(--tx);letter-spacing:-.01em;margin:4px 0}
+.sst .bg small{font-size:.5em;margin-left:.12em}
+.sst .lb{font-size:19px;color:var(--mu);max-width:560px}
+.rv{opacity:0;transform:translateY(46px);transition:opacity 1s,transform 1s cubic-bezier(.2,.8,.2,1)}
+.rv.in{opacity:1;transform:none}
+.spi{position:relative;margin:70px auto 0;max-width:820px;aspect-ratio:634/277}
+.spi .glow{position:absolute;inset:-12% -6%;background:radial-gradient(closest-side,rgba(31,127,224,.28),transparent 70%)}
+.spi .pic{position:absolute;inset:0;background:var(--spn) center/contain no-repeat;will-change:transform;filter:drop-shadow(0 40px 40px rgba(11,37,89,.35))}
+.hs{position:absolute;transform:translate(-50%,-50%);display:flex;align-items:center;gap:8px;z-index:2}
+.hs i{width:16px;height:16px;border-radius:50%;background:var(--gold);border:3px solid #fff;box-shadow:0 0 0 0 rgba(31,127,224,.6);animation:hp 2s infinite;flex:none}
+@keyframes hp{0%{box-shadow:0 0 0 0 rgba(31,127,224,.55)}80%,100%{box-shadow:0 0 0 16px rgba(31,127,224,0)}}
+.hs em{font:600 12px Inter,Arial,sans-serif;font-style:normal;background:#fff;color:var(--tx);padding:6px 10px;border-radius:999px;box-shadow:0 8px 20px -8px rgba(11,37,89,.4);white-space:nowrap}
+@media(max-width:860px){.spbar{top:78px;padding-left:16px}.spbar b{font-size:17px}.spb{padding:9px 12px;font-size:10px}.spst{gap:46px}.spi{margin-top:44px}.hs em{font-size:10px;padding:4px 8px}.hs i{width:12px;height:12px}}
+@media(prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}.hs i{animation:none}}:root{--t98:url(assets/image-40ac2305a18c5866.webp)}
+.t3d{position:relative;justify-self:center;width:min(100%,420px);aspect-ratio:4/5;touch-action:pan-y;cursor:grab;-webkit-user-select:none;user-select:none}
+.t3d .aura{position:absolute;inset:-6%;background:radial-gradient(closest-side,rgba(31,127,224,.32),rgba(31,127,224,.08) 60%,transparent 75%);animation:au 5s ease-in-out infinite}
+@keyframes au{50%{transform:scale(1.08);opacity:.8}}
+.t3d .stage{position:absolute;inset:0;perspective:1100px}
+.t3d .obj{position:absolute;inset:3% 8%;transform-style:preserve-3d;will-change:transform}
+.t3d .pf{position:absolute;inset:0;background:var(--t98) center/contain no-repeat;filter:drop-shadow(0 34px 30px rgba(11,37,89,.38))}
+.t3d .shn{position:absolute;inset:0;-webkit-mask:var(--t98) center/contain no-repeat;mask:var(--t98) center/contain no-repeat;background:linear-gradient(110deg,transparent 36%,rgba(255,255,255,.85) 50%,transparent 64%) 220% 0/260% 100% no-repeat;animation:sn 5.5s ease-in-out infinite}
+@keyframes sn{0%,30%{background-position:220% 0}80%,100%{background-position:-120% 0}}
+.t3d .rg{position:absolute;left:50%;top:56%;width:116%;aspect-ratio:1;border-radius:50%;border:1.5px solid rgba(31,127,224,.55)}
+.t3d .g1{transform:translate(-50%,-50%) rotateX(74deg) rotateZ(0);animation:o1 16s linear infinite}
+.t3d .g2{width:92%;border-style:dashed;border-color:rgba(11,37,89,.35);transform:translate(-50%,-50%) rotateX(74deg) rotateZ(0);animation:o1 24s linear infinite reverse}
+@keyframes o1{to{transform:translate(-50%,-50%) rotateX(74deg) rotateZ(360deg)}}
+.t3d .flr{position:absolute;left:24%;right:24%;bottom:0;height:20px;background:radial-gradient(closest-side,rgba(11,37,89,.4),transparent);filter:blur(4px);animation:fl3 4s ease-in-out infinite}
+@keyframes fl3{50%{transform:scaleX(.82);opacity:.7}}
+@media(max-width:860px){.t3d{width:min(86%,340px);margin-top:10px}}
+@media(prefers-reduced-motion:reduce){.t3d .aura,.t3d .shn,.t3d .rg,.t3d .flr{animation:none}}.t3d{aspect-ratio:4/5.6}
+.t3d .obj{inset:15% 8% 6%}
+.t3d .stage{inset:0}
+.t3n{position:absolute;left:0;right:0;top:0;z-index:3;text-align:center;font:600 clamp(26px,5.5vw,38px)/1.05 "Cormorant Garamond",Georgia,serif;color:var(--tx);letter-spacing:.01em;pointer-events:none}
+.dm{position:absolute;height:0;border-top:1.5px solid var(--tx);transform:translateZ(46px)}
+.dm::before,.dm::after{content:"";position:absolute;top:-7px;height:12px;border-left:1.5px solid var(--tx)}
+.dm::before{left:0}.dm::after{right:0}
+.dm.dt{top:-16px}.dm.db{top:calc(100% + 14px)}
+.dm b{position:absolute;left:50%;transform:translateX(-50%);white-space:nowrap;font:600 13px Inter,Arial,sans-serif;color:var(--tx);background:#fff;padding:4px 10px;border-radius:999px;box-shadow:0 8px 18px -8px rgba(11,37,89,.45);border:1px solid var(--bd)}
+.dm.dt b{bottom:8px}.dm.db b{top:8px}
+.dm b em{font-style:normal;font-weight:500;color:var(--mu);margin-left:6px}
+@media(max-width:860px){.dm b{font-size:11px;padding:3px 8px}.dm b em{margin-left:4px}}.t3d{cursor:default;touch-action:auto}.t3d .aura{animation:none}.t3d .obj{transform:none}.dm{transform:none}.hb{display:flex;flex-wrap:wrap;gap:12px}
+.abl{font:500 clamp(22px,3.4vw,32px)/1.35 "Cormorant Garamond",Georgia,serif;max-width:860px;color:var(--tx);margin:8px 0 38px}
+.abn{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.abn div{background:#fff;border:1px solid var(--bd);padding:20px 22px;position:relative;overflow:hidden}
+.abn div::before{content:"";position:absolute;left:0;top:0;right:0;height:3px;background:linear-gradient(90deg,var(--gold),var(--tx))}
+.abn b{display:block;font:600 clamp(34px,6vw,50px)/1.1 "Cormorant Garamond",Georgia,serif;color:var(--tx)}
+.abn span{color:var(--mu);font-size:15px}
+.abh3{font-size:clamp(26px,4vw,36px);margin:52px 0 18px}
+.abg{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:12px}
+.abg div{display:flex;align-items:center;gap:12px;padding:16px 18px;background:#fff;border:1px solid var(--bd);font-weight:500}
+.abi{width:11px;height:11px;border-radius:50%;border:2.5px solid var(--gold);flex:none}
+.abst{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.abst div{padding:20px 22px;background:#fff;border:1px solid var(--bd)}
+.abst h4{margin:0 0 6px;font:600 26px "Cormorant Garamond",Georgia,serif}
+.abst p{margin:0;color:var(--mu);font-size:15px}
+.abp{display:flex;flex-wrap:wrap;align-items:center;gap:10px 14px}
+.abp .lgi{margin:0;width:190px;height:80px}
+.abk{background:#fff;border:1px solid var(--bd);padding:8px 24px;max-width:640px}
+.abk p{margin:0;padding:15px 0;border-bottom:1px solid var(--bd);display:flex;gap:16px;align-items:baseline}
+.abk p:last-child{border:0}
+.abk .k{min-width:84px}
+.abk a{color:var(--tx);text-decoration:none;border-bottom:1px solid var(--gold)}
+@media(max-width:860px){.abn{gap:8px}.abn div{padding:14px 12px}.abn span{font-size:12px}.abst{grid-template-columns:1fr}.abp .lgi{width:140px;height:60px}}.abhd{font-size:clamp(34px,6vw,64px);line-height:1.08;max-width:900px;margin:0 0 6px}
+.abss{margin:-6px 0 26px;font-size:17px;max-width:720px}
+.abhist{position:relative;max-width:860px;padding-left:34px}
+.abhist::before{content:"";position:absolute;left:7px;top:10px;bottom:10px;border-left:2px dashed var(--bd)}
+.abhist p{position:relative;margin:0 0 22px;font-size:17px;line-height:1.75;color:var(--tx)}
+.abhist p::before{content:"";position:absolute;left:-34px;top:.62em;width:16px;height:16px;border-radius:50%;background:#fff;border:3px solid var(--gold)}
+.abhist p.lead{font:500 clamp(21px,3vw,27px)/1.45 "Cormorant Garamond",Georgia,serif}
+.abvg{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.abv{background:#fff;border:1px solid var(--bd);padding:24px 22px;transition:.3s;position:relative}
+.abv:hover{transform:translateY(-4px);border-color:var(--gold);box-shadow:0 18px 38px -20px rgba(11,37,89,.35)}
+.abv h4,.abw h4{margin:12px 0 8px;font:600 26px/1.15 "Cormorant Garamond",Georgia,serif}
+.abv p,.abw p{margin:0;color:var(--mu);font-size:15px}
+.abwg{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.abw{background:#fff;border:1px solid var(--bd);padding:26px 24px;position:relative;overflow:hidden}
+.abw::before{content:"";position:absolute;left:0;top:0;right:0;height:3px;background:linear-gradient(90deg,var(--gold),var(--tx))}
+.aic svg{width:46px;height:46px}.aic .f{stroke:var(--tx);stroke-width:1.5;fill:rgba(31,127,224,.14)}.aic .g{stroke:var(--gold);stroke-width:2.2}
+@media(max-width:960px){.abvg{grid-template-columns:repeat(2,1fr)}.abwg{grid-template-columns:1fr}}
+@media(max-width:560px){.abvg{grid-template-columns:1fr}}:root{--ab1:url(assets/image-54f3047729f284ad.jpg);--ab2:url(assets/image-7903c3df35a7fd54.jpg);--ab3:url(assets/image-8d40dc3b9b133543.jpg)}
+.abhero{position:relative;padding:18px 0 10px}
+.abhero::before{content:"";position:absolute;inset:-30px -10px 0;background-image:linear-gradient(rgba(31,127,224,.08) 1px,transparent 1px),linear-gradient(90deg,rgba(31,127,224,.08) 1px,transparent 1px);background-size:34px 34px;-webkit-mask:radial-gradient(ellipse at 30% 30%,#000,transparent 70%);mask:radial-gradient(ellipse at 30% 30%,#000,transparent 70%);z-index:-1}
+.abtag{font:500 12px ui-monospace,Menlo,Consolas,monospace;letter-spacing:.24em;color:var(--gold);text-transform:uppercase}
+.abhd{background:linear-gradient(100deg,var(--tx) 20%,#1f7fe0 55%,var(--tx) 90%);background-size:220% 100%;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent;animation:abg 7s ease-in-out infinite alternate}
+@keyframes abg{to{background-position:100% 0}}
+.abhud{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:34px}
+.abhud div{position:relative;padding:20px 20px 24px;background:rgba(255,255,255,.75);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);border:1px solid var(--bd)}
+.abhud b{display:block;font:600 clamp(36px,7vw,60px)/1 "Cormorant Garamond",Georgia,serif;color:var(--tx)}
+.abhud span{font-size:14px;color:var(--mu)}
+.abhud i{position:absolute;left:0;bottom:0;height:3px;width:100%;background:linear-gradient(90deg,var(--gold),var(--tx));transform:scaleX(0);transform-origin:left;transition:transform 1.6s cubic-bezier(.2,.8,.2,1)}
+.abhud.in i{transform:scaleX(1)}
+.abtl{position:relative;margin:48px 0 20px}
+.abln{position:absolute;left:50%;top:0;bottom:0;width:2px;margin-left:-1px;background:var(--bd)}
+.abln i{display:block;width:100%;height:0;background:linear-gradient(var(--gold),var(--tx));box-shadow:0 0 14px rgba(31,127,224,.6)}
+.abch{position:relative;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;margin-bottom:90px}
+.abch::before{content:"";position:absolute;left:50%;top:50%;width:18px;height:18px;margin:-9px 0 0 -9px;border-radius:50%;background:#fff;border:3px solid var(--gold);z-index:2;box-shadow:0 0 0 6px rgba(31,127,224,.12)}
+.abch:nth-child(even) .abfig{order:2}
+.abfig{position:relative;width:100%;max-width:440px;justify-self:center}
+.abph{position:absolute;inset:0;background-size:cover;background-position:center;border-radius:26px;clip-path:inset(0 0 100% 0);transition:clip-path 1.3s cubic-bezier(.2,.8,.2,1);overflow:hidden;box-shadow:0 30px 50px -28px rgba(11,37,89,.55)}
+.abph::after{content:"";position:absolute;left:0;right:0;top:-40%;height:40%;background:linear-gradient(180deg,transparent,rgba(31,127,224,.4),transparent)}
+.in .abph{clip-path:inset(0 0 0 0)}
+.in .abph::after{animation:abs 1.5s ease-out 1}
+@keyframes abs{to{top:110%}}
+.abc{position:absolute;width:22px;height:22px;border:2px solid var(--gold);z-index:2;opacity:0;transition:opacity .6s .9s}
+.in .abc{opacity:1}
+.abc.c1{left:-10px;top:-10px;border-right:0;border-bottom:0}.abc.c2{right:-10px;top:-10px;border-left:0;border-bottom:0}
+.abc.c3{left:-10px;bottom:-10px;border-right:0;border-top:0}.abc.c4{right:-10px;bottom:-10px;border-left:0;border-top:0}
+.abcp{position:absolute;left:14px;bottom:14px;z-index:3;font:500 11px ui-monospace,Menlo,Consolas,monospace;font-style:normal;letter-spacing:.2em;background:rgba(255,255,255,.88);color:var(--tx);padding:6px 10px;border-radius:999px}
+.abtx h3{font-size:clamp(30px,4.5vw,44px);margin:10px 0 12px}
+.abtx p{font-size:17px;line-height:1.7;color:var(--mu);margin:0}
+.abrv .abtx{opacity:0;transform:translateY(30px);transition:opacity 1s .3s,transform 1s .3s}
+.abrv.in .abtx{opacity:1;transform:none}
+.abvg{grid-template-columns:repeat(6,1fr)}
+.abvg .abv{grid-column:span 2}.abvg .abv:nth-child(1),.abvg .abv:nth-child(2){grid-column:span 3}.abvg .abv:nth-child(6){grid-column:span 6}
+.abv,.abw{background:radial-gradient(320px circle at var(--mx,-200px) var(--my,-200px),rgba(31,127,224,.16),transparent 60%),#fff}
+@media(max-width:960px){.abvg{grid-template-columns:repeat(2,1fr)}.abvg .abv,.abvg .abv:nth-child(1),.abvg .abv:nth-child(2){grid-column:span 1}.abvg .abv:nth-child(6){grid-column:span 2}}
+@media(max-width:860px){.abln{left:12px}.abch{grid-template-columns:1fr;gap:22px;padding-left:38px;margin-bottom:60px}.abch::before{left:12px;top:30px;margin-top:0}.abch:nth-child(even) .abfig{order:0}.abfig{max-width:none}.abhud{gap:8px}.abhud div{padding:14px 12px 18px}.abhud span{font-size:12px}}
+@media(max-width:560px){.abvg{grid-template-columns:1fr}.abvg .abv,.abvg .abv:nth-child(6){grid-column:span 1}}
+@media(prefers-reduced-motion:reduce){.abhd{animation:none}.abph{clip-path:none;transition:none}.abrv .abtx{opacity:1;transform:none}.abc{opacity:1}}.axr{background:#fff;font-family:Inter,"Helvetica Neue",Arial,sans-serif;overflow-x:clip}
+.ax-bk{position:fixed;left:14px;top:90px;z-index:30;font:600 12px Inter,Arial,sans-serif;letter-spacing:.12em;text-transform:uppercase;color:var(--tx);background:rgba(255,255,255,.85);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);border:1px solid var(--bd);padding:11px 18px;border-radius:999px;cursor:pointer;box-shadow:0 10px 26px -12px rgba(11,37,89,.45)}
+.ax-tag{font:500 12px ui-monospace,Menlo,Consolas,monospace;letter-spacing:.24em;color:var(--gold);text-transform:uppercase}
+.ax-hero{position:relative;min-height:calc(100svh - 76px);display:flex;align-items:center;overflow:hidden;background:radial-gradient(900px 500px at 80% 20%,rgba(31,127,224,.14),transparent),linear-gradient(180deg,#fff,#f2f7ff)}
+.ax-giant{position:absolute;right:-4vw;bottom:-6vw;font:800 clamp(220px,46vw,720px)/.8 Inter,Arial,sans-serif;letter-spacing:-.06em;color:transparent;-webkit-text-stroke:2px rgba(31,127,224,.28);pointer-events:none;will-change:transform}
+.ax-hc{position:relative;z-index:2;width:100%;max-width:1180px;margin:0 auto;padding:70px 24px 110px}
+.ax-h{font:800 clamp(34px,7.4vw,104px)/1.02 Inter,Arial,sans-serif;letter-spacing:-.035em;margin:18px 0 26px;max-width:15em;color:var(--tx)}
+.wm{display:inline-block;overflow:hidden;vertical-align:top;padding-bottom:.08em}
+.wi{display:inline-block;transform:translateY(110%);animation:axu .95s cubic-bezier(.2,.8,.2,1) forwards;animation-delay:calc(var(--i)*70ms + 150ms)}
+@keyframes axu{to{transform:none}}
+.ax-lead{font:500 clamp(17px,2vw,24px)/1.5 Inter,Arial,sans-serif;max-width:620px;color:var(--mu);margin:0}
+.ax-hint{position:absolute;left:50%;bottom:22px;transform:translateX(-50%);font:500 11px ui-monospace,Menlo,Consolas,monospace;letter-spacing:.24em;text-transform:uppercase;color:var(--mu);display:flex;flex-direction:column;align-items:center;gap:10px}
+.ax-hint i{width:1.5px;height:44px;background:linear-gradient(var(--gold),transparent);animation:axh 1.8s ease-in-out infinite}
+@keyframes axh{0%{transform:scaleY(0);transform-origin:top}50%{transform:scaleY(1);transform-origin:top}51%{transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
+.ax-rw{position:relative;background:#fff}
+.ax-ri{position:sticky;top:76px;display:flex;align-items:center;justify-content:center;padding:0 24px}
+.ax-rp{max-width:1080px;font:700 clamp(26px,4.6vw,64px)/1.16 Inter,Arial,sans-serif;letter-spacing:-.03em;margin:0}
+.ax-w{color:#d6dfef;transition:color .35s}.ax-w.on{color:var(--tx)}
+.ax-stk{position:relative}
+.ax-st{position:sticky;top:76px;overflow:hidden;border-radius:30px 30px 0 0;background:#0b2559;color:#fff;transform-origin:50% 0;will-change:transform,filter}
+.ax-bg{position:absolute;inset:-8%;background-size:cover;background-position:center;filter:blur(46px) saturate(1.1);transform:scale(1.15)}
+.ax-st::before{content:"";position:absolute;inset:0;background:linear-gradient(120deg,rgba(11,37,89,.82),rgba(11,37,89,.55));z-index:1}
+.ax-sg{position:relative;z-index:2;height:100%;max-width:1180px;margin:0 auto;padding:0 24px;display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:center}
+.ax-card{height:min(68%,620px);justify-self:center;border-radius:30px;overflow:hidden;box-shadow:0 50px 90px -30px rgba(0,0,0,.65),0 0 0 1px rgba(255,255,255,.18);max-width:100%}
+.ax-ph{width:100%;height:100%;background-size:cover;background-position:center;transform:scale(1.08);transition:transform 1.6s}
+.ax-st:hover .ax-ph{transform:scale(1)}
+.ax-st:nth-child(even) .ax-card{order:2}
+.ax-txt .ax-tag{color:#8fc4ff}
+.ax-txt h3{font:800 clamp(34px,5.4vw,76px)/1.02 Inter,Arial,sans-serif;letter-spacing:-.035em;margin:14px 0 18px;color:#fff}
+.ax-txt p{font:400 clamp(16px,1.7vw,21px)/1.6 Inter,Arial,sans-serif;color:rgba(255,255,255,.82);margin:0;max-width:30em}
+.ax-num{position:relative;overflow:hidden;background:linear-gradient(160deg,#0b2559,#12408f);color:#fff;padding:110px 24px;border-radius:30px 30px 0 0;margin-top:-1px}
+.ax-glow{position:absolute;left:50%;top:50%;width:900px;height:900px;margin:-450px;background:radial-gradient(closest-side,rgba(63,155,255,.4),transparent 70%);animation:axg 8s ease-in-out infinite alternate;pointer-events:none}
+@keyframes axg{to{transform:scale(1.18)}}
+.ax-ng{position:relative;z-index:2;max-width:1180px;margin:0 auto;display:grid;grid-template-columns:repeat(3,1fr);gap:30px}
+.ax-ng div{border-top:1.5px solid rgba(255,255,255,.35);padding-top:22px}
+.ax-ng b{display:block;font:800 clamp(52px,11vw,170px)/.95 Inter,Arial,sans-serif;letter-spacing:-.05em}
+.ax-ng span{display:block;margin-top:12px;color:rgba(255,255,255,.75);font-size:clamp(13px,1.4vw,18px)}
+.ax-hs{position:relative;background:#f2f7ff}
+.ax-hi{position:sticky;top:76px;overflow:hidden;display:flex;flex-direction:column;justify-content:center;gap:34px}
+.ax-ht{max-width:1180px;width:100%;margin:0 auto;padding:0 24px}
+.ax-ht h3{font:800 clamp(32px,5.6vw,80px)/1.02 Inter,Arial,sans-serif;letter-spacing:-.035em;margin:12px 0 0;color:var(--tx);max-width:12em}
+.ax-ht .ax-tag{display:block;max-width:34em;line-height:1.7;letter-spacing:.16em}
+.ax-tr{display:flex;gap:18px;padding:0 24px 0 max(24px,calc((100vw - 1180px)/2 + 24px));will-change:transform;width:max-content}
+.ax-vc{flex:none;width:min(78vw,340px);height:min(44vh,380px);background:#fff;border-radius:28px;padding:30px 26px;display:flex;flex-direction:column;justify-content:flex-end;box-shadow:0 30px 50px -34px rgba(11,37,89,.5);position:relative;overflow:hidden}
+.ax-vc::before{content:"";position:absolute;right:-60px;top:-60px;width:180px;height:180px;border-radius:50%;background:radial-gradient(closest-side,rgba(31,127,224,.25),transparent)}
+.ax-dot{position:absolute;left:26px;top:26px;width:16px;height:16px;border-radius:50%;border:4px solid var(--gold)}
+.ax-vc h4{font:700 clamp(22px,2.3vw,30px)/1.1 Inter,Arial,sans-serif;letter-spacing:-.02em;margin:0 0 10px;color:var(--tx)}
+.ax-vc p{margin:0;font-size:15px;line-height:1.55;color:var(--mu)}
+.ax-wy{background:#fff;padding:110px 24px 90px}
+.ax-wi{max-width:1180px;margin:0 auto}
+.ax-wi h3{font:800 clamp(32px,5.6vw,80px)/1.02 Inter,Arial,sans-serif;letter-spacing:-.035em;margin:0 0 10px;color:var(--tx);max-width:12em}
+.ax-sub{color:var(--mu);font-size:clamp(16px,1.8vw,21px);margin:0 0 50px}
+.ax-wr{display:grid;grid-template-columns:1fr 1.2fr;gap:40px;align-items:baseline;padding:34px 0;border-top:1.5px solid var(--bd);transition:padding .4s,background .4s}
+.ax-wr:last-child{border-bottom:1.5px solid var(--bd)}
+.ax-wr:hover{padding-left:18px;background:linear-gradient(90deg,rgba(31,127,224,.08),transparent)}
+.ax-wr h4{font:700 clamp(24px,3.6vw,48px)/1.05 Inter,Arial,sans-serif;letter-spacing:-.03em;margin:0;color:var(--tx)}
+.ax-wr p{margin:0;font-size:clamp(15px,1.6vw,19px);line-height:1.6;color:var(--mu)}
+.ax-cta{position:relative;overflow:hidden;background:linear-gradient(160deg,#0b2559,#12408f);color:#fff;padding:130px 24px;text-align:center;border-radius:30px 30px 0 0}
+.ax-cta h3{position:relative;z-index:2;font:800 clamp(38px,8vw,120px)/1 Inter,Arial,sans-serif;letter-spacing:-.045em;margin:0 auto 40px;max-width:11em}
+.ax-bt{position:relative;z-index:2;display:flex;flex-wrap:wrap;gap:14px;justify-content:center}
+.ax-btn{font:600 15px Inter,Arial,sans-serif;text-decoration:none;color:var(--tx);background:#fff;padding:18px 38px;border-radius:999px;transition:.3s}
+.ax-btn.o{background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,.6)}
+.ax-btn:hover{transform:translateY(-3px);box-shadow:0 18px 34px -12px rgba(0,0,0,.5)}
+@media(max-width:860px){.ax-sg{grid-template-columns:1fr;gap:22px;align-content:center;padding:0 20px}.ax-card{height:auto;width:min(62%,300px);max-height:44%}.ax-st:nth-child(even) .ax-card{order:0}.ax-card .ax-ph{min-height:100%}.ax-ng{grid-template-columns:1fr;gap:34px}.ax-wr{grid-template-columns:1fr;gap:12px}.ax-bk{top:84px}.ax-giant{right:-10vw}}
+@media(prefers-reduced-motion:reduce){.wi{animation:none;transform:none}.ax-glow,.ax-hint i{animation:none}.ax-w{color:var(--tx)}}.ax-intro{background:#fff;padding:54px 24px 34px;max-width:1180px;margin:0 auto}
+.ax-intro p{margin:0;max-width:980px;font:700 clamp(22px,3.4vw,44px)/1.25 Inter,Arial,sans-serif;letter-spacing:-.025em;color:var(--tx)}
+.ax-chs{background:#fff;padding:34px 0 56px}
+.ax-chh{max-width:1180px;margin:0 auto 24px;padding:0 24px}
+.ax-chh h3{font:800 clamp(30px,5vw,64px)/1.04 Inter,Arial,sans-serif;letter-spacing:-.035em;margin:10px 0 0;color:var(--tx)}
+.ax-chh .ax-tag{display:block;max-width:34em;line-height:1.7;letter-spacing:.16em}
+.ax-cv{position:relative;display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:none;padding:6px calc(50% - min(42vw,190px)) 24px}
+.ax-cv::-webkit-scrollbar{display:none}
+.ax-cc{flex:none;width:min(84vw,380px);scroll-snap-align:center;background:linear-gradient(170deg,#0b2559,#12408f);color:#fff;border-radius:30px;overflow:hidden;box-shadow:0 34px 50px -34px rgba(11,37,89,.7)}
+.ax-cp{position:relative;height:min(46svh,380px);overflow:hidden;background:#0b2559}
+.ax-cb{position:absolute;inset:-10%;background-size:cover;background-position:center;filter:blur(26px) brightness(.7)}
+.ax-ci{position:absolute;inset:14px;background-size:contain;background-position:center;background-repeat:no-repeat;border-radius:18px;filter:drop-shadow(0 14px 22px rgba(0,0,0,.4))}
+.ax-ctx{padding:22px 24px 28px}
+.ax-ctx .ax-tag{color:#8fc4ff;font-size:11px}
+.ax-ctx h4{font:800 clamp(24px,3vw,32px)/1.08 Inter,Arial,sans-serif;letter-spacing:-.03em;margin:8px 0 10px;color:#fff}
+.ax-ctx p{margin:0;font-size:15px;line-height:1.6;color:rgba(255,255,255,.82)}
+.ax-cn{display:flex;align-items:center;justify-content:center;gap:18px;margin-top:4px}
+.ax-cn button{width:50px;height:50px;border-radius:50%;border:1.5px solid var(--tx);background:#fff;color:var(--tx);font-size:20px;cursor:pointer;transition:.25s}
+.ax-cn button:hover{background:var(--tx);color:#fff}
+.ax-dots{display:flex;gap:8px}
+.ax-dots i{width:9px;height:9px;border-radius:50%;background:#cfdcf1;cursor:pointer;transition:.3s}
+.ax-dots i.on{width:26px;border-radius:6px;background:var(--gold)}
+.ax-vm{background:#f2f7ff;padding:64px 0 60px;overflow:hidden}
+.ax-vmq{overflow:hidden;margin-top:30px}
+.ax-vtk{display:flex;width:max-content;animation:axm 70s linear infinite}
+@keyframes axm{from{transform:translateX(-50%)}to{transform:translateX(0)}}
+.ax-vmq:hover .ax-vtk,.ax-vmq:active .ax-vtk{animation-play-state:paused}
+.ax-vtk .ax-vc{height:300px;margin-right:18px}
+@media(max-width:860px){.ax-intro{padding:36px 20px 20px}.ax-chs{padding:20px 0 40px}.ax-vm{padding:44px 0 40px}.ax-vtk .ax-vc{height:270px}}
+@media(prefers-reduced-motion:reduce){.ax-vtk{animation:none}.ax-vmq{overflow-x:auto}}:root{--ab4:url(assets/image-23575d8a48af2153.jpg);--ab5:url(assets/image-8a3b1880bdbf6591.jpg)}
+.ax-hist{background:#fff;padding:34px 0 56px}
+.ax-hm{overflow:hidden;margin-top:26px}
+.ax-htk{display:flex;align-items:flex-start;width:max-content;animation:axh2 90s linear infinite}
+@keyframes axh2{from{transform:translateX(-50%)}to{transform:translateX(0)}}
+.ax-hm:hover .ax-htk,.ax-hm:active .ax-htk{animation-play-state:paused}
+.ax-hsl{flex:none;margin-right:20px}
+.ax-hph{height:clamp(330px,66svh,620px);width:auto;border-radius:28px;background-size:cover;background-position:center;box-shadow:0 30px 46px -30px rgba(11,37,89,.55)}
+.ax-hcp{margin-top:14px;text-align:center;font:500 12px ui-monospace,Menlo,Consolas,monospace;letter-spacing:.22em;color:var(--gold);white-space:nowrap}
+.ax-stg{max-width:1180px;margin:34px auto 0;padding:0 24px;display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+.ax-sto{background:#f2f7ff;border-radius:22px;padding:22px 24px}
+.ax-sto h4{font:800 clamp(22px,2.6vw,30px)/1.1 Inter,Arial,sans-serif;letter-spacing:-.03em;margin:8px 0 8px;color:var(--tx)}
+.ax-sto p{margin:0;font-size:15px;line-height:1.6;color:var(--mu)}
+@media(max-width:860px){.ax-hist{padding:20px 0 40px}.ax-stg{grid-template-columns:1fr;padding:0 16px}.ax-hph{border-radius:22px}}
+@media(prefers-reduced-motion:reduce){.ax-htk{animation:none}.ax-hm{overflow-x:auto}}.ax-htk{align-items:flex-start;animation-duration:100s}
+.ax-hq{flex:none;margin-right:18px;background:#fff;border-radius:26px;overflow:hidden;box-shadow:0 26px 44px -28px rgba(11,37,89,.55),0 0 0 1px var(--bd)}
+.ax-hq.kw{width:min(88vw,520px)}.ax-hq.kt{width:min(76vw,300px)}.ax-hq.kp{width:min(80vw,330px)}
+.ax-hpw{position:relative;overflow:hidden;background:#0b2559}
+.kw .ax-hpw{aspect-ratio:16/9}.kt .ax-hpw{aspect-ratio:4/5}.kp .ax-hpw{aspect-ratio:4/3}
+.ax-hpb{position:absolute;inset:-10%;background-size:cover;background-position:center;filter:blur(22px) brightness(.8)}
+.ax-hpi{position:absolute;inset:0;background-position:center;background-repeat:no-repeat;background-size:cover}
+.kt .ax-hpi{background-size:contain}
+.ax-hqt{padding:16px 20px 22px}
+.ax-hqt .ax-tag{font-size:11px}
+.ax-hqt h4{font:800 clamp(20px,2.4vw,26px)/1.1 Inter,Arial,sans-serif;letter-spacing:-.025em;margin:6px 0 8px;color:var(--tx)}
+.ax-hqt p{margin:0;font-size:14.5px;line-height:1.55;color:var(--mu)}
+@media(max-width:860px){.ax-hq{border-radius:22px;margin-right:12px}}.ax-htk{animation:none!important;will-change:transform}.ax-hm{touch-action:pan-y;cursor:grab;-webkit-user-select:none;user-select:none}.ax-hm:active{cursor:grabbing}.ax-hm .ax-hq{-webkit-user-drag:none}.ax-num{padding:64px 24px 56px}
+.ax-ch2{position:relative;z-index:2;max-width:1000px;margin:0 auto 34px;padding:18px 18px 8px;border:1px solid rgba(255,255,255,.18);border-radius:24px;background:rgba(255,255,255,.06);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px)}
+.ax-svg{display:block;width:100%;height:auto;overflow:visible}
+.ax-ln{stroke-dasharray:1;stroke-dashoffset:1;transition:stroke-dashoffset 2.8s cubic-bezier(.3,.7,.2,1)}
+.ax-ln.l2{transition-duration:3.4s}
+.in .ax-ln{stroke-dashoffset:0}
+.ax-ar{opacity:0;transition:opacity 1.8s .9s}.in .ax-ar{opacity:1}
+.ax-vb{transform-box:fill-box;transform-origin:50% 100%;transform:scaleY(0);transition:transform .9s cubic-bezier(.2,.8,.2,1)}
+.in .ax-vb{transform:scaleY(1)}
+.ax-ed{opacity:0;transition:opacity .5s 2.5s}.in .ax-ed{opacity:1}
+.ax-pl{transform-box:fill-box;transform-origin:center;animation:axp 1.8s ease-out infinite}
+@keyframes axp{0%{transform:scale(.6);opacity:1}100%{transform:scale(2.4);opacity:0}}
+.ax-chip{position:absolute;left:20px;top:16px;display:flex;flex-direction:column;gap:2px;font-size:12px;color:rgba(255,255,255,.75)}
+.ax-chip b{font:800 clamp(22px,4vw,34px)/1 Inter,Arial,sans-serif;letter-spacing:-.02em;color:#7ee6a8}
+.ax-axl{display:flex;justify-content:space-between;padding:6px 4px 8px;font:500 11px ui-monospace,Menlo,Consolas,monospace;letter-spacing:.2em;color:rgba(255,255,255,.6)}
+.ax-ng b{font-size:clamp(34px,7vw,64px)}
+@media(max-width:860px){.ax-num{padding:48px 16px 40px}.ax-ng{grid-template-columns:repeat(3,1fr);gap:12px}.ax-ng div{padding-top:14px}.ax-ng span{font-size:12px;margin-top:6px}.ax-ch2{padding:12px 10px 4px;border-radius:20px}.ax-chip{left:14px;top:12px}}
+@media(prefers-reduced-motion:reduce){.ax-ln,.ax-ar,.ax-vb,.ax-ed{transition:none}.ax-pl{animation:none}}
+/* ===== HOME v2: cinematic tech style (same language as About page) ===== */
+#home h1,#home h2,#home h3{font-family:Inter,"Helvetica Neue",Arial,sans-serif;font-weight:800;letter-spacing:-.035em}
+#home h2{font-size:clamp(34px,6.2vw,88px);line-height:1.02;margin:10px 0 .3em;color:var(--tx)}
+#home .tag{font:500 12px ui-monospace,Menlo,Consolas,monospace;letter-spacing:.24em;text-transform:uppercase;color:var(--gold)}
+#home .tag::before{content:"[ "}#home .tag::after{content:" ]"}
+#home .mu{color:var(--mu)}
+header{background:rgba(255,255,255,.78);-webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px);border-bottom:1px solid rgba(219,230,245,.9)}
+.logo{font:800 17px Inter,Arial,sans-serif;letter-spacing:.2em}
+nav a{font:600 11.5px Inter,Arial,sans-serif;letter-spacing:.14em}
+.btn{border-radius:999px;padding:16px 30px;font-weight:600;letter-spacing:.1em}
+#spb{position:fixed;top:0;left:0;height:3px;width:0;z-index:60;background:linear-gradient(90deg,var(--gold),#7ee6a8);box-shadow:0 0 12px rgba(31,127,224,.7)}
+.rx{opacity:0;transform:translateY(38px);transition:opacity .95s,transform .95s cubic-bezier(.2,.8,.2,1)}
+.rx.in2{opacity:1;transform:none}
+.vm2{display:inline-block;overflow:hidden;vertical-align:top;padding-bottom:.1em}
+.vi2{display:inline-block;transform:translateY(112%);transition:transform .95s cubic-bezier(.2,.8,.2,1);transition-delay:calc(var(--i)*55ms + 120ms)}
+.in2 .vi2{transform:none}
+/* hero */
+.hero{position:relative;overflow:hidden;min-height:calc(100svh - 76px);display:flex;align-items:center;padding:0;background:radial-gradient(900px 520px at 85% 15%,rgba(31,127,224,.16),transparent),linear-gradient(180deg,#fff,#f2f7ff)}
+.hero::before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(31,127,224,.08) 1px,transparent 1px),linear-gradient(90deg,rgba(31,127,224,.08) 1px,transparent 1px);background-size:36px 36px;-webkit-mask:radial-gradient(ellipse at 25% 35%,#000,transparent 72%);mask:radial-gradient(ellipse at 25% 35%,#000,transparent 72%);pointer-events:none}
+.hero::after{content:"15+";position:absolute;right:-3vw;bottom:-6vw;font:800 clamp(200px,40vw,620px)/.8 Inter,Arial,sans-serif;letter-spacing:-.06em;color:transparent;-webkit-text-stroke:2px rgba(31,127,224,.16);pointer-events:none}
+.hero .w{position:relative;z-index:2;padding-top:36px;padding-bottom:70px}
+.hero h1{font-size:clamp(38px,6.6vw,100px);line-height:1.02;letter-spacing:-.045em;margin:12px 0 22px;max-width:9.5em}
+.hero .sub,.hero p.mu{font-size:clamp(16px,1.7vw,21px);line-height:1.55;max-width:34em}
+.hb{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px}
+.stats{gap:12px}
+.stats>div{border-radius:20px;background:rgba(255,255,255,.78);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px)}
+.stats b{font-family:Inter,Arial,sans-serif;font-weight:800;letter-spacing:-.04em}
+/* sections rhythm */
+section{padding:clamp(60px,8.5vw,110px) 0}
+#cat,#trust,#process{background:#fff!important}
+#why,#hours{background:#f2f7ff!important}
+#sys,#work,#contact{position:relative;overflow:hidden;color:#fff;background:linear-gradient(165deg,#0b2559,#12408f)!important;border-radius:34px 34px 0 0}
+#sys::before,#work::before,#contact::before{content:"";position:absolute;left:50%;top:-20%;width:900px;height:900px;margin-left:-450px;background:radial-gradient(closest-side,rgba(63,155,255,.32),transparent 70%);pointer-events:none}
+#sys>*,#work>*,#contact>*{position:relative;z-index:1}
+#sys h2,#work h2,#contact h2{color:#fff}
+#sys .tag,#work .tag,#contact .tag{color:#8fc4ff}
+#sys .mu,#work .mu,#contact .mu{color:rgba(255,255,255,.72)}
+#sys .scp h3{color:#fff}
+#sys .scp::before{background:#8fc4ff}
+#sys .nv button{background:transparent;border-color:rgba(255,255,255,.55);color:#fff}
+#sys .nv button:hover{background:#fff;color:#0b2559}
+#work .tile{border-radius:26px;box-shadow:0 30px 50px -28px rgba(0,0,0,.55)}
+/* catalog cards, tabs, hours */
+.cc .cb h3{font-size:clamp(22px,2.4vw,30px)}
+.why{border-radius:26px;box-shadow:0 24px 44px -30px rgba(11,37,89,.5)}
+.why h3{font-size:20px}
+.wd{border-radius:22px}
+.wd p{font-size:clamp(16px,2vw,22px);font-weight:500}
+#process{padding-top:clamp(48px,6vw,80px)}
+.dr{border-radius:20px}.tr,.tr i{border-radius:6px}
+/* contacts on navy */
+#contact .stack::before{border-left-color:rgba(255,255,255,.22)}
+#contact .cr{background:rgba(255,255,255,.09);border-color:rgba(255,255,255,.2);color:#fff;box-shadow:none;-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);border-radius:24px}
+#contact .cr h3{color:#fff;font-size:clamp(24px,3vw,34px)}
+#contact .cr p{color:rgba(255,255,255,.72)}
+#contact .cr .ar{border-color:rgba(255,255,255,.4)}
+#contact .cr:hover{background:rgba(255,255,255,.16)}
+footer{background:#0a1d47;color:#9fb3d9;border-top:0}
+@media(max-width:860px){.hero{min-height:0;padding:20px 0 40px}.hero .w{padding-top:20px;padding-bottom:30px}.hero h1{max-width:none}#sys,#work,#contact{border-radius:26px 26px 0 0}}
+@media(prefers-reduced-motion:reduce){.rx{opacity:1;transform:none;transition:none}.vi2{transform:none;transition:none}}
+.hero .w{width:100%}:root{--o1:url(assets/image-a75154d534fe5d38.jpg);--o2:url(assets/image-aef5341e9acf4781.jpg);--o3:url(assets/image-e553c51ee3114c64.jpg);--o4:url(assets/image-aecd51432952612c.jpg);--o5:url(assets/image-de9121e368835d31.jpg);--o6:url(assets/image-37bb7dd5524b865c.jpg);--o7:url(assets/image-69e37487d050efb2.jpg);--o8:url(assets/image-22882d1711a76ba9.jpg);--o9:url(assets/image-549d2d6b2aacf296.jpg);--o10:url(assets/image-e38830d66a862581.jpg);--o11:url(assets/image-fb72e0e5b3ee3723.jpg);--o12:url(assets/image-8e31c72990761f16.jpg);--o13:url(assets/image-0d83adc89a403d8a.jpg);--o14:url(assets/image-bfdfa1f7acadd177.jpg);--o15:url(assets/image-40ad7d1ebaf6da9e.jpg);--o16:url(assets/image-b0180cdee5a5cccb.jpg);--o17:url(assets/image-58e662f3f10e5530.jpg);--o18:url(assets/image-a8b013ca99b7c337.jpg);--o19:url(assets/image-3cf93e212a4eac8e.jpg);--o20:url(assets/image-3f8897fb7f75e371.jpg);}
+.pjb{text-align:center;margin-top:36px}
+#work .pjb .btn{background:#fff;color:#0b2559;border-color:#fff;padding:18px 40px}
+#work .pjb .btn::after{content:"  \2192"}
+#work .pjb .btn:hover{background:#8fc4ff;border-color:#8fc4ff}
+.pj{max-width:1280px;margin:0 auto;padding:34px 20px 90px}
+.pj-hd h2{font:800 clamp(34px,7vw,96px)/1.02 Inter,Arial,sans-serif;letter-spacing:-.04em;margin:12px 0 14px;color:var(--tx);max-width:11em}
+.pj-hd p{font-size:clamp(16px,1.8vw,21px);color:var(--mu);max-width:36em;margin:0}
+.pj-st{display:flex;align-items:flex-end;justify-content:space-between;gap:20px;flex-wrap:wrap;margin:30px 0 26px}
+.pj-st b{display:block;font:800 clamp(52px,10vw,110px)/.9 Inter,Arial,sans-serif;letter-spacing:-.05em;background:linear-gradient(100deg,var(--tx),#1f7fe0);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.pj-st span{font-size:14px;color:var(--mu)}
+.pj-pl{font:600 13px Inter,Arial,sans-serif;letter-spacing:.1em;text-transform:uppercase;color:#fff;background:var(--tx);border:0;border-radius:999px;padding:16px 28px;cursor:pointer;transition:.3s}
+.pj-pl:hover{background:#1f7fe0;transform:translateY(-2px)}
+.pj-fl{position:sticky;top:76px;z-index:6;display:flex;gap:8px;overflow-x:auto;scrollbar-width:none;padding:12px 0;margin:0 -20px 18px;padding-left:20px;padding-right:20px;background:rgba(255,255,255,.88);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px)}
+.pj-fl::-webkit-scrollbar{display:none}
+.pj-ch{flex:none;font:600 13px Inter,Arial,sans-serif;color:var(--tx);background:#fff;border:1.5px solid var(--bd);border-radius:999px;padding:10px 18px;cursor:pointer;transition:.25s;white-space:nowrap}
+.pj-ch:hover{border-color:#1f7fe0}
+.pj-ch.on{background:var(--tx);color:#fff;border-color:var(--tx)}
+.pj-m{columns:2;column-gap:12px}
+.pj-t{position:relative;break-inside:avoid;margin:0 0 12px;border-radius:22px;overflow:hidden;cursor:pointer;background:#dfe9f8;opacity:0;transform:translateY(34px) scale(.97);transition:opacity .9s,transform .9s cubic-bezier(.2,.8,.2,1);will-change:transform}
+.pj-t.in{opacity:1;transform:none}
+.pj-i{position:absolute;inset:0;background-size:cover;background-position:center;transition:transform 1s cubic-bezier(.2,.8,.2,1)}
+.pj-t:hover .pj-i{transform:scale(1.07)}
+.pj-t::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 55%,rgba(11,37,89,.78));opacity:.0;transition:opacity .4s}
+.pj-t:hover::after{opacity:1}
+.pj-l{position:absolute;left:12px;bottom:12px;z-index:2;font:600 11px Inter,Arial,sans-serif;letter-spacing:.06em;color:#fff;background:rgba(11,37,89,.55);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);padding:7px 12px;border-radius:999px;transform:translateY(8px);opacity:0;transition:.4s}
+.pj-t:hover .pj-l{opacity:1;transform:none}
+@media(hover:none){.pj-l{opacity:1;transform:none;font-size:10px;padding:5px 9px}.pj-t::after{opacity:1}}
+@media(min-width:760px){.pj-m{columns:3;column-gap:16px}.pj-t{margin-bottom:16px}.pj{padding:44px 32px 100px}.pj-fl{margin:0 -32px 22px;padding-left:32px;padding-right:32px}}
+@media(min-width:1180px){.pj-m{columns:4}}
+.pj-lb{position:fixed;inset:0;z-index:200;display:none;background:#06142f;color:#fff;touch-action:none}
+.pj-lb.on{display:block;animation:lbf .35s ease}
+@keyframes lbf{from{opacity:0}to{opacity:1}}
+.lb-bg{position:absolute;inset:-10%;background-size:cover;background-position:center;filter:blur(46px) brightness(.5) saturate(1.2);transition:background-image .5s}
+.lb-stg{position:absolute;left:0;right:0;top:56px;bottom:150px}
+.lb-im{position:absolute;inset:0 14px;background-size:contain;background-position:center;background-repeat:no-repeat;filter:drop-shadow(0 24px 40px rgba(0,0,0,.55))}
+.lb-im.kb{animation:lbkb 3.6s ease-out}
+@keyframes lbkb{from{transform:scale(1.045)}to{transform:scale(1)}}
+.lb-x{position:absolute;right:14px;top:10px;z-index:5;width:44px;height:44px;border-radius:50%;border:1px solid rgba(255,255,255,.4);background:rgba(255,255,255,.1);color:#fff;font-size:26px;line-height:1;cursor:pointer;-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px)}
+.lb-a{position:absolute;top:50%;margin-top:-26px;z-index:5;width:52px;height:52px;border-radius:50%;border:1px solid rgba(255,255,255,.4);background:rgba(255,255,255,.1);color:#fff;font-size:30px;line-height:1;cursor:pointer;-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px)}
+.lb-p{left:12px}.lb-n{right:12px}
+.lb-a:hover,.lb-x:hover{background:#fff;color:#0b2559}
+.lb-cp{position:absolute;left:18px;top:14px;z-index:5;display:flex;flex-direction:column;gap:2px}
+.lb-cp b{font:700 16px Inter,Arial,sans-serif;letter-spacing:-.01em}
+.lb-cp span{font:500 12px ui-monospace,Menlo,Consolas,monospace;letter-spacing:.2em;color:#9fd0ff}
+.lb-pl{position:absolute;right:70px;top:10px;z-index:5;width:44px;height:44px;border-radius:50%;border:1px solid rgba(255,255,255,.4);background:rgba(255,255,255,.1);color:#fff;font-size:14px;cursor:pointer}
+.lb-th{position:absolute;left:0;right:0;bottom:14px;z-index:5;display:flex;gap:8px;overflow-x:auto;padding:0 14px;scrollbar-width:none}
+.lb-th::-webkit-scrollbar{display:none}
+.lb-th i{flex:none;width:64px;height:64px;border-radius:12px;background-size:cover;background-position:center;opacity:.5;cursor:pointer;border:2px solid transparent;transition:.3s}
+.lb-th i.on{opacity:1;border-color:#fff;transform:translateY(-4px)}
+.lb-pg{position:absolute;left:0;bottom:0;z-index:6;height:3px;width:100%;background:linear-gradient(90deg,#8fc4ff,#fff);transform-origin:left;transform:scaleX(0)}
+@keyframes lbg{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+@media(max-width:860px){.lb-a{width:42px;height:42px;font-size:24px;margin-top:-21px}.lb-p{left:6px}.lb-n{right:6px}.lb-stg{bottom:140px}.lb-th i{width:54px;height:54px}}
+@media(prefers-reduced-motion:reduce){.pj-t{opacity:1;transform:none;transition:none}.lb-im.kb{animation:none}}
+.pw{position:relative;height:min(74svh,820px);overflow:hidden;border-radius:28px;display:flex;gap:12px;touch-action:none;cursor:grab;-webkit-user-select:none;user-select:none;-webkit-mask:linear-gradient(180deg,transparent,#000 8%,#000 92%,transparent);mask:linear-gradient(180deg,transparent,#000 8%,#000 92%,transparent)}
+.pw:active{cursor:grabbing}
+.pw-c{flex:1;min-width:0;position:relative}
+.pw-k{will-change:transform}
+.pw-t{display:block;margin:0 0 12px!important;opacity:1!important;transform:none!important}
+.pw-t .pj-i{transition:transform .8s}:root{--c1:url(assets/image-97496cb159baff22.jpg);--c2:url(assets/image-3bac493053394075.jpg);--c3:url(assets/image-d3d5dd819896d175.jpg);--c4:url(assets/image-e5d5aefd46e85a67.jpg);--c5:url(assets/image-f8741145a8fe8654.jpg);--c6:url(assets/image-b00f0e4a43973e5a.jpg);--c7:url(assets/image-0c8fdf6a2c6441e3.jpg);--c8:url(assets/image-3a0ed7827d89ef7f.jpg);--c9:url(assets/image-26cbd0b8b13e6bb4.jpg);--c10:url(assets/image-5c80afcb49a04132.jpg);--c11:url(assets/image-9f2d7910e275dc70.jpg);--c12:url(assets/image-3bac493053394075.jpg);--c13:url(assets/image-6f283f01525c428a.jpg);}
+.sdl.lk .sim{cursor:pointer}.sgo{margin-left:8px;color:#8fc4ff;font-size:.9em}
+.al{max-width:1180px;margin:0 auto;padding:30px 20px 90px;font-family:Inter,Arial,sans-serif}
+.al-h{font:800 clamp(34px,6.4vw,84px)/1.02 Inter,Arial,sans-serif;letter-spacing:-.04em;margin:10px 0 26px;color:var(--tx)}
+.al-cf{display:grid;grid-template-columns:1fr;gap:18px}
+.al-pv{background:#eef0f2;border-radius:26px;padding:14px}
+.al-sc{position:relative;aspect-ratio:4/3;border-radius:18px;overflow:hidden;background:linear-gradient(160deg,#ede9e2 0%,#d8d2c8 100%);box-shadow:inset 0 0 0 1px rgba(0,0,0,.05)}
+.al-wl{position:absolute;inset:0;background:radial-gradient(ellipse at 25% 15%,rgba(255,255,255,.55),transparent 60%);opacity:.9}
+.al-wl::after,.al-tx::after{content:"";position:absolute;inset:0;background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .6 0'/></filter><rect width='160' height='160' filter='url(%23n)'/></svg>");opacity:.22;mix-blend-mode:multiply;pointer-events:none}
+.alw{position:absolute;left:19%;top:11%;width:62%;aspect-ratio:400/360;box-shadow:0 0 0 .8% #c9c3b8,0 0 0 1.1% rgba(0,0,0,.18),0 2.4% 3.4% -.4% rgba(0,0,0,.42)}
+.al-tx{position:absolute;inset:0;background:var(--tx) center/cover}
+.al-ov{position:absolute;inset:0;width:100%;height:100%}
+.al-sl{position:absolute;left:15%;right:15%;top:81.5%;height:3.6%;background:linear-gradient(180deg,#f7f5f1,#cfc9be);border-radius:2px;box-shadow:0 1.6% 2.4% rgba(0,0,0,.4)}
+.al-cn{display:flex;align-items:baseline;gap:12px;margin-top:12px;padding:0 4px}
+.al-cn span{font:500 11px ui-monospace,Menlo,Consolas,monospace;letter-spacing:.2em;text-transform:uppercase;color:var(--mu)}
+.al-cn b{font:700 17px Inter,Arial,sans-serif;color:var(--tx)}
+.al-cn em{margin-left:auto;font:500 12px ui-monospace,Menlo,Consolas,monospace;font-style:normal;color:var(--mu)}
+.al-sw{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;align-content:start}
+.al-sa{aspect-ratio:1.12;border-radius:18px;border:1px solid rgba(0,0,0,.28);background-size:cover;background-position:center;cursor:pointer;padding:0}
+.al-sa.on{outline:2.5px solid #0b2559;outline-offset:3px}
+.al-ds{display:grid;grid-template-columns:1fr;gap:14px;margin:54px 0 44px;padding-top:26px;border-top:1px solid var(--bd)}
+.al-ds .ax-tag{padding-top:6px}
+.al-lead{font:600 clamp(19px,2vw,24px)/1.45 Inter,Arial,sans-serif;letter-spacing:-.015em;color:var(--tx);margin:0 0 14px}
+.al-ds p{margin:0 0 12px;font-size:16.5px;line-height:1.75;color:var(--mu);max-width:44em}
+.al-sp{display:grid;grid-template-columns:1fr;gap:24px;background:#0b2559;border-radius:26px;padding:22px;color:#fff;position:relative;overflow:hidden}
+.al-pic{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.16);border-radius:20px;padding:14px;display:flex;flex-direction:column;align-items:center;gap:10px}
+.al-pic div{width:100%;height:240px;background-size:contain;background-position:center;background-repeat:no-repeat;filter:drop-shadow(0 16px 20px rgba(0,0,0,.45))}
+.al-pic span{font:500 10.5px ui-monospace,Menlo,Consolas,monospace;letter-spacing:.22em;text-transform:uppercase;color:#8fc4ff}
+.al-rw h3{font:700 22px/1 Inter,Arial,sans-serif;letter-spacing:-.02em;margin:2px 0 14px;color:#fff}
+.al-kvs{display:grid;gap:0;margin-bottom:6px}
+.al-kv{display:flex;justify-content:space-between;gap:16px;padding:11px 0;border-top:1px solid rgba(255,255,255,.14);font-size:14px}
+.al-kv span{color:rgba(255,255,255,.62)}.al-kv b{font-weight:600;text-align:right}
+.al-r{display:grid;grid-template-columns:1fr auto;gap:7px 14px;align-items:end;padding:12px 0 13px;border-top:1px solid rgba(255,255,255,.14)}
+.al-rl{font-size:14px;color:rgba(255,255,255,.62)}
+.al-rv{font:700 20px/1 Inter,Arial,sans-serif;letter-spacing:-.01em;text-align:right}
+.al-rb{grid-column:1/-1;height:3px;background:rgba(255,255,255,.14)}
+.al-rb i{display:block;height:100%;width:0;background:#8fc4ff;transition:width 1.2s cubic-bezier(.2,.8,.2,1)}
+.al-sp.in .al-rb i{width:var(--w)}
+.al-cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
+@media(min-width:900px){.al-cf{grid-template-columns:1fr 1.2fr;gap:36px;align-items:start}.al-sw{order:1}.al-pv{order:2;position:sticky;top:96px}.al-ds{grid-template-columns:200px 1fr;gap:40px}.al-sp{grid-template-columns:300px 1fr;padding:32px;gap:36px}.al-pic div{height:340px}}
+@media(max-width:560px){.al-sw{gap:8px}.al-sa{border-radius:13px}}
+@media(prefers-reduced-motion:reduce){.al-rb i{transition:none}}@media(min-width:560px){.pg{grid-template-columns:repeat(3,1fr);gap:16px;max-width:1000px}.pi{height:clamp(150px,19vw,240px);padding:12px}.pc b{font-size:14px;margin-top:8px}}
+.request-form{max-width:760px;margin-top:28px}
+.request-alternatives a{color:var(--gold);text-underline-offset:4px}
+.request-form button:disabled{opacity:.65;cursor:wait}
+.request-form input:focus-visible,.request-form textarea:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+@media(max-width:560px){.request-form .row{grid-template-columns:1fr}.request-alternatives{line-height:2}}
+</style>
+<link rel="icon" type="image/png" href="assets/image-2b86ddf227e8f263.png"></head>
+<body>
+<header><div class="w nav">
+<a class="logo" href="#top"><span class="lm" role="img" aria-label="OKNO PREMIUM"></span><span>OKNO <b>PREMIUM</b></span></a>
+<nav><a href="#/about" data-i="n0"></a><a href="#cat" data-i="n1"></a><a href="#work" data-i="n2"></a><a href="#why" data-i="n3"></a><a href="#contact" data-i="n5"></a></nav>
+<div class="lang"><button data-l="ru">RU</button><button data-l="uz">UZ</button><button data-l="en">EN</button></div>
+</div></header>
+
+<div id="home"><div class="hero" id="top"><div class="w">
+<div>
+<span class="tag" data-i="tag"></span>
+<h1 data-i="h1"></h1>
+<p class="mu" data-i="sub"></p>
+<p class="hb"><a class="btn" href="#request" data-i="ask">Оставить заявку</a><a class="btn" href="#/about" data-i="n0"></a><a class="btn o" href="#work" data-i="cta1"></a><a class="btn o" href="tel:+998935376666" data-i="cta2"></a></p>
+<div class="stats" id="sts"><div><b data-n="15" data-s="+">15+</b><span class="mu" data-i="s1"></span></div><div><b data-n="1000" data-s="+">1000+</b><span class="mu" data-i="s2"></span></div><div><b data-i="s3b"></b><span class="mu" data-i="s3"></span></div></div>
+</div>
+<div class="t3d" id="t3d"><div class="t3n">Thermo Engelberg 98</div><div class="aura"></div><div class="stage"><div class="obj" id="t3o"><div class="pf"></div><div class="dm dt" style="left:44.8%;width:19%"><b>98 <span data-i="mmu"></span><em data-i="spH3"></em></b></div><div class="dm db" style="left:57.4%;width:19.4%"><b>90 <span data-i="mmu"></span><em data-i="spF"></em></b></div></div></div></div>
+</div></div>
+
+<section id="cat"><div class="w"><span class="tag" data-i="n1"></span><h2 data-i="catH"></h2><p class="mu" data-i="catP"></p><div class="grid g3"><div class="card cc" data-go="#/kitchen"><div class="im" style="background-image:var(--i3)"></div><div class="cb"><h3 data-i="k1"></h3><p class="mu" data-i="k1d"></p><a class="btn o" href="#/kitchen" data-i="more"></a></div></div><div class="card cc" data-go="#/bedroom"><div class="im" style="background-image:var(--i2)"></div><div class="cb"><h3 data-i="k2"></h3><p class="mu" data-i="k2d"></p><a class="btn o" href="#/bedroom" data-i="more"></a></div></div><div class="card cc" data-go="#/living"><div class="im" style="background-image:var(--i1)"></div><div class="cb"><h3 data-i="k3"></h3><p class="mu" data-i="k3d"></p><a class="btn o" href="#/living" data-i="more"></a></div></div></div></div></section>
+<section id="sys" class="alt"><div class="w"><span class="tag" data-i="sysT"></span><h2 data-i="sysH"></h2></div><div class="sv" id="sv"><div class="str" id="str"></div></div><div class="nv"><button id="sp" aria-label="prev"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M11 6l-6 6 6 6"/></svg></button><span id="sc" style="display:none"></span><button id="sx" aria-label="next"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button></div></section>
+<section id="trust"><div class="w"><span class="tag" data-i="trT"></span><h2 data-i="trH"></h2></div><div class="mq"><div class="ltrack"><div class="lgi lg1" role="img" aria-label="Ermak"></div><div class="lgi lg2" role="img" aria-label="Auto Sale Umar"></div><div class="lgi lg3" role="img" aria-label="Dafna"></div><div class="lgi lg1" role="img" aria-label="Ermak"></div><div class="lgi lg2" role="img" aria-label="Auto Sale Umar"></div><div class="lgi lg3" role="img" aria-label="Dafna"></div><div class="lgi lg1" role="img" aria-label="Ermak"></div><div class="lgi lg2" role="img" aria-label="Auto Sale Umar"></div><div class="lgi lg3" role="img" aria-label="Dafna"></div><div class="lgi lg1" role="img" aria-label="Ermak"></div><div class="lgi lg2" role="img" aria-label="Auto Sale Umar"></div><div class="lgi lg3" role="img" aria-label="Dafna"></div><div class="lgi lg1" role="img" aria-label="Ermak"></div><div class="lgi lg2" role="img" aria-label="Auto Sale Umar"></div><div class="lgi lg3" role="img" aria-label="Dafna"></div><div class="lgi lg1" role="img" aria-label="Ermak"></div><div class="lgi lg2" role="img" aria-label="Auto Sale Umar"></div><div class="lgi lg3" role="img" aria-label="Dafna"></div></div></div></section>
+<section id="work" class="alt"><div class="w"><span class="tag" data-i="n2"></span><h2 data-i="wH"></h2><p class="mu" data-i="wP"></p></div><div class="mq"><div class="track"><div class="tile" style="background-image:var(--p1)"></div><div class="tile" style="background-image:var(--p2)"></div><div class="tile" style="background-image:var(--p3)"></div><div class="tile" style="background-image:var(--p4)"></div><div class="tile" style="background-image:var(--p5)"></div><div class="tile" style="background-image:var(--p6)"></div><div class="tile" style="background-image:var(--p7)"></div><div class="tile" style="background-image:var(--p1)"></div><div class="tile" style="background-image:var(--p2)"></div><div class="tile" style="background-image:var(--p3)"></div><div class="tile" style="background-image:var(--p4)"></div><div class="tile" style="background-image:var(--p5)"></div><div class="tile" style="background-image:var(--p6)"></div><div class="tile" style="background-image:var(--p7)"></div></div></div><div class="w pjb"><a class="btn" href="#/projects" data-i="moreW"></a></div></section>
+
+
+<section id="why"><div class="w"><span class="tag" data-i="n3"></span><h2 data-i="whyH"></h2><div class="grid"><div class="card why"><span class="n">01</span><div class="ico"><svg viewBox="0 0 48 48"><path class="f" d="M24 5l15 6v11c0 10-6 17-15 21C15 39 9 32 9 22V11z"/><path class="g" d="M17 24l5 5 9-10"/></svg></div><h3 data-i="a1"></h3><p class="mu" data-i="a1d"></p></div><div class="card why"><span class="n">02</span><div class="ico"><svg viewBox="0 0 48 48"><path class="f" d="M30 18v24M19.6 24l20.8 12M19.6 36l20.8-12"/><circle class="f" cx="14" cy="14" r="5"/><path class="g" d="M14 3v3M14 22v3M3 14h3M22 14h3M6 6l2 2M20 20l2 2M22 6l-2 2M6 22l2-2"/></svg></div><h3 data-i="a2"></h3><p class="mu" data-i="a2d"></p></div><div class="card why"><span class="n">03</span><div class="ico"><svg viewBox="0 0 48 48"><rect class="f" x="5" y="15" width="38" height="18" rx="1"/><path class="g" d="M12 15v6M19 15v9M26 15v6M33 15v9M40 15v5"/></svg></div><h3 data-i="a3"></h3><p class="mu" data-i="a3d"></p></div><div class="card why"><span class="n">04</span><div class="ico"><svg viewBox="0 0 48 48"><path class="f" d="M4 13h25v21H4z"/><path class="f" d="M29 20h9l6 7v7H29z"/><circle class="g" cx="13" cy="36" r="4" style="fill:#fff"/><circle class="g" cx="36" cy="36" r="4" style="fill:#fff"/></svg></div><h3 data-i="a4"></h3><p class="mu" data-i="a4d"></p></div></div><div class="wd f" id="wd"><p id="wdt"></p></div></div></section>
+<section id="process" class="alt"><div class="w"><h2 data-i="stH"></h2><div class="grid"><div class="card why"><div class="ico"><svg viewBox="0 0 48 48"><path class="f" d="M7 9h34v22H22l-8 8v-8H7z"/><path class="g" d="M15 17h18M15 24h11"/></svg></div><h3 data-i="t1"></h3><p class="mu" data-i="t1d"></p></div><div class="card why"><div class="ico"><svg viewBox="0 0 48 48"><rect class="f" x="10" y="9" width="28" height="28"/><path class="g" d="M5 9v28M3 9h4M3 37h4M10 43h28M10 41v4M38 41v4"/></svg></div><h3 data-i="t2"></h3><p class="mu" data-i="t2d"></p></div><div class="card why"><div class="ico"><svg viewBox="0 0 48 48"><circle class="f" cx="24" cy="24" r="9"/><path class="g" d="M24 5v6M24 37v6M5 24h6M37 24h6M10.6 10.6l4.2 4.2M33.2 33.2l4.2 4.2M37.4 10.6l-4.2 4.2M14.8 33.2l-4.2 4.2"/></svg></div><h3 data-i="t3"></h3><p class="mu" data-i="t3d"></p></div><div class="card why"><div class="ico"><svg viewBox="0 0 48 48"><path class="f" d="M7 22L24 7l17 15v19H7z"/><path class="g" d="M17 30l5 5 9-10"/></svg></div><h3 data-i="t4"></h3><p class="mu" data-i="t4d"></p></div></div><div class="wd f" id="pd"><p id="pdt"></p></div></div></section>
+
+
+<section id="hours"><div class="w"><span class="tag" data-i="hTz"></span><h2 data-i="hT"></h2><p class="mu" data-i="hSub"></p>
+<div class="hw" id="hw"><div class="drs"><div class="dr" data-d="1"><span class="dn"><span data-i="dn1"></span><em class="tg" data-i="hTd"></em></span><span class="tr"><i style="--d:90ms"></i><b class="nw"></b></span><span class="dt2">8:30–19:00</span></div><div class="dr" data-d="2"><span class="dn"><span data-i="dn2"></span><em class="tg" data-i="hTd"></em></span><span class="tr"><i style="--d:180ms"></i><b class="nw"></b></span><span class="dt2">8:30–19:00</span></div><div class="dr" data-d="3"><span class="dn"><span data-i="dn3"></span><em class="tg" data-i="hTd"></em></span><span class="tr"><i style="--d:270ms"></i><b class="nw"></b></span><span class="dt2">8:30–19:00</span></div><div class="dr" data-d="4"><span class="dn"><span data-i="dn4"></span><em class="tg" data-i="hTd"></em></span><span class="tr"><i style="--d:360ms"></i><b class="nw"></b></span><span class="dt2">8:30–19:00</span></div><div class="dr" data-d="5"><span class="dn"><span data-i="dn5"></span><em class="tg" data-i="hTd"></em></span><span class="tr"><i style="--d:450ms"></i><b class="nw"></b></span><span class="dt2">8:30–19:00</span></div><div class="dr" data-d="6"><span class="dn"><span data-i="dn6"></span><em class="tg" data-i="hTd"></em></span><span class="tr"><i style="--d:540ms"></i><b class="nw"></b></span><span class="dt2">8:30–19:00</span></div><div class="dr off" data-d="7"><span class="dn"><span data-i="dn7"></span><em class="tg" data-i="hTd"></em></span><span class="tr"><i style="--d:630ms"></i><b class="nw"></b></span><span class="dt2" data-i="hOff"></span></div></div></div></div></section>
+
+<section id="request" class="alt"><div class="w">
+<span class="tag">OKNO PREMIUM</span><h2 data-i="ask">Оставить заявку</h2>
+<form id="request-form" class="request-form" action="https://formsubmit.co/okno.premium2026@gmail.com" method="POST" accept-charset="UTF-8">
+<input type="hidden" name="_subject" value="Новая заявка — OKNO PREMIUM">
+<input type="hidden" name="_template" value="table">
+<input type="hidden" name="_url" id="request-url">
+<input type="text" name="_honey" tabindex="-1" autocomplete="off" style="display:none" aria-hidden="true">
+<div class="row"><div><label for="request-name" data-i="fName">Ваше имя</label><input id="request-name" name="name" required maxlength="100" autocomplete="name"></div>
+<div><label for="request-phone" data-i="fPhone">Телефон</label><input id="request-phone" name="phone" type="tel" inputmode="tel" required maxlength="30" autocomplete="tel" placeholder="+998 90 123 45 67" pattern="[+0-9() .-]{7,30}"></div></div>
+<label for="request-message" data-i="fMsg">Сообщение</label><textarea id="request-message" name="message" rows="4" maxlength="4000"></textarea>
+<p class="mu" data-i="formNotice">Заявка будет передана через FormSubmit на нашу почту. На следующем шаге подтвердите, что вы не робот.</p>
+<button class="btn" type="submit" data-i="fSend">Отправить заявку</button>
+<p id="request-status" role="status" aria-live="polite"></p>
+<p class="request-alternatives"><a id="request-gmail" target="_blank" rel="noopener" href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=okno.premium2026%40gmail.com" data-i="gmailSend">Написать через Gmail</a> · <a id="request-mail" href="mailto:okno.premium2026@gmail.com" data-i="bMail">Отправить по почте</a> · <a href="tel:+998935376666" data-i="cTel">Позвонить</a></p>
+</form></div></section>
+<section id="contact" class="alt"><div class="w"><span class="tag" data-i="n5"></span><h2 data-i="ctH"></h2><div class="stack"><a class="cr" style="--c:#d6249f;--d:0ms" href="https://www.instagram.com/okno_premium" target="_blank" rel="noopener"><img src="assets/image-05739dbc0d5c66c9.png" alt="" width="96" height="96"><span class="tx"><h3>Instagram</h3><p><span>@okno_premium</span></p></span><span class="ar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a><a class="cr" style="--c:#2aa3de;--d:110ms" href="https://t.me/windowglassuz" target="_blank" rel="noopener"><img src="assets/image-f165e98c8a929d16.png" alt="" width="96" height="96"><span class="tx"><h3>Telegram</h3><p><span>@windowglassuz</span></p></span><span class="ar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a><a class="cr" style="--c:#34b233;--d:220ms" href="tel:+998935376666"><img src="assets/image-f1b859d2806429f3.png" alt="" width="96" height="96"><span class="tx"><h3 data-i="cTel"></h3><p><span>+998 (93) 537-66-66</span></p></span><span class="ar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a><a class="cr" style="--c:#4285f4;--d:330ms" href="https://maps.app.goo.gl/nePVktdNtWpMhoty7" target="_blank" rel="noopener"><img src="assets/image-d42d09d836b4527a.png" alt="" width="96" height="96"><span class="tx"><h3 data-i="cMap"></h3><p><span data-i="addr"></span></p></span><span class="ar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a><a class="cr" style="--c:#ea4335;--d:440ms" href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=okno.premium2026%40gmail.com" target="_blank" rel="noopener"><img src="assets/image-6a6358391e5b644a.png" alt="" width="96" height="96"><span class="tx"><h3 data-i="cMail"></h3><p><span>okno.premium2026@gmail.com</span></p></span><span class="ar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a></div></div></section>
+
+</div><div id="vk" style="display:none"></div><footer><div class="w">© 2026 OKNO PREMIUM · <span data-i="rights"></span></div></footer>
+
+<script>
+var D={
+ru:{n1:"Каталог",n2:"Проекты",wH:"Наши готовые объекты",wP:"Реализованные проекты: окна, которые уже украшают дома наших клиентов.",k1:"Окна в кухню",k1d:"Светлые решения, которые подчёркивают интерьер и открывают вид.",k2:"Окна в спальню",k2d:"Тишина, тепло и уют: надёжная звуко- и теплоизоляция.",k3:"Окна в гостиную",k3d:"Панорамные окна, которые наполняют дом светом.",ask:"Оставить заявку",more:"Подробнее",bD:"Тишина, тепло и уют: выберите профиль с надёжной тепло- и звукоизоляцией для вашей спальни.",lD:"Окна, которые наполняют гостиную светом и теплом: выберите профиль с панорамным видом и энергосберегающими свойствами.",s_ins:"Теплоизоляция",s_wt:"Максимальный вес створки",s_cyc:"Ресурс",back:"← Назад",bh:"Главная",kT:"Окна в кухню",kD:"Стильные и функциональные окна для кухни. Выберите профиль, который даст тепло и свет и гармонично впишется в ваш интерьер.",spc:"Характеристики",ord:"Заказать",s_type:"Тип профиля",s_series:"Серия профиля",s_glass:"Толщина стеклопакета",s_cover:"Покрытие",s_wd:"Монтажная глубина оконной рамы",s_dd:"Монтажная глубина дверной рамы",s_sd:"Глубина створки",s_br:"Ширина термомоста",s_ch:"Количество камер",s_wall:"Толщина стенки профиля",s_pl:"Монтажная плоскость",s_mh:"Максимальная высота створки",s_mw:"Максимальная ширина створки",s_md:"Монтажная глубина",n3:"О нас",n4:"Карта",n5:"Контакты",tag:"Окна и двери премиум-класса",h1:"Окна, которые делают дом лучше",sub:"Производство, доставка и монтаж под ключ. Подберём окна для кухни, спальни, гостиной и частного дома.",cta1:"Наши работы",cta2:"Связаться",s1:"лет опыта",s2:"клиентов, которые нам доверяют",s3:"до вашего объекта",s3b:"Доставка",catH:"Окна для каждой комнаты",catP:"Подберём решение под вашу кухню, спальню или гостиную.",c1:"Окна",c1d:"Пластиковые и алюминиевые окна любой формы.",c2:"Двери",c2d:"Входные и межкомнатные двери.",c3:"Балконы и лоджии",c3d:"Остекление, тёплое и холодное.",c4:"Раздвижные системы",c4d:"Панорамные порталы и витражи.",pick:"Выбрать",cfH:"Онлайн-конфигуратор",cfP:"Меняйте параметры — окно и цена обновляются сразу.",lType:"Тип изделия",lW:"Ширина, мм",lH:"Высота, мм",lProf:"Профиль",lGlass:"Стеклопакет",lOpen:"Открывание",lCol:"Цвет",p1:"Стандарт (3 камеры)",p2:"Премиум (5 камер)",p3:"Ультра (7 камер)",g1:"Однокамерный",g2:"Двухкамерный",g3:"Энергосберегающий",o1:"Глухое",o2:"Поворотно-откидное",o3:"Две створки",note:"Цена ориентировочная. Точный расчёт — после замера.",order:"Заказать этот расчёт",whyH:"Почему OKNO PREMIUM",a1:"Надёжность",a1d:"Усиленный профиль и фурнитура европейских брендов.",a2:"Тепло и тишина",a2d:"Энергосберегающие стеклопакеты защищают от жары и шума.",a3:"Точный замер",a3d:"Мастер приезжает бесплатно и замеряет с точностью до мм.",a4:"Доставка",a4d:"Привезём изделия на объект в срок и аккуратно.",stH:"Как мы работаем",t1:"Заявка",t1d:"Оставьте заявку или позвоните.",t2:"Замер",t2d:"Бесплатный выезд мастера.",t3:"Производство",t3d:"Изготовление на собственном заводе.",t4:"Монтаж",t4d:"Установка и уборка за 1 день.",faqH:"Частые вопросы",q1:"Сколько времени занимает заказ?",q1a:"Обычно производство занимает от 5 до 10 рабочих дней, монтаж — один день.",q2:"Можно ли заказать нестандартный размер?",q2a:"Да, мы изготавливаем изделия по индивидуальным размерам и формам.",q3:"Есть ли доставка?",q3a:"Да, мы доставляем изделия на объект и аккуратно разгружаем.",ctH:"Свяжитесь с нами",addr:"г. Ташкент, Бектемирский район, МСГ «Рохат», 6А (цокольный этаж)",mapO:"Открыть в Google Картах",mT:"Мы на карте",cTel:"Позвонить",cMap:"Мы на карте",cMail:"Написать на почту",moreW:"Больше объектов",aD:"Алюминиевые окна: выберите систему, примерьте любой цвет и посмотрите характеристики.",alC:"Цвет",alP:"Перебрать цвета",alX:"Разрез профиля",alD:"Описание",spT:"Крупным планом",spP:"Один профиль и всё, что важно о нём знать.",spC:"Сравнить с",spH1:"Термомост",spH2:"Стеклопакет",spH3:"Створка",mmu:"мм",spF:"Рама",n0:"О компании",abL:"OKNO PREMIUM — компания из Ташкента. Мы изготавливаем, доставляем и устанавливаем окна, двери и системы остекления для квартир, домов и коммерческих объектов.",abS:"Чем мы занимаемся",abY:"направлений систем",abF:"Где нас найти",hT:"Режим работы",hSub:"Понедельник — суббота · 8:30–19:00",dn1:"Понедельник",dn2:"Вторник",dn3:"Среда",dn4:"Четверг",dn5:"Пятница",dn6:"Суббота",dn7:"Воскресенье",hOff:"Выходной",hOpen:"Сейчас открыто",hCl:"Сейчас закрыто",hN0:"Откроемся сегодня в 8:30",hN1:"Откроемся завтра в 8:30",hN2:"Откроемся в понедельник в 8:30",hTd:"Сегодня",hTz:"Время в Ташкенте",sysT:"Ассортимент",sysH:"Наши системы",sy1:"Пластиковые окна",sy2:"Алюминиевые окна",sy3:"Дверные системы",sy4:"Раздвижные системы",sy5:"Импортные системы",sy6:"Фасадные системы",sy7:"Роллетные системы",trT:"Партнёры",trH:"Нам доверяют",vdT:"Видео",vdH:"Видео наших работ",hrs:"Пн–Сб, 8:30–19:00",fName:"Ваше имя",fPhone:"Телефон",fMsg:"Сообщение",fSend:"Отправить заявку",fBad:"Пожалуйста, укажите имя и номер телефона.",fWait:"Отправляем…",fOk:"Спасибо! Ваша заявка отправлена. Мы скоро свяжемся с вами.",fMail:"Откроется почта — нажмите «Отправить», чтобы завершить заявку.",fFail:"Автоматическая отправка здесь недоступна. Выберите, как отправить заявку:",bMail:"Отправить по почте",bTg:"Написать в Telegram",bCp:"Скопировать текст",cpd:"Скопировано",cpb:"Копировать",rights:"Все права защищены",m1:"Заявка из конфигуратора"},
+uz:{n1:"Katalog",n2:"Loyihalar",wH:"Tayyor obyektlarimiz",wP:"Amalga oshirilgan loyihalar: mijozlarimiz uylarini bezab turgan oynalar.",k1:"Oshxona uchun oynalar",k1d:"Interyerni ta'kidlaydigan va manzarani ochadigan yorqin yechimlar.",k2:"Yotoqxona uchun oynalar",k2d:"Sukunat, issiqlik va qulaylik: ishonchli tovush va issiqlik izolyatsiyasi.",k3:"Mehmonxona uchun oynalar",k3d:"Uyni nurga to'ldiradigan panoramali oynalar.",ask:"Ariza qoldirish",more:"Batafsil",bD:"Sukunat, issiqlik va qulaylik: yotoqxonangiz uchun ishonchli issiqlik va tovush izolyatsiyasiga ega profilni tanlang.",lD:"Mehmonxonani nur va issiqlikka to'ldiradigan oynalar: panoramali ko'rinish va energiya tejash xususiyatiga ega profilni tanlang.",s_ins:"Issiqlik izolyatsiyasi",s_wt:"Qanotning maksimal og'irligi",s_cyc:"Resurs",back:"← Orqaga",bh:"Bosh sahifa",kT:"Oshxona uchun oynalar",kD:"Oshxona uchun zamonaviy va funksional oynalar. Issiqlik va yorug'lik beradigan, interyeringizga uyg'unlashadigan profilni tanlang.",spc:"Xususiyatlar",ord:"Buyurtma berish",s_type:"Profil turi",s_series:"Profil seriyasi",s_glass:"Shisha paket qalinligi",s_cover:"Qoplama",s_wd:"Deraza ramasining o'rnatish chuqurligi",s_dd:"Eshik ramasining o'rnatish chuqurligi",s_sd:"Qanot chuqurligi",s_br:"Termokoprik kengligi",s_ch:"Kameralar soni",s_wall:"Profil devori qalinligi",s_pl:"O'rnatish tekisligi",s_mh:"Qanotning maksimal balandligi",s_mw:"Qanotning maksimal kengligi",s_md:"O'rnatish chuqurligi",n3:"Biz haqimizda",n4:"Xarita",n5:"Aloqa",tag:"Premium darajadagi oyna va eshiklar",h1:"Uyingizni go'zallashtiradigan oynalar",sub:"Ishlab chiqarish, yetkazib berish va o'rnatish — kalit topshirish asosida. Oshxona, yotoqxona, mehmonxona va shaxsiy uy uchun oynalar.",cta1:"Ishlarimiz",cta2:"Bog'lanish",s1:"yillik tajriba",s2:"ishonch bildirgan mijozlar",s3:"obyektingizgacha",s3b:"Yetkazib berish",catH:"Har bir xona uchun oynalar",catP:"Oshxona, yotoqxona yoki mehmonxonangiz uchun yechim tanlaymiz.",c1:"Oynalar",c1d:"Har qanday shakldagi plastik va alyuminiy oynalar.",c2:"Eshiklar",c2d:"Kirish va xona eshiklari.",c3:"Balkon va lodjiyalar",c3d:"Issiq va sovuq oynalash.",c4:"Surma tizimlar",c4d:"Panoramali portal va vitrajlar.",pick:"Tanlash",cfH:"Onlayn konfigurator",cfP:"Parametrlarni o'zgartiring — oyna va narx darhol yangilanadi.",lType:"Mahsulot turi",lW:"Eni, mm",lH:"Bo'yi, mm",lProf:"Profil",lGlass:"Shisha paket",lOpen:"Ochilish turi",lCol:"Rang",p1:"Standart (3 kamera)",p2:"Premium (5 kamera)",p3:"Ultra (7 kamera)",g1:"Bir kamerali",g2:"Ikki kamerali",g3:"Energiya tejovchi",o1:"Qo'zg'almas",o2:"Burilma-ochiluvchi",o3:"Ikki qanot",note:"Narx taxminiy. Aniq hisob — o'lchovdan keyin.",order:"Shu hisobni buyurtma qilish",whyH:"Nega OKNO PREMIUM",a1:"Ishonchlilik",a1d:"Kuchaytirilgan profil va yevropa furnitura.",a2:"Issiq va tinch",a2d:"Energiya tejovchi shisha paketlar issiq va shovqindan himoya qiladi.",a3:"Aniq o'lchov",a3d:"Usta bepul kelib, millimetrgacha o'lchaydi.",a4:"Yetkazib berish",a4d:"Mahsulotlarni obyektga o'z vaqtida va ehtiyotkorlik bilan yetkazamiz.",stH:"Qanday ishlaymiz",t1:"Ariza",t1d:"Ariza qoldiring yoki qo'ng'iroq qiling.",t2:"O'lchov",t2d:"Ustaning bepul tashrifi.",t3:"Ishlab chiqarish",t3d:"O'z zavodimizda tayyorlash.",t4:"O'rnatish",t4d:"1 kunda o'rnatish va tozalash.",faqH:"Ko'p so'raladigan savollar",q1:"Buyurtma qancha vaqt oladi?",q1a:"Odatda ishlab chiqarish 5–10 ish kuni, o'rnatish — bir kun.",q2:"Nostandart o'lcham buyurtma qilsa bo'ladimi?",q2a:"Ha, individual o'lcham va shakllarda tayyorlaymiz.",q3:"Yetkazib berish xizmati bormi?",q3a:"Ha, mahsulotlarni obyektga yetkazib, ehtiyotkorlik bilan tushiramiz.",ctH:"Biz bilan bog'laning",addr:"Toshkent sh., Bektemir tumani, «Rohat» MFY, 6A (yerto'la qavat)",mapO:"Google Xaritada ochish",mT:"Xaritada biz",cTel:"Qo'ng'iroq qilish",cMap:"Xaritada biz",cMail:"Pochta orqali yozish",moreW:"Ko'proq obyektlar",aD:"Alyuminiy oynalar: tizimni tanlang, istalgan rangni sinab ko'ring va xususiyatlarini ko'ring.",alC:"Rang",alP:"Ranglarni aylantirish",alX:"Profil kesimi",alD:"Tavsif",spT:"Yaqindan",spP:"Bitta profil va u haqida bilish muhim bo'lgan hamma narsa.",spC:"Taqqoslash",spH1:"Termokoprik",spH2:"Shisha paket",spH3:"Qanot",mmu:"mm",spF:"Rama",n0:"Kompaniya haqida",abL:"OKNO PREMIUM — Toshkentdagi kompaniya. Biz kvartira, uy va tijorat obyektlari uchun oyna, eshik va oynalash tizimlarini tayyorlaymiz, yetkazamiz va o'rnatamiz.",abS:"Faoliyat yo'nalishlarimiz",abY:"tizim yo'nalishi",abF:"Bizni qayerdan topasiz",hT:"Ish tartibi",hSub:"Dushanba — shanba · 8:30–19:00",dn1:"Dushanba",dn2:"Seshanba",dn3:"Chorshanba",dn4:"Payshanba",dn5:"Juma",dn6:"Shanba",dn7:"Yakshanba",hOff:"Dam olish kuni",hOpen:"Hozir ochiq",hCl:"Hozir yopiq",hN0:"Bugun 8:30 da ochamiz",hN1:"Ertaga 8:30 da ochamiz",hN2:"Dushanba kuni 8:30 da ochamiz",hTd:"Bugun",hTz:"Toshkent vaqti",sysT:"Assortiment",sysH:"Tizimlarimiz",sy1:"Plastik oynalar",sy2:"Alyuminiy oynalar",sy3:"Eshik tizimlari",sy4:"Surma tizimlar",sy5:"Import tizimlar",sy6:"Fasad tizimlari",sy7:"Rolet tizimlari",trT:"Hamkorlar",trH:"Bizga ishonishadi",vdT:"Video",vdH:"Ishlarimiz videosi",hrs:"Du–Sha, 8:30–19:00",fName:"Ismingiz",fPhone:"Telefon",fMsg:"Xabar",fSend:"Ariza yuborish",fBad:"Iltimos, ism va telefon raqamingizni kiriting.",fWait:"Yuborilmoqda…",fOk:"Rahmat! Arizangiz yuborildi. Tez orada siz bilan bog'lanamiz.",fMail:"Pochta ochiladi — arizani yakunlash uchun «Yuborish» tugmasini bosing.",fFail:"Bu yerda avtomatik yuborish mavjud emas. Arizani qanday yuborishni tanlang:",bMail:"Pochta orqali yuborish",bTg:"Telegramda yozish",bCp:"Matnni nusxalash",cpd:"Nusxalandi",cpb:"Nusxalash",rights:"Barcha huquqlar himoyalangan",m1:"Konfiguratordan ariza"},
+en:{n1:"Catalog",n2:"Projects",wH:"Our completed projects",wP:"Delivered projects: windows that already grace our clients' homes.",k1:"Kitchen windows",k1d:"Bright solutions that frame the interior and open up the view.",k2:"Bedroom windows",k2d:"Quiet, warm and cosy: reliable sound and heat insulation.",k3:"Living room windows",k3d:"Panoramic windows that fill the home with light.",ask:"Send a request",more:"Details",bD:"Quiet, warm and cosy: choose a profile with reliable heat and sound insulation for your bedroom.",lD:"Windows that fill the living room with light and warmth: choose a profile with panoramic views and energy-saving performance.",s_ins:"Thermal insulation",s_wt:"Maximum sash weight",s_cyc:"Service life",back:"← Back",bh:"Home",kT:"Kitchen windows",kD:"Stylish, functional windows for the kitchen. Choose a profile that brings warmth and light and blends into your interior.",spc:"Specifications",ord:"Order",s_type:"Profile type",s_series:"Profile series",s_glass:"Glazing thickness",s_cover:"Finish",s_wd:"Window frame installation depth",s_dd:"Door frame installation depth",s_sd:"Sash depth",s_br:"Thermal break width",s_ch:"Number of chambers",s_wall:"Profile wall thickness",s_pl:"Installation plane",s_mh:"Maximum sash height",s_mw:"Maximum sash width",s_md:"Installation depth",n3:"About",n4:"Map",n5:"Contact",tag:"Premium windows and doors",h1:"Windows that make your home better",sub:"Manufacturing, delivery and installation, fully handled. Windows for kitchens, bedrooms, living rooms and private homes.",cta1:"Our work",cta2:"Contact us",s1:"years of experience",s2:"clients who trust us",s3:"to your site",s3b:"Delivery",catH:"Windows for every room",catP:"We will find the right solution for your kitchen, bedroom or living room.",c1:"Windows",c1d:"PVC and aluminium windows of any shape.",c2:"Doors",c2d:"Entrance and interior doors.",c3:"Balconies & loggias",c3d:"Warm and cold glazing.",c4:"Sliding systems",c4d:"Panoramic portals and facades.",pick:"Select",cfH:"Online configurator",cfP:"Change parameters and the preview and price update instantly.",lType:"Product type",lW:"Width, mm",lH:"Height, mm",lProf:"Profile",lGlass:"Glazing",lOpen:"Opening",lCol:"Colour",p1:"Standard (3 chambers)",p2:"Premium (5 chambers)",p3:"Ultra (7 chambers)",g1:"Single chamber",g2:"Double chamber",g3:"Energy saving",o1:"Fixed",o2:"Tilt & turn",o3:"Two sashes",note:"Estimated price. Exact quote after measurement.",order:"Order this quote",whyH:"Why OKNO PREMIUM",a1:"Reliability",a1d:"Reinforced profile and European hardware.",a2:"Warm and quiet",a2d:"Energy-saving glazing blocks heat and noise.",a3:"Precise measuring",a3d:"Free visit by a specialist, accurate to the millimetre.",a4:"Delivery",a4d:"We deliver products to your site on time and with care.",stH:"How we work",t1:"Request",t1d:"Send a request or call us.",t2:"Measurement",t2d:"Free specialist visit.",t3:"Production",t3d:"Made at our own factory.",t4:"Installation",t4d:"Installed and cleaned up in 1 day.",faqH:"Frequently asked questions",q1:"How long does an order take?",q1a:"Production usually takes 5 to 10 working days, installation one day.",q2:"Can I order a custom size?",q2a:"Yes, we make products in custom sizes and shapes.",q3:"Do you offer delivery?",q3a:"Yes, we deliver to your site and unload with care.",ctH:"Get in touch",addr:"Tashkent, Bektemir District, Rohat mahalla, 6A (basement floor)",mapO:"Open in Google Maps",mT:"Find us on the map",cTel:"Call us",cMap:"Find us on the map",cMail:"Write to us",moreW:"More projects",aD:"Aluminium windows: choose a system, try any colour and see its specifications.",alC:"Colour",alP:"Cycle colours",alX:"Profile section",alD:"Description",spT:"Close-up",spP:"One profile and everything worth knowing about it.",spC:"Compare with",spH1:"Thermal break",spH2:"Glazing unit",spH3:"Sash",mmu:"mm",spF:"Frame",n0:"About us",abL:"OKNO PREMIUM is a Tashkent-based company. We make, deliver and install windows, doors and glazing systems for apartments, houses and commercial buildings.",abS:"What we do",abY:"system lines",abF:"Where to find us",hT:"Working hours",hSub:"Monday — Saturday · 8:30–19:00",dn1:"Monday",dn2:"Tuesday",dn3:"Wednesday",dn4:"Thursday",dn5:"Friday",dn6:"Saturday",dn7:"Sunday",hOff:"Day off",hOpen:"Open now",hCl:"Closed now",hN0:"We open today at 8:30",hN1:"We open tomorrow at 8:30",hN2:"We open on Monday at 8:30",hTd:"Today",hTz:"Tashkent time",sysT:"Range",sysH:"Our systems",sy1:"PVC windows",sy2:"Aluminium windows",sy3:"Door systems",sy4:"Sliding systems",sy5:"Imported systems",sy6:"Facade systems",sy7:"Roller shutter systems",trT:"Partners",trH:"They trust us",vdT:"Video",vdH:"Our work on video",hrs:"Mon–Sat, 8:30–19:00",fName:"Your name",fPhone:"Phone",fMsg:"Message",fSend:"Send request",fBad:"Please enter your name and phone number.",fWait:"Sending…",fOk:"Thank you! Your request has been sent. We will contact you soon.",fMail:"Your mail app will open — press Send to complete the request.",fFail:"Automatic sending isn't available here. Choose how to send your request:",bMail:"Send by email",bTg:"Message on Telegram",bCp:"Copy text",cpd:"Copied",cpb:"Copy",rights:"All rights reserved",m1:"Request from configurator"}
+};
+var L='ru',$=function(i){return document.getElementById(i)};
+function t(k){return D[L][k]||k}
+function lang(l){
+  L=l;document.documentElement.lang=l;
+  try{localStorage.setItem('okl',l)}catch(e){}
+  var n=document.querySelectorAll('[data-i]');
+  for(var i=0;i<n.length;i++)n[i].textContent=t(n[i].getAttribute('data-i'));
+  var b=document.querySelectorAll('.lang button');
+  for(i=0;i<b.length;i++)b[i].className=b[i].getAttribute('data-l')===l?'on':'';
+  if(typeof window.rv==='function')rv();if(typeof window.hu==='function')hu();if(typeof window.wu==='function')wu();if(typeof window.sp==='function')sp();if(typeof window.v2==='function')v2();
+}
+[].forEach.call(document.querySelectorAll('.lang button'),function(b){b.addEventListener('click',function(){lang(b.getAttribute('data-l'))})});
+document.documentElement.className+=' js';
+(function(){var r=document.querySelectorAll('.cr');
+ if(!('IntersectionObserver' in window)){[].forEach.call(r,function(x){x.className+=' in'});return}
+ var o=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.className+=' in';o.unobserve(e.target)}})},{threshold:.15});
+ [].forEach.call(r,function(x){o.observe(x)});
+ setTimeout(function(){[].forEach.call(r,function(x){if(x.className.indexOf(' in')<0)x.className+=' in'})},4000);
+})();
+var hv=false;
+(function(){
+  var w=$('hw');
+  var go=function(){if(hv)return;hv=true;w.className+=' in';hu()};
+  if('IntersectionObserver' in window){var o=new IntersectionObserver(function(es){if(es[0].isIntersecting){go();o.disconnect()}},{threshold:.2});o.observe(w)}else go();
+  setTimeout(go,6000);
+  setInterval(hu,30000);
+})();
+function hu(){
+  var n=new Date(),z=new Date(n.getTime()+n.getTimezoneOffset()*60000+18000000),d=z.getDay(),m=z.getHours()*60+z.getMinutes();
+  var rs=document.querySelectorAll('.dr'),td=d===0?7:d,k;
+  for(k=0;k<rs.length;k++){var on=+rs[k].getAttribute('data-d')===td,c=rs[k].className.replace(' td','');rs[k].className=on?c+' td':c;
+    if(on)rs[k].querySelector('.nw').style.left=(m/1440*100)+'%'}
+}
+(function(){
+  var vp=$('sv'),tr=$('str'),n=7,i=n,tm,h='',c,k,AR=[0.8, 0.5618, 0.7568, 0.709, 0.6707, 0.75, 0.6667];
+  for(c=0;c<3;c++)for(k=1;k<=n;k++)h+='<div class="sdl'+(k===2?' lk':'')+'"'+(k===2?' data-go="#/alu"':'')+'><div class="sim" style="background-image:var(--s'+k+');aspect-ratio:'+AR[k-1]+'"></div><div class="scp"><h3 data-i="sy'+k+'"></h3>'+(k===2?'<span class="sgo">&rarr;</span>':'')+'</div></div>';
+  tr.innerHTML=h;
+  var S=tr.children;
+  function base(j){var e=S[j];return vp.clientWidth/2-(e.offsetLeft+e.offsetWidth/2)}
+  function put(j,anim){tr.style.transition=anim?'transform .55s cubic-bezier(.22,.8,.25,1)':'none';tr.style.transform='translate3d('+base(j)+'px,0,0)'}
+  function norm(){if(i<n)i+=n;else if(i>=2*n)i-=n}
+  function go(j){i=j;put(i,true);clearTimeout(tm);tm=setTimeout(function(){norm();put(i,false)},580)}
+  function near(x){var b=0,bd=1e9,j,d;for(j=0;j<S.length;j++){d=Math.abs(base(j)-x);if(d<bd){bd=d;b=j}}return b}
+  put(i,false);
+  window.addEventListener('resize',function(){put(i,false)});
+  $('sp').addEventListener('click',function(){go(i-1)});
+  $('sx').addEventListener('click',function(){go(i+1)});
+  var sx=0,sb=0,dr=false,t0=0;
+  vp.addEventListener('pointerdown',function(e){window.__tap=e.target.closest&&e.target.closest('.sdl');clearTimeout(tm);norm();dr=true;sx=e.clientX;sb=base(i);t0=Date.now();tr.style.transition='none';tr.style.transform='translate3d('+sb+'px,0,0)';try{vp.setPointerCapture(e.pointerId)}catch(x){}});
+  vp.addEventListener('pointermove',function(e){if(dr)tr.style.transform='translate3d('+(sb+e.clientX-sx)+'px,0,0)'});
+  function end(e){if(!dr)return;dr=false;var dx=e.clientX-sx;if(Math.abs(dx)<6&&window.__tap&&window.__tap.getAttribute('data-go')){var gg=window.__tap.getAttribute('data-go');window.__tap=null;location.hash=gg;return}var v=dx/Math.max(Date.now()-t0,1),j=Math.abs(dx)<6?i:near(sb+dx+v*160);j=Math.max(i-4,Math.min(i+4,j));go(j)}
+  vp.addEventListener('pointerup',end);vp.addEventListener('pointercancel',end);
+  vp.addEventListener('dragstart',function(e){e.preventDefault()});
+})();
+var TB=[];
+window.wu=function(){TB.forEach(function(f){f()})};
+function tabs(sec,pid){
+  var cs=document.querySelectorAll(sec+' .why'),cur=0,tm,red=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches,hv=window.matchMedia&&matchMedia('(hover:hover)').matches;
+  function up(){var p=$(pid+'t');if(p)p.textContent=cs[cur].querySelector('p').textContent}
+  TB.push(up);
+  function set(k){
+    cur=k;for(var i=0;i<cs.length;i++)cs[i].className='card why'+(i===k?' on':'');
+    var w=$(pid);w.className='wd';void w.offsetWidth;w.className='wd f';up();
+    clearTimeout(tm);if(!red)tm=setTimeout(function(){set((cur+1)%cs.length)},4500);
+  }
+  for(var i=0;i<cs.length;i++)(function(k){cs[k].addEventListener('click',function(){set(k)});if(hv)cs[k].addEventListener('mouseenter',function(){if(cur!==k)set(k)})})(i);
+  set(0);
+}
+tabs('#why','wd');tabs('#process','pd');
+(function(){
+  
+  
+  var ss=$('sts'),bs=ss.querySelectorAll('b[data-n]');
+  function run(){
+    ss.className+=' in';
+    [].forEach.call(bs,function(b){var n=+b.getAttribute('data-n'),sf=b.getAttribute('data-s')||'',t0=null;
+      function f(t){if(!t0)t0=t;var p=Math.min((t-t0)/1500,1),e=1-Math.pow(1-p,3);b.textContent=Math.round(n*e)+sf;if(p<1)requestAnimationFrame(f)}
+      requestAnimationFrame(f)});
+  }
+  if('IntersectionObserver' in window){var o=new IntersectionObserver(function(es){if(es[0].isIntersecting){run();o.disconnect()}},{threshold:.4});o.observe(ss)}else run();
+})();
+(function(){
+  var h=$('home'),pr=document.createElement('div'),t,i;pr.id='spb';document.body.appendChild(pr);
+  window.addEventListener('scroll',function(){var d=document.documentElement,m=d.scrollHeight-window.innerHeight;pr.style.width=(m>0?(window.pageYOffset/m*100):0)+'%'},{passive:true});
+  var io=('IntersectionObserver' in window);
+  if(io)window.v2o=new IntersectionObserver(function(es){es.forEach(function(x){if(x.isIntersecting){x.target.className+=' in2';window.v2o.unobserve(x.target)}})},{threshold:.12});
+  t=h.querySelectorAll('section .w > *:not(h2),section > .sv,section > .nv,section > .mq');
+  for(i=0;i<t.length;i++){t[i].className+=' rx';if(io)window.v2o.observe(t[i]);else t[i].className+=' in2'}
+  window.v2=function(){
+    var els=h.querySelectorAll('h1,section h2'),k,e,tx;
+    for(k=0;k<els.length;k++){e=els[k];if(e.querySelector('.vm2'))continue;tx=e.textContent;if(!tx)continue;
+      e.innerHTML=tx.split(' ').map(function(w,j){return '<span class="vm2"><span class="vi2" style="--i:'+j+'">'+w+'</span></span>'}).join(' ');
+      if(e.tagName==='H1'||!io){if(e.className.indexOf('in2')<0)e.className+=' in2'}else if(e.className.indexOf('in2')<0)window.v2o.observe(e)}
+  };
+})();
+var sv='ru';try{sv=localStorage.getItem('okl')||((navigator.language||'').slice(0,2)==='uz'?'uz':(navigator.language||'').slice(0,2)==='en'?'en':'ru')}catch(e){}
+var LI={ru:0,uz:1,en:2},cp=null,cr=null;
+var PR={
+th:{n:"Thermo 57 Engelberg",im:"--k1",d:["Тёплая алюминиевая система, которая сочетает функциональность, эстетику и универсальность и допускает самые разные архитектурные решения по доступной цене. Лёгкая и прочная, она подходит для жилых, общественных и коммерческих помещений. Профиль состоит из двух алюминиевых частей, соединённых термовставками из армированного стекловолокном полиамида, поэтому конструкции получаются прочными и тёплыми. Оптимизированные профили ускоряют монтаж, а компланарные двери отличаются надёжностью и долговечностью.","Funksionallik, estetika va universallikni birlashtirgan issiq alyuminiy tizim: turli arxitektura yechimlariga imkon beradi va narxi qulay. Yengil va mustahkam tizim turar-joy, jamoat va tijorat binolari uchun mos. Profil shisha tola bilan armirlangan poliamid termovkladishlar bilan biriktirilgan ikki alyuminiy qismdan iborat, shuning uchun konstruksiyalar mustahkam va issiq bo'ladi. Optimallashtirilgan profillar o'rnatishni tezlashtiradi, komplanar eshiklar esa ishonchli va uzoq xizmat qiladi.","A thermally broken aluminium system that combines function, aesthetics and versatility, with wide architectural freedom at an affordable price. Light yet strong, it suits residential, public and commercial spaces. Each profile has two aluminium parts joined by glass-fibre-reinforced polyamide thermal inserts, giving strong, warm constructions. Optimised profiles speed up installation, and coplanar doors are reliable and durable."],
+ s:[["s_type",["Алюминиевый","Alyuminiy","Aluminium"]],["s_series",["Тёплая","Issiq","Thermal"]],["s_glass","4–30 mm"],["s_cover",["Анодирование, цвета RAL, ламинация","Anodlash, RAL ranglari, laminatsiya","Anodising, RAL colours, lamination"]],["s_wd","49 mm"],["s_dd","57 mm"],["s_sd","57 mm"],["s_br","17 mm"]]},
+tr:{n:"Trio 60",im:"--k2",d:["Система из компактных профилей рамы и створки, благодаря чему световой проём получается больше. Трёхкамерный ПВХ-профиль со стенкой 2,8 мм хорошо сохраняет тепло, защищает от уличного шума и рассчитан на климат Средней Азии. Предусмотрены дополнительный контур уплотнения, усиленный армированный профиль и стеклопакет. Простая и надёжная система для жилых и коммерческих помещений.","Rama va qanotning ixcham profillaridan iborat tizim, shu tufayli yorug'lik o'tadigan teshik kattaroq bo'ladi. Devor qalinligi 2,8 mm bo'lgan uch kamerali PVX profil issiqlikni yaxshi saqlaydi, ko'cha shovqinidan himoya qiladi va O'rta Osiyo iqlimiga mo'ljallangan. Qo'shimcha zichlagich konturi, kuchaytirilgan armirlangan profil va shisha paket nazarda tutilgan. Turar-joy va tijorat binolari uchun oddiy va ishonchli tizim.","A system of compact frame and sash profiles that enlarges the glazed opening. The three-chamber PVC profile with a 2.8 mm wall keeps heat in, reduces street noise and is built for the Central Asian climate. It allows an extra sealing circuit and comes with a reinforced profile and a glazing unit. A simple, reliable system for homes and commercial spaces."],
+ s:[["s_type",["ПВХ","PVX","PVC"]],["s_ch","3"],["s_wall","2,8 mm"],["s_pl","60 mm"],["s_mh","1800 mm"],["s_mw","800 mm"],["s_glass","20 mm"],["s_md","60 mm"]]},
+qu:{n:"Quattro 60",im:"--k3",d:["Четырёхкамерный ПВХ-профиль с отличной светопропускной способностью: помещение становится светлее и кажется просторнее. Подходит для квартир, офисов и общественных зданий с повышенными требованиями к тепло- и шумоизоляции. Стеклопакет 20 мм, сдержанный дизайн профиля и ламинация под дерево. Для кухни особенно хорош: много света и защита от пыли.","Yorug'likni a'lo darajada o'tkazadigan to'rt kamerali PVX profil: xona yorqinroq va kengroq ko'rinadi. Issiqlik va shovqin izolyatsiyasiga yuqori talab qo'yiladigan kvartira, ofis va jamoat binolari uchun mos. 20 mm shisha paket, profilning ixcham dizayni va yog'ochni eslatuvchi laminatsiya. Oshxona uchun ayniqsa yaxshi: ko'p yorug'lik va changdan himoya.","A four-chamber PVC profile with excellent light transmission: rooms feel brighter and more spacious. Suited to apartments, offices and public buildings with higher heat- and sound-insulation demands. 20 mm glazing, restrained profile design and wood-effect lamination. Especially good for kitchens: plenty of light and protection from dust."],
+ s:[["s_type",["ПВХ","PVX","PVC"]],["s_ch","4"],["s_wall","2,8 mm"],["s_mh","1800 mm"],["s_mw","800 mm"],["s_glass","20 mm"]]}
+,eb:{n:"Engelberg 70",im:"--b1",d:["Профиль, изготовленный по швейцарской технологии и соответствующий европейским стандартам качества. Пять камер и стальной усилитель надёжно держат форму, сохраняют тепло и защищают от уличного шума, поэтому окно отлично подходит для спальни, гостиной, кабинета и библиотеки. Адаптирован к климату Центральной Азии: выдерживает перепады температур, солнце и интенсивное использование, а герметичная конструкция защищает от потерь тепла и влаги.","Shveytsariya texnologiyasi bo'yicha tayyorlangan va yevropa sifat standartlariga javob beradigan profil. Besh kamera va po'lat armatura shaklni ishonchli saqlaydi, issiqlikni ushlab turadi va ko'cha shovqinidan himoya qiladi, shuning uchun deraza yotoqxona, mehmonxona, kabinet va kutubxona uchun juda mos. Markaziy Osiyo iqlimiga moslashgan: harorat o'zgarishi, quyosh va intensiv foydalanishga bardosh beradi, germetik konstruksiya issiqlik va namlik yo'qolishidan saqlaydi.","A profile made with Swiss technology to European quality standards. Five chambers and a steel reinforcement hold their shape, keep heat in and block street noise, making it a great fit for bedrooms, living rooms, studies and libraries. Adapted to the Central Asian climate: it handles temperature swings, sun and heavy use, and the sealed construction prevents heat and moisture loss."],
+ s:[["s_type",["ПВХ","PVX","PVC"]],["s_ch","5"],["s_wall","2,8 mm"],["s_pl","70 mm"],["s_mh","2300 mm"],["s_mw","1000 mm"],["s_glass","24–32 mm"],["s_cyc",["до 60 000 циклов открывания","60 000 ochilish siklgacha","up to 60,000 opening cycles"]]]},
+t78:{n:"Thermo 78 Engelberg",im:"--b2",d:["Современное решение для городских квартир и загородных домов с повышенной стойкостью к погодным условиям. Массивный «тёплый» алюминиевый профиль позволяет установить стеклопакет с улучшенной теплоизоляцией и заметно снижает уличный шум. Адаптирован к климату Узбекистана: не выгорает на солнце и защищает от холода и жары. Современная импортная фурнитура исключает продувание, а в доме остаётся тепло и светло.","Shahar kvartiralari va shahar tashqarisidagi uylar uchun zamonaviy yechim, ob-havo ta'siriga chidamliligi yuqori. Massiv «issiq» alyuminiy profil yaxshilangan issiqlik izolyatsiyali shisha paketni o'rnatishga imkon beradi va ko'cha shovqinini sezilarli kamaytiradi. O'zbekiston iqlimiga moslashgan: quyoshda xiralashmaydi, sovuq va issiqdan himoya qiladi. Zamonaviy import furnitura shamol o'tkazmaydi, uyda issiq va yorug' bo'ladi.","A modern solution for city apartments and country homes with extra resistance to harsh weather. The massive thermally broken aluminium profile takes glazing with improved insulation and noticeably reduces street noise. Adapted to Uzbekistan's climate: no fading in the sun, solid protection against cold and heat. Modern imported hardware stops draughts, keeping the home warm and bright."],
+ s:[["s_type",["Алюминиевый","Alyuminiy","Aluminium"]],["s_series",["Тёплая","Issiq","Thermal"]],["s_ch","3"],["s_wall","1,4–1,9 mm"],["s_md","78 mm"],["s_mh","2600 mm"],["s_mw","1200 mm"],["s_glass","20–36 mm"],["s_cover",["Анодирование, цвета RAL, ламинация","Anodlash, RAL ranglari, laminatsiya","Anodising, RAL colours, lamination"]]]},
+t65:{n:"Thermo 65 Engelberg",im:"--b3",d:["Алюминиевый профиль со встроенным термомостом из полиамида в сочетании с двухкамерным стеклопакетом защищает от уличного шума и потерь тепла в любую погоду. Строгий современный дизайн, безопасные материалы и высокая тепло- и шумоизоляция. Прочная конструкция, устойчивая к коррозии, солнцу, дождю и холоду: при правильном монтаже и обслуживании служит десятилетиями.","Poliamid termokoprikli alyuminiy profil ikki kamerali shisha paket bilan birgalikda har qanday ob-havoda ko'cha shovqini va issiqlik yo'qolishidan himoya qiladi. Qat'iy zamonaviy dizayn, xavfsiz materiallar va yuqori issiqlik hamda tovush izolyatsiyasi. Korroziya, quyosh, yomg'ir va sovuqqa chidamli mustahkam konstruksiya: to'g'ri o'rnatilsa va xizmat ko'rsatilsa, o'nlab yillar xizmat qiladi.","An aluminium profile with a built-in polyamide thermal break and a double-chamber glazing unit protects against street noise and heat loss in any weather. Clean modern design, safe materials and high thermal and sound insulation. A sturdy construction resistant to corrosion, sun, rain and cold: with proper installation and maintenance it lasts for decades."],
+ s:[["s_type",["Алюминиевый","Alyuminiy","Aluminium"]],["s_series",["Тёплая","Issiq","Thermal"]],["s_ch","3"],["s_wall","1,4 mm"],["s_md","65 mm"],["s_mh","2500 mm"],["s_mw","1600 mm"],["s_glass","6–32 mm"],["s_cover",["Анодирование, цвета RAL, ламинация","Anodlash, RAL ranglari, laminatsiya","Anodising, RAL colours, lamination"]]]},
+rd:{n:"Rehau Euro-Design 70",im:"--b4",d:["Надёжное и экономичное решение для комфортного микроклимата: пятикамерный профиль с монтажной глубиной 70 мм даёт отличную тепло- и шумоизоляцию. Подходит для разных архитектурных стилей, предлагает большой выбор дизайнов и оттенков, долговечен и прост в уходе. Хороший выбор для жилых и коммерческих зданий.","Qulay mikroiqlim uchun ishonchli va tejamkor yechim: o'rnatish chuqurligi 70 mm bo'lgan besh kamerali profil a'lo darajadagi issiqlik va tovush izolyatsiyasini beradi. Turli arxitektura uslublariga mos, dizayn va ranglar tanlovi keng, bardoshli va parvarishi oson. Turar-joy va tijorat binolari uchun yaxshi tanlov.","A reliable, economical solution for a comfortable indoor climate: a five-chamber profile with a 70 mm installation depth gives excellent heat and sound insulation. Fits many architectural styles with a wide choice of designs and shades, durable and easy to maintain. A good choice for residential and commercial buildings."],
+ s:[["s_type",["ПВХ","PVX","PVC"]],["s_ch","5"],["s_md","70 mm"],["s_mh","2400 mm"],["s_mw","1000 mm"],["s_ins",["0,8 м²·°C/Вт","0,8 m²·°C/Vt","0.8 m²·°C/W"]]]},
+ra:{n:"Rehau ArtEvo",im:"--b5",d:["Инновационная система для комфортного микроклимата и стильного интерьера: многослойные профили с термовставками и армированным каркасом, семь камер, высокая тепло- и шумоизоляция. Подходит для нового строительства и реновации жилых и общественных зданий, монтаж выполняется в сжатые сроки. Позволяет собирать компланарные двери — надёжные и долговечные.","Qulay mikroiqlim va zamonaviy interyer uchun innovatsion tizim: termovkladishli ko'p qatlamli profillar va armirlangan karkas, yetti kamera, yuqori issiqlik va tovush izolyatsiyasi. Turar-joy va jamoat binolarini yangi qurish hamda ta'mirlash uchun mos, o'rnatish tez bajariladi. Komplanar eshiklarni yig'ish imkonini beradi — ishonchli va uzoq xizmat qiladi.","An innovative system for a comfortable indoor climate and stylish interiors: multi-layer profiles with thermal inserts and a reinforced frame, seven chambers, high heat and sound insulation. Suitable for new builds and renovation of residential and public buildings, with quick installation. It can also be used for coplanar doors, which are reliable and durable."],
+ s:[["s_type",["ПВХ","PVX","PVC"]],["s_ch","7"],["s_md","80 mm"],["s_mh","2800 mm"],["s_mw","1000 mm"],["s_glass",["до 56 mm","56 mm gacha","up to 56 mm"]],["s_ins",["0,98 м²·°C/Вт","0,98 m²·°C/Vt","0.98 m²·°C/W"]]]}
+};
+PR.t85={n:"Thermo 85 Engelberg",im:"--l1",d:["Профили со встроенным полиамидным термомостом в сочетании с качественным стеклопакетом защищают дом от уличного шума и потери тепла. Строгий современный дизайн, безопасные материалы и высокая тепло- и шумоизоляция рассчитаны на климат Средней Азии. Прочная конструкция создана для активного использования и устойчива к коррозии, солнцу, дождю и холоду.","O'rnatilgan poliamid termokoprikli profillar sifatli shisha paket bilan birgalikda uyni ko'cha shovqini va issiqlik yo'qotilishidan himoya qiladi. Qat'iy zamonaviy dizayn, xavfsiz materiallar hamda yuqori issiqlik va shovqin izolyatsiyasi O'rta Osiyo iqlimiga mo'ljallangan. Mustahkam konstruksiya faol foydalanish uchun yaratilgan va korroziya, quyosh, yomg'ir hamda sovuqqa chidamli.","Profiles with a built-in polyamide thermal break, combined with a quality glazing unit, protect your home from street noise and heat loss. Clean modern design, safe materials and high heat and sound insulation, made for the Central Asian climate. The strong construction is built for daily use and resists corrosion, sun, rain and cold."],
+ s:[["s_type",["Алюминиевый","Alyuminiy","Aluminium"]],["s_series",["Тёплая","Issiq","Thermal"]],["s_mh","2100 mm"],["s_mw","1200 mm"],["s_md","85 mm"],["s_br","39 mm"]]};
+PR.t98={n:"Thermo 98 Engelberg",im:"--l2",d:["Высокие теплотехнические показатели достигаются за счёт увеличенных многокамерных термомостов, вставок из вспененного полиэтилена в зоне термомоста и особой теплоизоляции фальца стеклопакета. Система заметно снижает городской шум, до 40 дБ. Базовый размер: 90 мм для рамы и 98 мм для створки. Подходит для жилых и коммерческих объектов.","Yuqori issiqlik ko'rsatkichlariga kattalashtirilgan ko'p kamerali termokoprikli, termokoprik zonasidagi ko'pirtirilgan polietilen qo'shimchalari va shisha paket falsining maxsus issiqlik izolyatsiyasi orqali erishiladi. Tizim shahar shovqinini 40 dB gacha kamaytiradi. Asosiy o'lcham: rama uchun 90 mm, qanot uchun 98 mm. Turar-joy va tijorat obyektlari uchun mos.","High thermal performance comes from enlarged multi-chamber thermal breaks, foamed polyethylene inserts in the break zone and special insulation of the glazing rebate. The system cuts city noise by up to 40 dB. Base size: 90 mm for the frame and 98 mm for the sash. Suitable for homes and commercial buildings."],
+ s:[["s_type",["Алюминиевый","Alyuminiy","Aluminium"]],["s_series",["Тёплая","Issiq","Thermal"]],["s_md","90 mm"],["s_sd","98 mm"],["s_br","54 mm"]]};
+PR.t105={n:"Thermo 105 Engelberg",im:"--l3",d:["Один из эксклюзивных профилей на рынке: отличная энергоэффективность и современный дизайн для жилых и коммерческих помещений. Профиль надёжен и долговечен и обеспечивает комфорт на протяжении всей эксплуатации. Позволяет делать высокие створки, до 3 метров.","Bozordagi eksklyuziv profillardan biri: turar-joy va tijorat binolari uchun a'lo energiya samaradorligi va zamonaviy dizayn. Profil ishonchli va uzoq xizmat qiladi, butun foydalanish davomida qulaylik beradi. Balandligi 3 metrgacha bo'lgan qanotlar yasashga imkon beradi.","One of the exclusive profiles on the market: excellent energy efficiency and modern design for homes and commercial spaces. Reliable and durable, it delivers comfort throughout its life. It allows tall sashes, up to 3 metres."],
+ s:[["s_type",["Алюминиевый","Alyuminiy","Aluminium"]],["s_series",["Тёплая","Issiq","Thermal"]],["s_wall","1,4 mm"],["s_mh","3000 mm"],["s_mw","1000 mm"],["s_md","98 mm"],["s_sd","105 mm"],["s_br","54 mm"]]};
+PR.e80={n:"Engelberg 80",im:"--l4",d:["Хорошо изолированная система для окон и дверей: сочетает аккуратный дизайн и энергоэффективность при умеренной цене. Шесть камер и монтажная глубина 80 мм подходят для жилых зданий, офисов, общественных и производственных зданий, а также для конструкций с повышенными требованиями к тепло- и шумоизоляции. Выдерживает створку весом до 80 кг.","Oyna va eshiklar uchun yaxshi izolyatsiyalangan tizim: ixcham dizayn va energiya samaradorligini o'rtacha narxda birlashtiradi. Olti kamera va 80 mm o'rnatish chuqurligi turar-joy binolari, ofislar, jamoat va ishlab chiqarish binolari hamda issiqlik va shovqin izolyatsiyasiga yuqori talab qo'yiladigan konstruksiyalar uchun mos. 80 kg gacha og'irlikdagi qanotga bardosh beradi.","A well-insulated system for windows and doors that combines tidy design with energy efficiency at a moderate price. Six chambers and an 80 mm installation depth suit homes, offices, public and industrial buildings, and frames with higher heat- and sound-insulation demands. Carries a sash weighing up to 80 kg."],
+ s:[["s_type",["ПВХ","PVX","PVC"]],["s_series",["Тёплая","Issiq","Thermal"]],["s_ch","6"],["s_wall","2,8 mm"],["s_pl","80 mm"],["s_mh","2300 mm"],["s_mw","1000 mm"],["s_glass","24–50 mm"],["s_md","80 mm"],["s_wt",["до 80 кг","80 kg gacha","up to 80 kg"]]]};
+var RM={kitchen:{k:"k1",d:"kD",l:["th","tr","qu"]},bedroom:{k:"k2",d:"bD",l:["eb","t78","t65","rd","ra"]},living:{k:"k3",d:"lD",l:["t85","t65","t78","t98","t105","eb","e80"]},alu:{k:"sy2",d:"aD",l:["t85","champ","th","t65","t78","t98","t105"]}};
+function rv(r,p){
+  if(arguments.length){cr=r||null;cp=p||null}
+  if(cr==='about'){av();return}
+  if(cr==='projects'){pv();return}
+  if(!cr)return;
+  if(cr==='alu'&&cp){alv(cp);return}
+  var v=$('vk'),i=LI[L],R=RM[cr],h='<div class="w vw"><button class="bk" type="button" data-bk>'+t('back')+'</button><div class="bc"><a href="#top">'+t('bh')+'</a> / ';
+  if(!cp){
+    h+=t(R.k)+'</div><h2>'+t(R.k)+'</h2><p class="mu" style="max-width:820px">'+t(R.d)+'</p><hr><div class="pg">';
+    R.l.forEach(function(k){h+='<a class="pc" href="#/'+cr+'/'+k+'"><div class="pi" style="background-image:var('+PR[k].im+')"></div><b>'+PR[k].n+'</b></a>'});
+    h+='</div></div>';
+  }else{
+    var P=PR[cp];
+    h+='<a href="#/'+cr+'">'+t(R.k)+'</a> / '+P.n+'</div><div class="dt"><div class="big" style="background-image:var('+P.im+')"></div><div><h2>'+P.n+'</h2><p class="mu">'+P.d[i]+'</p><h3 class="shd">'+t('spc')+'</h3><table class="sp">';
+    P.s.forEach(function(x){h+='<tr><td>'+t(x[0])+'</td><td>'+(typeof x[1]==='string'?x[1]:x[1][i])+'</td></tr>'});
+    h+='</table><a class="btn" href="#request">'+t('ord')+'</a> &nbsp; <button class="btn o" type="button" data-bk>'+t('back')+'</button></div></div></div>';
+  }
+  v.innerHTML=h;
+}
+var AB={
+ru:{h:"Более 15 лет делаем пространство светлее, теплее и комфортнее",l:"OKNO PREMIUM предлагает современные окна, двери, фасадные и стеклянные системы для жилых и коммерческих объектов.",hs:"Наша история",hsub:"Путь, построенный на качестве, доверии и профессионализме.",
+p:["OKNO PREMIUM уже более 15 лет помогает создавать светлые, тёплые и удобные пространства: мы предлагаем пластиковые и алюминиевые окна, двери, раздвижные, фасадные и роллетные системы для квартир, домов и коммерческих объектов.","Всё началось с желания принести на рынок Узбекистана современные решения, в которых надёжность сочетается с энергоэффективностью и красивым дизайном. С первых дней для нас главным были качество продукции, аккуратный сервис и внимание к каждому клиенту.","За это время мы поработали с более чем тысячей клиентов: от частных домов и квартир до коммерческих помещений. Нам доверяют благодаря команде специалистов, современным технологиям и постоянному развитию.","Сегодня мы ведём проект от первой консультации до сдачи объекта: подбор системы, изготовление, доставка и монтаж. Мы осваиваем новые технологии и расширяем ассортимент, чтобы дома и офисы становились комфортнее, безопаснее и красивее."],
+vh:"Миссия и ценности OKNO PREMIUM",vs:"Качество, ответственность и стремление к совершенству в каждом проекте.",
+v:[["Качество без компромиссов","Следим за каждой деталью, от выбора материалов до последнего шага монтажа, чтобы изделия служили долго."],["Ответственность перед клиентом","Ценим ваше доверие, выполняем обещания, соблюдаем сроки и стандарты работы."],["Индивидуальный подход","Каждый объект особенный, поэтому решение подбираем под задачи и пожелания заказчика."],["Развитие и новые технологии","Осваиваем новые технологии и совершенствуем процессы, чтобы предлагать рынку лучшее."],["Профессионализм команды","Опыт и знания наших специалистов позволяют справляться с проектами любой сложности."],["Долгосрочное партнёрство","Для нас важно не просто выполнить заказ, а стать надёжным партнёром на долгие годы."]],
+wh:"Почему выбирают OKNO PREMIUM",ws:"Преимущества, за которые нам доверяют.",
+w:[["Качественные материалы","Работаем с проверенными профильными системами, стеклом и фурнитурой, отвечающими современным стандартам."],["Индивидуальные решения","Каждый проект учитывает особенности здания, технические требования и пожелания заказчика."],["Доставка и монтаж","Привозим изделия на объект и устанавливаем их аккуратно и в срок."]]},
+uz:{h:"15 yildan ortiq vaqtdan beri makonni yorug', iliq va qulay qilamiz",l:"OKNO PREMIUM turar-joy va tijorat obyektlari uchun zamonaviy oyna, eshik, fasad va shisha tizimlarini taklif qiladi.",hs:"Bizning tariximiz",hsub:"Sifat, ishonch va professionallikka asoslangan yo'l.",
+p:["OKNO PREMIUM 15 yildan ortiq vaqtdan beri yorug', iliq va qulay makonlar yaratishga yordam beradi: kvartira, uy va tijorat obyektlari uchun plastik va alyuminiy oynalar, eshiklar, surma, fasad va rolet tizimlarini taklif qilamiz.","Hammasi O'zbekiston bozoriga ishonchlilik, energiya tejamkorligi va chiroyli dizaynni birlashtirgan zamonaviy yechimlarni olib kelish istagidan boshlangan. Dastlabki kundan mahsulot sifati, ehtiyotkor xizmat va har bir mijozga e'tibor biz uchun eng muhim bo'lgan.","Shu vaqt ichida biz mingdan ortiq mijoz bilan ishladik: xususiy uylar, kvartiralar va tijorat binolari. Bizga mutaxassislar jamoasi, zamonaviy texnologiyalar va doimiy rivojlanish tufayli ishonishadi.","Bugun biz birinchi maslahatdan obyektni topshirishgacha ishlaymiz: tizim tanlash, tayyorlash, yetkazib berish va o'rnatish. Uy va ofislar qulayroq, xavfsizroq va go'zalroq bo'lishi uchun yangi texnologiyalarni o'zlashtiramiz va assortimentni kengaytiramiz."],
+vh:"OKNO PREMIUM missiyasi va qadriyatlari",vs:"Har bir loyihada sifat, mas'uliyat va mukammallikka intilish.",
+v:[["Murosasiz sifat","Materiallar tanlovidan tortib o'rnatishning oxirgi bosqichigacha har bir tafsilotga e'tibor beramiz, shunda mahsulotlar uzoq xizmat qiladi."],["Mijoz oldidagi mas'uliyat","Ishonchingizni qadrlaymiz, va'dalarimizni bajaramiz, muddat va ish standartlariga rioya qilamiz."],["Individual yondashuv","Har bir obyekt o'ziga xos, shuning uchun yechimni buyurtmachining vazifa va xohishlariga mos tanlaymiz."],["Rivojlanish va yangi texnologiyalar","Yangi texnologiyalarni o'zlashtiramiz va jarayonlarni takomillashtiramiz, bozorga eng yaxshisini taklif qilish uchun."],["Jamoa professionalligi","Mutaxassislarimizning tajriba va bilimi har qanday murakkablikdagi loyihalarni uddalashga imkon beradi."],["Uzoq muddatli hamkorlik","Biz uchun buyurtmani bajarishning o'zi emas, yillar davomida ishonchli hamkor bo'lish muhim."]],
+wh:"Nega OKNO PREMIUMni tanlashadi",ws:"Bizga ishonishlariga sabab bo'lgan afzalliklar.",
+w:[["Sifatli materiallar","Zamonaviy standartlarga mos, sinalgan profil tizimlari, shisha va furnitura bilan ishlaymiz."],["Individual yechimlar","Har bir loyiha bino xususiyatlari, texnik talablar va buyurtmachi xohishlarini hisobga oladi."],["Yetkazib berish va o'rnatish","Mahsulotlarni obyektga olib kelamiz va ehtiyotkorlik bilan, o'z vaqtida o'rnatamiz."]]},
+en:{h:"For over 15 years we've been making spaces brighter, warmer and more comfortable",l:"OKNO PREMIUM offers modern windows, doors, facade and glass systems for residential and commercial buildings.",hs:"Our story",hsub:"A path built on quality, trust and professionalism.",
+p:["For more than 15 years OKNO PREMIUM has helped create bright, warm and comfortable spaces, offering PVC and aluminium windows, doors, sliding, facade and roller-shutter systems for apartments, houses and commercial buildings.","It all began with a wish to bring modern solutions to Uzbekistan's market that combine reliability, energy efficiency and attractive design. From day one, product quality, careful service and attention to every client have come first.","Over this time we have worked with more than a thousand clients, from private houses and apartments to commercial premises. People trust us because of our team of specialists, modern technology and constant development.","Today we work from the first consultation to handing over the finished site: choosing the system, manufacturing, delivery and installation. We keep learning new technologies and widening our range so homes and offices become more comfortable, safer and more beautiful."],
+vh:"OKNO PREMIUM mission and values",vs:"Quality, responsibility and the pursuit of excellence in every project.",
+v:[["Quality without compromise","We pay attention to every detail, from choosing materials to the last step of installation, so our products last."],["Responsibility to clients","We value your trust, keep our promises and respect deadlines and work standards."],["Individual approach","Every site is unique, so we choose solutions that match the client's tasks and wishes."],["Development and new technology","We adopt new technologies and improve our processes to offer the market the best."],["A professional team","The experience and knowledge of our specialists let us handle projects of any complexity."],["Long-term partnership","For us it isn't just about completing an order, but about becoming a reliable partner for years."]],
+wh:"Why people choose OKNO PREMIUM",ws:"The advantages that earn us trust.",
+w:[["Quality materials","We work with proven profile systems, glass and hardware that meet modern standards."],["Tailored solutions","Each project takes into account the building's features, technical requirements and the client's wishes."],["Delivery and installation","We bring the products to your site and install them carefully and on time."]]}};
+var AI=['<svg viewBox="0 0 48 48" fill="none" stroke-linecap="round" stroke-linejoin="round"><path class="f" d="M24 6l17 9-17 9-17-9z"/><path class="g" d="M7 24l17 9 17-9M7 33l17 9 17-9"/></svg>','<svg viewBox="0 0 48 48" fill="none" stroke-linecap="round" stroke-linejoin="round"><path class="g" d="M8 14h32M8 24h32M8 34h32"/><circle class="f" cx="30" cy="14" r="4.5"/><circle class="f" cx="16" cy="24" r="4.5"/><circle class="f" cx="32" cy="34" r="4.5"/></svg>','<svg viewBox="0 0 48 48" fill="none" stroke-linecap="round" stroke-linejoin="round"><path class="f" d="M4 13h25v21H4z"/><path class="f" d="M29 20h9l6 7v7H29z"/><circle class="g" cx="13" cy="36" r="4" style="fill:#fff"/><circle class="g" cx="36" cy="36" r="4" style="fill:#fff"/></svg>'];
+var ABX={
+ru:{tg:["НАЧАЛО","ПЕРВЫЕ РАБОТЫ","РОСТ","СЕГОДНЯ"],ti:["Так всё начиналось","Первые работы","Рост и доверие","Сегодня"],c2:"Первые объекты стали нашей школой: на них мы учились точности, вниманию к мелочам и честной работе с клиентом.",sc:"Листайте"},
+uz:{tg:["BOSHLANISH","BIRINCHI ISHLAR","O'SISH","BUGUN"],ti:["Hammasi shunday boshlangan","Birinchi ishlar","O'sish va ishonch","Bugun"],c2:"Birinchi obyektlar bizning maktabimiz bo'ldi: ularda aniqlik, mayda tafsilotlarga e'tibor va mijoz bilan halol ishlashni o'rgandik.",sc:"Pastga suring"},
+en:{tg:["THE START","FIRST WORKS","GROWTH","TODAY"],ti:["How it all began","First works","Growth and trust","Today"],c2:"Our first projects became our school: they taught us precision, attention to detail and honest work with clients.",sc:"Scroll"}};
+function av(){
+  var v=$('vk'),A=AB[L],X=ABX[L],i,w='',sl='',sh='',vc='',wy='',tx=[A.p[1],X.c2,A.p[2],A.p[3]],
+  sp=function(x){var q=x.split('. ');return q.length>1?[q[0]+'.',q.slice(1).join('. ')]:[x,x]},s1=sp(A.p[1]),s2=sp(A.p[2]),
+  P=[['--ab1','t',0,s1[0]],['--ab5','w',0,s1[1]],['--ab2','w',1,X.c2],['--ab3','t',2,s2[0]],['--ab4','w',2,s2[1]]];
+  A.h.split(' ').forEach(function(x,k){w+='<span class="wm"><span class="wi" style="--i:'+k+'">'+x+'</span></span> '});
+  for(i=0;i<2;i++)P.forEach(function(q){sl+='<div class="ax-hq k'+q[1]+'"><div class="ax-hpw"><div class="ax-hpb" style="background-image:var('+q[0]+')"></div><div class="ax-hpi" style="background-image:var('+q[0]+')"></div></div><div class="ax-hqt"><span class="ax-tag">[ '+X.tg[q[2]]+' ]</span><h4>'+X.ti[q[2]]+'</h4><p>'+q[3]+'</p></div></div>'});
+  for(i=0;i<2;i++)A.v.forEach(function(q){vc+='<div class="ax-vc"><span class="ax-dot"></span><h4>'+q[0]+'</h4><p>'+q[1]+'</p></div>'});
+  for(i=0;i<A.w.length;i++)wy+='<div class="ax-wr"><h4>'+A.w[i][0]+'</h4><p>'+A.w[i][1]+'</p></div>';
+  v.innerHTML='<div class="axr"><button class="ax-bk" type="button" data-bk>'+t('back')+'</button>'
+   +'<section class="ax-hero"><div class="ax-giant" id="axg">15+</div><div class="ax-hc"><span class="ax-tag">[ '+t('n0')+' ]</span><h2 class="ax-h">'+w+'</h2><p class="ax-lead">'+A.l+'</p></div><div class="ax-hint"><i></i>'+X.sc+'</div></section>'
+   +'<section class="ax-intro"><p>'+A.p[0]+'</p></section>'
+   +'<section class="ax-hist"><div class="ax-chh"><span class="ax-tag">[ '+A.hsub+' ]</span><h3>'+A.hs+'</h3></div><div class="ax-hm"><div class="ax-htk">'+sl+'</div></div></section>'
+   +'<section class="ax-num" id="axnum"><div class="ax-glow"></div><div class="ax-ch2"><svg class="ax-svg" viewBox="0 0 600 270" aria-hidden="true"><defs><linearGradient id="axAr" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#5bb6ff" stop-opacity=".55"/><stop offset="1" stop-color="#5bb6ff" stop-opacity="0"/></linearGradient><linearGradient id="axLn" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#7fc4ff"/><stop offset="1" stop-color="#ffffff"/></linearGradient></defs><g stroke="rgba(255,255,255,.14)" stroke-dasharray="3 6"><path d="M0 40H600M0 90H600M0 140H600M0 190H600M0 240H600"/><path d="M100 0V250M200 0V250M300 0V250M400 0V250M500 0V250"/></g><g fill="rgba(143,196,255,.35)"><rect class="ax-vb" x="8" y="246" width="16" height="14" rx="2" style="transition-delay:120ms"/><rect class="ax-vb" x="45" y="240" width="16" height="20" rx="2" style="transition-delay:210ms"/><rect class="ax-vb" x="83" y="244" width="16" height="16" rx="2" style="transition-delay:300ms"/><rect class="ax-vb" x="120" y="234" width="16" height="26" rx="2" style="transition-delay:390ms"/><rect class="ax-vb" x="158" y="238" width="16" height="22" rx="2" style="transition-delay:480ms"/><rect class="ax-vb" x="195" y="228" width="16" height="32" rx="2" style="transition-delay:570ms"/><rect class="ax-vb" x="233" y="232" width="16" height="28" rx="2" style="transition-delay:660ms"/><rect class="ax-vb" x="270" y="222" width="16" height="38" rx="2" style="transition-delay:750ms"/><rect class="ax-vb" x="308" y="226" width="16" height="34" rx="2" style="transition-delay:840ms"/><rect class="ax-vb" x="345" y="216" width="16" height="44" rx="2" style="transition-delay:930ms"/><rect class="ax-vb" x="383" y="220" width="16" height="40" rx="2" style="transition-delay:1020ms"/><rect class="ax-vb" x="420" y="208" width="16" height="52" rx="2" style="transition-delay:1110ms"/><rect class="ax-vb" x="458" y="212" width="16" height="48" rx="2" style="transition-delay:1200ms"/><rect class="ax-vb" x="495" y="200" width="16" height="60" rx="2" style="transition-delay:1290ms"/><rect class="ax-vb" x="533" y="204" width="16" height="56" rx="2" style="transition-delay:1380ms"/><rect class="ax-vb" x="570" y="192" width="16" height="68" rx="2" style="transition-delay:1470ms"/></g><path class="ax-ar" d="M0 232 L40 226 L80 230 L120 212 L160 218 L200 196 L240 201 L280 178 L320 184 L360 150 L400 158 L440 118 L480 126 L520 78 L560 52 L592 32 L592 260 L0 260 Z" fill="url(#axAr)"/><path class="ax-ln l2" pathLength="1" d="M0 240 C80 236 120 226 180 214 S300 186 360 168 S470 128 592 70" fill="none" stroke="rgba(255,255,255,.5)" stroke-width="2" stroke-dasharray="1" /><path class="ax-ln" pathLength="1" d="M0 232 L40 226 L80 230 L120 212 L160 218 L200 196 L240 201 L280 178 L320 184 L360 150 L400 158 L440 118 L480 126 L520 78 L560 52 L592 32" fill="none" stroke="url(#axLn)" stroke-width="3.5" stroke-linejoin="round" stroke-linecap="round" style="filter:drop-shadow(0 0 8px rgba(127,196,255,.9))"/><g class="ax-ed"><circle cx="592" cy="32" r="16" fill="rgba(255,255,255,.18)" class="ax-pl"/><circle cx="592" cy="32" r="6" fill="#fff"/></g></svg><div class="ax-chip"><b>&#9650; 1000+</b><span>'+t('s2')+'</span></div><div class="ax-axl"><span>'+X.tg[0]+'</span><span>'+X.tg[3]+'</span></div></div><div class="ax-ng"><div><b data-n="15" data-s="+">0</b><span>'+t('s1')+'</span></div><div><b data-n="1000" data-s="+">0</b><span>'+t('s2')+'</span></div><div><b data-n="7" data-s="">0</b><span>'+t('abY')+'</span></div></div></section>'
+   +'<section class="ax-vm"><div class="ax-ht"><span class="ax-tag">[ '+A.vs+' ]</span><h3>'+A.vh+'</h3></div><div class="ax-vmq"><div class="ax-vtk">'+vc+'</div></div></section>'
+   +'<section class="ax-wy"><div class="ax-wi"><h3>'+A.wh+'</h3><p class="ax-sub">'+A.ws+'</p>'+wy+'</div></section>'
+   +'<section class="ax-cta"><div class="ax-glow"></div><h3>'+t('ctH')+'</h3><div class="ax-bt"><a class="ax-btn" href="tel:+998935376666">'+t('cTel')+'</a><a class="ax-btn o" href="https://t.me/windowglassuz" target="_blank" rel="noopener">Telegram</a></div></section></div>';
+  abi();
+}
+function abi(){
+  var g=$('axg'),num=$('axnum');
+  window.abs=function(){if($('vk').style.display==='none')return;g.style.transform='translate3d(0,'+((window.pageYOffset||0)*-0.18).toFixed(1)+'px,0)'};
+  window.axr=function(){window.abs()};
+  window.abs();
+  var go=function(){if(num.className.indexOf(' in')>-1)return;num.className+=' in';[].forEach.call(num.querySelectorAll('b[data-n]'),function(b){var n=+b.getAttribute('data-n'),sf=b.getAttribute('data-s'),t0=null;function f(t){if(!t0)t0=t;var p=Math.min((t-t0)/1800,1);b.textContent=Math.round(n*(1-Math.pow(1-p,3)))+sf;if(p<1)requestAnimationFrame(f)}requestAnimationFrame(f)})};
+  if('IntersectionObserver' in window){var o=new IntersectionObserver(function(es){if(es[0].isIntersecting){go();o.disconnect()}},{threshold:.35});o.observe(num)}else go();
+  var hm=document.querySelector('#vk .ax-hm'),tk=document.querySelector('#vk .ax-htk');
+  if(hm&&tk){
+    var red=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches,SP=red?0:-38,half=0,x=0,vel=SP,drag=false,hov=false,sx=0,sb=0,lx=0,lt=0,lv=0,t0=0;
+    function meas(){half=tk.scrollWidth/2;if(!x)x=-half*.5}
+    function wrap(){if(half<=0)return;while(x>=0)x-=half;while(x<-half)x+=half}
+    function put(){tk.style.transform='translate3d('+x.toFixed(1)+'px,0,0)'}
+    meas();wrap();put();
+    window.addEventListener('resize',function(){if(document.body.contains(tk)){meas();wrap();put()}});
+    hm.addEventListener('pointerdown',function(e){drag=true;sx=e.clientX;sb=x;lx=e.clientX;lt=performance.now();lv=0;try{hm.setPointerCapture(e.pointerId)}catch(z){}});
+    hm.addEventListener('pointermove',function(e){if(!drag)return;var n=performance.now();x=sb+(e.clientX-sx);wrap();put();var dt=Math.max(n-lt,1);lv=lv*.6+((e.clientX-lx)/dt*1000)*.4;lx=e.clientX;lt=n});
+    var up=function(){if(!drag)return;drag=false;vel=Math.max(-900,Math.min(900,lv))};
+    hm.addEventListener('pointerup',up);hm.addEventListener('pointercancel',up);
+    hm.addEventListener('pointerenter',function(e){if(e.pointerType==='mouse')hov=true});hm.addEventListener('pointerleave',function(){hov=false});
+    (function f(n){
+      if(!document.body.contains(tk))return;
+      var dt=Math.min(.05,(n-(f.p||n))/1000);f.p=n;
+      if($('vk').style.display!=='none'&&!drag){
+        if(hov){vel=0}else{vel+=(SP-vel)*Math.min(1,dt*2.2)}
+        x+=vel*dt;wrap();put();
+      }
+      requestAnimationFrame(f);
+    })(performance.now());
+  }
+}
+window.addEventListener('scroll',function(){if(window.abs)window.abs()},{passive:true});
+var PJM=[[1, "pav", 0.75], [2, "rail", 0.75], [3, "rail", 0.75], [4, "rail", 0.75], [5, "slide", 1.3333], [6, "ent", 0.75], [7, "pav", 0.75], [8, "slide", 1.3333], [9, "fac", 1.3333], [10, "fac", 0.75], [11, "slide", 1.3333], [12, "slide", 1.3333], [13, "ent", 0.75], [14, "fac", 0.75], [15, "slide", 0.75], [16, "fac", 1.3333], [17, "ent", 0.75], [18, "rail", 0.75], [19, "fac", 1.3333], [20, "rail", 0.75]];
+var PJX={ru:{t:"ПРОЕКТЫ",all:"Все",ph:"фото наших объектов",play:"Слайд-шоу",cats:{rail:"Стеклянные ограждения",slide:"Раздвижные системы",ent:"Входные группы",fac:"Фасады и окна",pav:"Павильоны и конструкции"}},
+uz:{t:"LOYIHALAR",all:"Hammasi",ph:"ta obyekt surati",play:"Slayd-shou",cats:{rail:"Shisha to'siqlar",slide:"Surma tizimlar",ent:"Kirish guruhlari",fac:"Fasad va oynalar",pav:"Pavilyon va konstruksiyalar"}},
+en:{t:"PROJECTS",all:"All",ph:"photos of our projects",play:"Slideshow",cats:{rail:"Glass railings",slide:"Sliding systems",ent:"Entrances",fac:"Facades & windows",pav:"Pavilions & structures"}}};
+var PJO=[19,11,5,17,20,15,8,6,4,12,14,13,18,3,2,10,9,16,1,7],pjf='all',pjs=[],pjk=0,pjt=null;
+function pv(){
+  var v=$('vk'),X=PJX[L],ch='',tl='';
+  ch='<button type="button" class="pj-ch on" data-c="all">'+X.all+'</button>';
+  ['rail','slide','ent','fac','pav'].forEach(function(k){ch+='<button type="button" class="pj-ch" data-c="'+k+'">'+X.cats[k]+'</button>'});
+  PJO.forEach(function(n){var q=PJM[n-1];tl+='<div class="pj-t" data-c="'+q[1]+'" data-n="'+n+'" style="aspect-ratio:'+q[2]+'"><div class="pj-i" style="background-image:var(--o'+n+')"></div><span class="pj-l">'+X.cats[q[1]]+'</span></div>'});
+  v.innerHTML='<div class="axr"><button class="ax-bk" type="button" data-bk>'+t('back')+'</button><div class="pj"><div class="pj-hd"><span class="ax-tag">[ '+X.t+' ]</span><h2>'+t('wH')+'</h2><p>'+t('wP')+'</p><div class="pj-st"><div><b>'+PJO.length+'</b><span>'+X.ph+'</span></div><button type="button" class="pj-pl" id="pjpl">&#9654; '+X.play+'</button></div></div><div class="pj-fl" id="pjfl">'+ch+'</div><div class="pw" id="pjw"></div></div></div>';
+  pjf='all';pjb();
+}
+function pjcur(){return PJO.filter(function(n){return pjf==='all'||PJM[n-1][1]===pjf})}
+var PW={cols:[],pos:0,vel:34,sp:34,drag:false,hov:false,ly:0,lt:0,lv:0,mv:0,dt:null,n:0,raf:0};
+if(window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches)PW.sp=0,PW.vel=0;
+function pwbuild(){
+  var w=$('pjw');if(!w)return;
+  var W=w.clientWidth||360,H=w.clientHeight||600,n=W<760?2:(W<1180?3:4),gap=12,cw=(W-gap*(n-1))/n,list=pjcur(),cols=[],hs=[],i;
+  for(i=0;i<n;i++){cols.push([]);hs.push(0)}
+  list.forEach(function(num){var q=PJM[num-1],k=hs.indexOf(Math.min.apply(null,hs));cols[k].push(num);hs[k]+=cw/q[2]+gap});
+  w.innerHTML='';PW.cols=[];PW.n=n;
+  cols.forEach(function(arr,ci){
+    var col=document.createElement('div'),inner=document.createElement('div'),P=Math.max(hs[ci],1),cp=Math.max(3,Math.ceil((H+2*P)/P)),h='',j;
+    col.className='pw-c';inner.className='pw-k';
+    for(j=0;j<cp;j++)arr.forEach(function(num){var q=PJM[num-1];h+='<div class="pj-t pw-t in" data-c="'+q[1]+'" data-n="'+num+'" style="aspect-ratio:'+q[2]+'"><div class="pj-i" style="background-image:var(--o'+num+')"></div><span class="pj-l">'+PJX[L].cats[q[1]]+'</span></div>'});
+    inner.innerHTML=h;col.appendChild(inner);w.appendChild(col);PW.cols.push({el:inner,P:P,f:[1,.72,1.3,.9][ci]})
+  });
+}
+function pwloop(n){
+  var w=$('pjw');if(!w||!document.body.contains(w)){PW.raf=0;return}
+  var dt=Math.min(.05,(n-(pwloop.p||n))/1000);pwloop.p=n;
+  if($('vk').style.display!=='none'&&!PW.drag){if(PW.hov)PW.vel=0;else PW.vel+=(PW.sp-PW.vel)*Math.min(1,dt*2);PW.pos+=PW.vel*dt}
+  PW.cols.forEach(function(c){var o=(((PW.pos*c.f)%c.P)+c.P)%c.P;c.el.style.transform='translate3d(0,'+(o-c.P).toFixed(1)+'px,0)'});
+  PW.raf=requestAnimationFrame(pwloop);
+}
+function pjb(){
+  var w=$('pjw');
+  [].forEach.call($('pjfl').querySelectorAll('.pj-ch'),function(b){b.addEventListener('click',function(){
+    pjf=b.getAttribute('data-c');
+    [].forEach.call($('pjfl').querySelectorAll('.pj-ch'),function(x){x.className='pj-ch'+(x===b?' on':'')});
+    pwbuild();
+  })});
+  $('pjpl').addEventListener('click',function(){pjs=pjcur();pjopen(0,true)});
+  w.addEventListener('pointerdown',function(e){PW.drag=true;PW.ly=e.clientY;PW.lt=performance.now();PW.lv=0;PW.mv=0;var t=e.target.closest&&e.target.closest('.pj-t');PW.dt=t?+t.getAttribute('data-n'):null;try{w.setPointerCapture(e.pointerId)}catch(z){}});
+  w.addEventListener('pointermove',function(e){
+    if(PW.drag){var n=performance.now(),dy=e.clientY-PW.ly,dt=Math.max(n-PW.lt,1);PW.pos+=dy;PW.mv+=Math.abs(dy);PW.lv=PW.lv*.6+(dy/dt*1000)*.4;PW.ly=e.clientY;PW.lt=n}
+  });
+  var up=function(){if(!PW.drag)return;PW.drag=false;PW.vel=Math.max(-1400,Math.min(1400,PW.lv));if(PW.mv<8&&PW.dt){pjs=pjcur();pjopen(pjs.indexOf(PW.dt),false)}PW.dt=null};
+  w.addEventListener('pointerup',up);w.addEventListener('pointercancel',up);
+  w.addEventListener('pointerenter',function(e){if(e.pointerType==='mouse')PW.hov=true});w.addEventListener('pointerleave',function(){PW.hov=false});
+  PW.pos=0;pwbuild();
+  if(!PW.raf)PW.raf=requestAnimationFrame(pwloop);
+}
+window.addEventListener('resize',function(){var w=$('pjw');if(!w||!document.body.contains(w))return;var W=w.clientWidth,n=W<760?2:(W<1180?3:4);if(n!==PW.n)pwbuild()});
+function pjinit(){
+  if($('pjlb'))return;
+  var d=document.createElement('div');d.id='pjlb';d.className='pj-lb';
+  d.innerHTML='<div class="lb-bg" id="lbbg"></div><button class="lb-x" id="lbx" aria-label="close" type="button">&times;</button><div class="lb-stg" id="lbs"><div class="lb-im" id="lbi"></div></div><button class="lb-a lb-p" id="lbp" aria-label="prev" type="button">&#8249;</button><button class="lb-a lb-n" id="lbn" aria-label="next" type="button">&#8250;</button><div class="lb-cp"><b id="lbc"></b><span id="lbk"></span></div><button class="lb-pl" id="lbpl" type="button"></button><div class="lb-th" id="lbt"></div><i class="lb-pg" id="lbg"></i>';
+  document.body.appendChild(d);
+  $('lbx').addEventListener('click',pjclose);
+  $('lbp').addEventListener('click',function(){pjgo(pjk-1)});
+  $('lbn').addEventListener('click',function(){pjgo(pjk+1)});
+  $('lbpl').addEventListener('click',function(){pjplay(!pjt)});
+  var sx=0,sy=0,dn=false,st=$('lbs');
+  st.addEventListener('pointerdown',function(e){dn=true;sx=e.clientX;sy=e.clientY});
+  window.addEventListener('pointerup',function(e){if(!dn)return;dn=false;var dx=e.clientX-sx,dy=e.clientY-sy;if(Math.abs(dx)>50&&Math.abs(dx)>Math.abs(dy)){pjgo(pjk+(dx<0?1:-1))}else if(dy>110){pjclose()}});
+  document.addEventListener('keydown',function(e){if(!$('pjlb')||$('pjlb').className.indexOf(' on')<0)return;if(e.key==='Escape')pjclose();else if(e.key==='ArrowRight')pjgo(pjk+1);else if(e.key==='ArrowLeft')pjgo(pjk-1)});
+}
+function pjopen(k,auto){
+  pjinit();var X=PJX[L];
+  var th='';pjs.forEach(function(n,i){th+='<i data-k="'+i+'" style="background-image:var(--o'+n+')"></i>'});
+  $('lbt').innerHTML=th;
+  [].forEach.call($('lbt').children,function(e){e.addEventListener('click',function(){pjgo(+e.getAttribute('data-k'))})});
+  $('pjlb').className='pj-lb on';document.body.style.overflow='hidden';
+  pjgo(k<0?0:k);pjplay(!!auto);
+}
+function pjgo(k){
+  var n=pjs.length;if(!n)return;pjk=((k%n)+n)%n;var q=pjs[pjk],m=PJM[q-1],X=PJX[L];
+  $('lbbg').style.backgroundImage='var(--o'+q+')';$('lbi').style.backgroundImage='var(--o'+q+')';
+  $('lbc').textContent=X.cats[m[1]];$('lbk').textContent=(pjk+1)+' / '+n;
+  var th=$('lbt').children,i;for(i=0;i<th.length;i++)th[i].className=i===pjk?'on':'';
+  if(th[pjk]&&th[pjk].scrollIntoView)try{th[pjk].scrollIntoView({inline:'center',block:'nearest',behavior:'smooth'})}catch(e){}
+  var g=$('lbg');g.style.animation='none';void g.offsetWidth;g.style.animation=pjt?'lbg 3.6s linear':'none';
+  var im=$('lbi');im.className='lb-im';void im.offsetWidth;im.className='lb-im kb';
+}
+function pjplay(on){
+  clearInterval(pjt);pjt=null;
+  if(on)pjt=setInterval(function(){pjgo(pjk+1)},3600);
+  $('lbpl').innerHTML=on?'&#10074;&#10074;':'&#9654;';
+  var g=$('lbg');g.style.animation='none';void g.offsetWidth;g.style.animation=on?'lbg 3.6s linear':'none';
+}
+window.pjclose=function(){var d=$('pjlb');if(!d||d.className.indexOf('on')<0)return;clearInterval(pjt);pjt=null;d.className='pj-lb';document.body.style.overflow=''};
+PR.champ={n:"Champion",im:"--b3",d:["Алюминиевая система без термомоста, так называемая «холодная». Чаще всего её применяют для холодного остекления балконов и лоджий и для зданий без высоких требований к теплоизоляции. Подходит для входных и межкомнатных окон и дверей, витрин и перегородок, а также для беседок, веранд и террас. Алюминиевые рамы лёгкие, их проще монтировать, и они не требуют массивной опоры.","Termokoprigi yo'q alyuminiy tizim, «sovuq» deb ataladi. Ko'pincha balkon va lodjiyalarni sovuq oynalash hamda issiqlik izolyatsiyasiga yuqori talab qo'yilmaydigan binolar uchun ishlatiladi. Kirish va xonalararo oyna hamda eshiklar, vitrinalar va to'siqlar, shuningdek besedka, veranda va teraslar uchun mos. Alyuminiy ramalar yengil, o'rnatish osonroq va katta tayanch talab qilmaydi.","An aluminium system without a thermal break, known as a “cold” system. It is most often used for cold glazing of balconies and loggias and for buildings without high insulation demands. It suits entrance and interior windows and doors, shopfronts and partitions, as well as gazebos, verandas and terraces. Aluminium frames are light, easier to install and need no heavy support."],
+ s:[["s_type",["Алюминиевый","Alyuminiy","Aluminium"]],["s_series",["Холодная","Sovuq","Cold"]],["s_wall","1,1 mm"],["s_mh","2200 mm"],["s_mw","1100 mm"],["s_glass","4–24 mm"],["s_cover",["Анодирование, цвета RAL, ламинация","Anodlash, RAL ranglari, laminatsiya","Anodising, RAL colours, lamination"]],["s_md","47 mm"]]};
+var ALU=["t85","champ","th","t65","t78","t98","t105"];
+var COLN=[["Белый","Антрацит","Серо-бежевое дерево","Золотой дуб","Тёмный орех","Светлое дерево","Дуб","Серо-зелёное дерево","Светло-серый","Тёмно-серый","Сине-серый","Чёрный графит","Светлая сосна"],["Oq","Antratsit","Kulrang-bej yog'och","Oltin eman","To'q yong'oq","Och yog'och","Eman","Kulrang-yashil yog'och","Och kulrang","To'q kulrang","Ko'k-kulrang","Qora grafit","Och qarag'ay"],["White","Anthracite","Taupe wood","Golden oak","Dark walnut","Light wood","Oak","Grey-green wood","Light grey","Dark grey","Blue-grey","Black graphite","Light pine"]];
+var alc=0,alt=null;
+function pn(x){var m=String(x).replace(/,/g,'.').match(/(\d+(?:\.\d+)?)(?:\s*[–-]\s*(\d+(?:\.\d+)?))?/);return m?+(m[2]||m[1]):0}
+function alv(k){
+  var v=$('vk'),P=PR[k],i=LI[L],nm=COLN[i],sw='',rows='',tags='',mx={},j;
+  for(j=0;j<13;j++)sw+='<button type="button" class="al-sa" data-j="'+j+'" aria-label="'+nm[j]+'" title="'+nm[j]+'" style="background-image:var(--c'+(j+1)+')"></button>';
+  ALU.forEach(function(q){PR[q].s.forEach(function(x){if(typeof x[1]==='string'){var n=pn(x[1]);if(n>(mx[x[0]]||0))mx[x[0]]=n}})});
+  P.s.forEach(function(x){
+    if(typeof x[1]!=='string'){tags+='<div class="al-kv"><span>'+t(x[0])+'</span><b>'+x[1][i]+'</b></div>';return}
+    var n=pn(x[1]),pc=mx[x[0]]?Math.round(n/mx[x[0]]*100):0;
+    rows+='<div class="al-r" style="--w:'+pc+'%"><div class="al-rl">'+t(x[0])+'</div><div class="al-rv">'+x[1]+'</div><div class="al-rb"><i></i></div></div>'});
+  var ds=P.d[i],ix=ds.indexOf('. '),lead=ix>0?ds.slice(0,ix+1):ds,rest=ix>0?ds.slice(ix+2):'';
+  v.innerHTML='<div class="axr"><button class="ax-bk" type="button" data-bk>'+t('back')+'</button><div class="al"><div class="bc"><a href="#top">'+t('bh')+'</a> / <a href="#/alu">'+t('sy2')+'</a> / '+P.n+'</div>'
+   +'<span class="ax-tag">[ '+t('sy2')+' ]</span><h2 class="al-h">'+P.n+'</h2>'
+   +'<div class="al-cf"><div class="al-pv"><div class="al-sc"><div class="al-wl"></div><div class="alw" id="alw"><div class="al-tx"></div><svg class="al-ov" viewBox="0 0 400 360" preserveAspectRatio="none" aria-hidden="true"><defs><linearGradient id="alSky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#c3d8e8"/><stop offset=".5" stop-color="#e3edf3"/><stop offset=".78" stop-color="#b9c8d0"/><stop offset="1" stop-color="#8d9ea8"/></linearGradient><linearGradient id="alHl" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff" stop-opacity=".55"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient><linearGradient id="alHd" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#3a3a3c"/><stop offset=".45" stop-color="#0c0c0d"/><stop offset="1" stop-color="#2a2a2c"/></linearGradient><filter id="alB" x="-10%" y="-10%" width="120%" height="120%"><feGaussianBlur stdDeviation="2.2"/></filter><clipPath id="alGL"><rect x="44" y="44" width="135" height="272"/></clipPath><clipPath id="alGR"><rect x="221" y="44" width="135" height="272"/></clipPath></defs><polygon points="0,0 400,0 378,22 22,22" fill="#fff" fill-opacity=".24"/><polygon points="0,360 400,360 378,338 22,338" fill="#000" fill-opacity=".26"/><polygon points="0,0 22,22 22,338 0,360" fill="#fff" fill-opacity=".07"/><polygon points="400,0 378,22 378,338 400,360" fill="#000" fill-opacity=".16"/><g stroke="#000" stroke-opacity=".38" stroke-width=".9" fill="none"><path d="M0 0L22 22M400 0L378 22M0 360L22 338M400 360L378 338"/><rect x="22" y="22" width="356" height="316"/></g><g stroke="#fff" stroke-opacity=".35" stroke-width="1.2" fill="none"><path d="M.6 359V.6H399.4"/></g><g><polygon points="24,24 199,24 179,44 44,44" fill="#fff" fill-opacity=".2"/><polygon points="24,336 199,336 179,316 44,316" fill="#000" fill-opacity=".24"/><polygon points="24,24 44,44 44,316 24,336" fill="#fff" fill-opacity=".06"/><polygon points="199,24 179,44 179,316 199,336" fill="#000" fill-opacity=".14"/></g><g><polygon points="201,24 376,24 356,44 221,44" fill="#fff" fill-opacity=".2"/><polygon points="201,336 376,336 356,316 221,316" fill="#000" fill-opacity=".24"/><polygon points="201,24 221,44 221,316 201,336" fill="#fff" fill-opacity=".06"/><polygon points="376,24 356,44 356,316 376,336" fill="#000" fill-opacity=".16"/></g><g stroke="#000" stroke-opacity=".42" stroke-width=".9" fill="none"><path d="M24 24L44 44M199 24L179 44M24 336L44 316M199 336L179 316M201 24L221 44M376 24L356 44M201 336L221 316M376 336L356 316"/><rect x="24" y="24" width="175" height="312"/><rect x="201" y="24" width="175" height="312"/></g><rect x="43" y="43" width="137" height="274" fill="none" stroke="#0a0a0a" stroke-width="4.5"/><rect x="220" y="43" width="137" height="274" fill="none" stroke="#0a0a0a" stroke-width="4.5"/><rect x="44" y="44" width="135" height="272" fill="url(#alSky)"/><rect x="221" y="44" width="135" height="272" fill="url(#alSky)"/><g clip-path="url(#alGL)"><polygon points="44,60 120,44 44,230" fill="#fff" fill-opacity=".32" filter="url(#alB)"/><polygon points="110,316 179,250 179,316" fill="#000" fill-opacity=".12" filter="url(#alB)"/></g><g clip-path="url(#alGR)"><polygon points="221,60 297,44 221,230" fill="#fff" fill-opacity=".32" filter="url(#alB)"/><polygon points="287,316 356,250 356,316" fill="#000" fill-opacity=".12" filter="url(#alB)"/></g><g fill="none" stroke="#fff" stroke-opacity=".22" stroke-width="1"><rect x="45.5" y="45.5" width="132" height="269"/><rect x="222.5" y="222.5" width="0" height="0"/><rect x="222.5" y="45.5" width="132" height="269"/></g><g fill="none" stroke="#000" stroke-opacity=".3" stroke-width="1.5"><rect x="44" y="44" width="135" height="272"/><rect x="221" y="44" width="135" height="272"/></g><g><rect x="184" y="172" width="11" height="22" rx="2" fill="#151516"/><rect x="187" y="176" width="7" height="46" rx="3.5" fill="url(#alHd)"/><rect x="188" y="180" width="1.4" height="36" rx=".7" fill="#fff" fill-opacity=".4"/><rect x="205" y="172" width="11" height="22" rx="2" fill="#151516"/><rect x="206" y="176" width="7" height="46" rx="3.5" fill="url(#alHd)"/><rect x="207" y="180" width="1.4" height="36" rx=".7" fill="#fff" fill-opacity=".4"/></g><g fill="#1a1a1b"><rect x="22" y="62" width="5" height="24" rx="1.5"/><rect x="22" y="274" width="5" height="24" rx="1.5"/><rect x="373" y="62" width="5" height="24" rx="1.5"/><rect x="373" y="274" width="5" height="24" rx="1.5"/></g></svg></div><div class="al-sl"></div></div><div class="al-cn"><span>'+t('alC')+'</span><b id="alcn"></b><em id="alci"></em></div></div><div class="al-sw">'+sw+'</div></div>'
+   +'<div class="al-ds"><span class="ax-tag">[ '+t('alD')+' ]</span><div><p class="al-lead">'+lead+'</p>'+(rest?'<p>'+rest+'</p>':'')+'</div></div>'
+   +'<div class="al-sp" id="alsp"><div class="al-pic"><div style="background-image:var('+P.im+')"></div><span>'+t('alX')+'</span></div><div class="al-rw"><h3>'+t('spc')+'</h3><div class="al-kvs">'+tags+'</div>'+rows+'</div></div>'
+   +'<div class="al-cta"><a class="btn" href="#request">'+t('ord')+'</a><button class="btn o" type="button" data-bk>'+t('back')+'</button></div></div></div>';
+  var w=$('alw'),sa=v.querySelectorAll('.al-sa');
+  function pick(n){alc=n;w.style.setProperty('--tx','var(--c'+(n+1)+')');for(var q=0;q<sa.length;q++)sa[q].className='al-sa'+(q===n?' on':'');$('alcn').textContent=nm[n];$('alci').textContent=(n+1)+' / 13'}
+  [].forEach.call(sa,function(b){b.addEventListener('click',function(){pick(+b.getAttribute('data-j'))})});
+  pick(alc);
+  var sp=$('alsp');if('IntersectionObserver' in window){var o=new IntersectionObserver(function(es){if(es[0].isIntersecting){sp.className+=' in';o.disconnect()}},{threshold:.2});o.observe(sp)}else sp.className+=' in';
+}
+var hp=0,anc=false,came=false;
+function goBack(){if(came)history.back();else{anc=true;location.hash=cp?'#/'+cr:'#top'}}
+document.addEventListener('click',function(e){
+  var b=e.target.closest&&e.target.closest('[data-bk]');
+  if(b){e.preventDefault();goBack();return}
+  var a=e.target.closest&&e.target.closest('a[href^="#"]');if(a)anc=true;
+});
+function route(){
+  var h=location.hash,m=h.match(/^#\/(kitchen|bedroom|living|alu)(?:\/(\w+))?$/),hm=$('home'),vk=$('vk');
+  var ab=h==='#/about',pj=h==='#/projects';
+  if(window.pjclose)window.pjclose();
+  if(ab||pj||(m&&(!m[2]||RM[m[1]].l.indexOf(m[2])>-1))){
+    if(hm.style.display!=='none')hp=window.pageYOffset||document.documentElement.scrollTop||0;
+    hm.style.display='none';vk.style.display='block';if(ab)rv('about',null);else if(pj)rv('projects',null);else rv(m[1],m[2]);document.body.classList.add('inview');window.scrollTo(0,0);anc=false}
+  else{var was=vk.style.display==='block';vk.style.display='none';hm.style.display='';document.body.classList.remove('inview');window.dispatchEvent(new Event('resize'));
+    var e=h.length>1&&document.getElementById(h.slice(1));
+    if(was&&!anc)setTimeout(function(){window.scrollTo(0,hp)},40);
+    else if(e)setTimeout(function(){e.scrollIntoView()},0);
+    else if(was)window.scrollTo(0,0);
+    anc=false}
+}
+[].forEach.call(document.querySelectorAll('[data-go]'),function(c){c.style.cursor='pointer';c.addEventListener('click',function(e){if(e.target.tagName!=='A')location.hash=c.getAttribute('data-go')})});
+window.addEventListener('hashchange',function(){came=true;route()});
+
+Object.assign(D.ru,{formNotice:'Заявка будет передана через FormSubmit на нашу почту. На следующем шаге подтвердите, что вы не робот.',gmailSend:'Написать через Gmail',formLocal:'Для отправки формы откройте опубликованный сайт. Сейчас можно отправить сообщение через Gmail или позвонить.',phoneBad:'Введите номер телефона: от 7 до 15 цифр.',nameBad:'Укажите ваше имя.'});
+Object.assign(D.uz,{formNotice:"Ariza FormSubmit orqali pochtamizga yuboriladi. Keyingi bosqichda robot emasligingizni tasdiqlang.",gmailSend:'Gmail orqali yozish',formLocal:"Ariza yuborish uchun e’lon qilingan saytni oching. Hozir Gmail orqali yozishingiz yoki qo‘ng‘iroq qilishingiz mumkin.",phoneBad:'Telefon raqamida 7 dan 15 tagacha raqam bo‘lishi kerak.',nameBad:'Ismingizni kiriting.'});
+Object.assign(D.en,{formNotice:'Your request will be sent to our email through FormSubmit. Complete the anti-spam check on the next page.',gmailSend:'Write via Gmail',formLocal:'Open the published website to submit the form. You can use Gmail or call us now.',phoneBad:'Enter a phone number with 7 to 15 digits.',nameBad:'Enter your name.'});
+(function(){
+ var form=$('request-form'),name=$('request-name'),phone=$('request-phone'),message=$('request-message'),button=form.querySelector('button[type="submit"]');
+ function update(){
+   var digits=phone.value.replace(/\D/g,'');
+   name.setCustomValidity(name.value.trim()?'':t('nameBad'));
+   phone.setCustomValidity(digits.length>=7&&digits.length<=15?'':t('phoneBad'));
+   var body='OKNO PREMIUM\nИмя: '+name.value.trim()+'\nТелефон: '+phone.value.trim()+'\nСообщение: '+message.value.trim();
+   var subject=encodeURIComponent('Заявка — OKNO PREMIUM');
+   $('request-gmail').href='https://mail.google.com/mail/?view=cm&fs=1&to=okno.premium2026%40gmail.com&su='+subject+'&body='+encodeURIComponent(body);
+   $('request-mail').href='mailto:okno.premium2026@gmail.com?subject='+subject+'&body='+encodeURIComponent(body);
+ }
+ form.addEventListener('input',update);
+ button.addEventListener('click',update);
+ form.addEventListener('submit',function(e){
+   update();
+   if(!form.reportValidity()){e.preventDefault();return;}
+   if(!/^https?:$/.test(location.protocol)){e.preventDefault();$('request-status').textContent=t('formLocal');return;}
+   $('request-url').value=location.href;
+   button.disabled=true;button.textContent=t('fWait');
+   setTimeout(function(){button.disabled=false;button.textContent=t('fSend')},15000);
+ });
+ window.addEventListener('pageshow',function(){button.disabled=false;button.textContent=t('fSend')});
+ document.addEventListener('click',function(e){
+   var link=e.target.closest&&e.target.closest('a[href="#request"]');
+   if(link&&cp&&PR[cp]&&!message.value){message.value=PR[cp].n;update()}
+ });
+})();
+
+lang(D[sv]?sv:'ru');
+route();
+</script>
+</body>
+</html>
